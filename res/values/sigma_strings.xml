@@ -261,4 +261,9 @@
 
     <string name="brightness_percent_title">Brightness Percentage</string>
     <string name="brightness_percent_summary">Show hide brightness percentage text</string>  
+
+    <!-- Lockscreen notif count -->
+    <string name="lockscreen_maxnotif_title">Lockscreen notification count</string>
+    <string name="lockscreen_maxnotif_summary">Enable adjustment of max lockscreen notifications</string>
+    <string name="lockscreen_maxnotif_config">Max lockscreen notifications</string>
 </resources>
