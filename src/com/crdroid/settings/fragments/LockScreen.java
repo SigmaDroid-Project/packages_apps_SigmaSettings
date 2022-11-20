@@ -45,6 +45,8 @@ import com.android.settingslib.search.SearchIndexable;
 import com.crdroid.settings.fragments.lockscreen.UdfpsAnimation;
 import com.crdroid.settings.fragments.lockscreen.UdfpsIconPicker;
 import com.crdroid.settings.utils.SystemUtils;
+
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 
@@ -68,6 +70,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_COLOR_SOURCE = "sysui_keyguard_battery_bar_color_source";
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_CUSTOM_COLOR = "sysui_keyguard_battery_bar_custom_color";
+    private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
 
     private Preference mUdfpsAnimations;
     private Preference mUdfpsIcons;
@@ -81,6 +84,7 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private SystemSettingListPreference mBarColorSource;
     private ColorPickerPreference mBarCustomColor;
+    private CustomSeekBarPreference mMaxKeyguardNotifConfig;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -140,6 +144,12 @@ public class LockScreen extends SettingsPreferenceFragment
 
         mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
+
+        mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        int kgconf = Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 3);
+        mMaxKeyguardNotifConfig.setValue(kgconf);
+        mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -172,6 +182,11 @@ public class LockScreen extends SettingsPreferenceFragment
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(getContentResolver(),
                    Settings.System.CUSTOM_KEYGUARD_BATTERY_BAR_CUSTOM_COLOR, intHex);
+            return true;
+        } else if (preference == mMaxKeyguardNotifConfig) {
+            int kgconf = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
             return true;
         }
         return false;
@@ -207,6 +222,10 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_WEATHER_HUMIDITY_INFO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCK_SCREEN_CUSTOM_NOTIF, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 3, UserHandle.USER_CURRENT);
         UdfpsAnimation.reset(mContext);
         UdfpsIconPicker.reset(mContext);
     }
