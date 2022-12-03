@@ -110,7 +110,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
         SensorBlock.reset(mContext);
-        MonetSettings.reset(mContext);
         SmartPixels.reset(mContext);
     }
 

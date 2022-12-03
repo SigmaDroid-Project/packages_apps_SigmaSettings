@@ -23,10 +23,10 @@
 
     <!-- Monet -->
     <Preference
-        android:key="monet_settings"
+        android:key="monet_engine"
         android:icon="@drawable/ic_themes"
-        android:title="@string/monet_settings_title"
-        android:summary="@string/monet_settings_summary"
+        android:title="@string/monet_title"
+        android:summary="@string/monet_summary"
         android:fragment="com.sigma.settings.fragments.ui.MonetSettings" />
 
     <!-- UI style -->
