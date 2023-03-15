@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alpha.settings.fragments.statusbar;
+package com.sigma.settings.fragments.statusbar;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -38,16 +38,16 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.alpha.settings.preferences.SecureSettingListPreference;
-import com.alpha.settings.preferences.SystemSettingListPreference;
+import com.sigma.settings.preferences.SecureSettingListPreference;
+import com.sigma.settings.preferences.SystemSettingListPreference;
 import com.android.settingslib.development.SystemPropPoker;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 public class MiscSignalAndWifiIconSettings extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
-    
-    
+
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -55,7 +55,7 @@ public class MiscSignalAndWifiIconSettings extends SettingsPreferenceFragment im
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
 
-        
+
     }
 
     @Override
@@ -66,7 +66,7 @@ public class MiscSignalAndWifiIconSettings extends SettingsPreferenceFragment im
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        
+
 
         return false;
     }
