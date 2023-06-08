@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2016-2022 crDroid Android Project
-     Copyright (C) 2023 AlphaDroid
+     Copyright (C) 2023 BetaDroid
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="alphabet_summary">Goodies!</string>
+    <string name="alphabet_summary">...Everything, including the Kitchen sink</string>
 
     <!-- Extra battery styles -->
     <string name="status_bar_battery_style_icon_landscape_buddy">Landscape Capsule</string>
@@ -250,7 +250,7 @@
 
     <!-- Volume Styles -->
     <string name="rui_style">Realme UI style</string>
-    <string name="rising_style">Rice style</string>
+    <string name="rising_style">Rising style</string>
     <string name="volume_style_title">Volume panel styles</string>
 
     <!-- Volume Media Output Toggle -->
@@ -282,8 +282,8 @@
     <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
 
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">Alphabet</string>
-    <string name="alpha_settings_summary">There will be goodies!</string>
+    <string name="alpha_settings_title">The Kitchen Sink</string>
+    <string name="alpha_settings_summary">Tinker to your hearts content!</string>
 
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
@@ -305,7 +305,7 @@
 
     <!-- Firmware info -->
     <string name="category_android_info">Android</string>
-    <string name="category_alpha_info">AlphaDroid</string>
+    <string name="category_alpha_info">BetaDroid</string>
     <string name="category_device_info">Device</string>
 
     <!-- Build info -->
