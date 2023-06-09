@@ -285,8 +285,8 @@
     <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
 
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">The Kitchen Sink</string>
-    <string name="alpha_settings_summary">Tinker to your hearts content!</string>
+    <string name="alpha_settings_title">BetaDroid Toolbox</string>
+    <string name="alpha_settings_summary">Taking Beta to the MAX!</string>
 
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
