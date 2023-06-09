@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="alphabet_summary">Taking Beta to the MAX</string>
+    <string name="alphabet_summary">Everything but the kitchen sink</string>
 
     <!-- Extra battery styles -->
     <string name="status_bar_battery_style_icon_landscape_buddy">Landscape Capsule</string>
@@ -287,6 +287,11 @@
     <!--  Alpha settings -->
     <string name="alpha_settings_title">BetaDroid Toolbox</string>
     <string name="alpha_settings_summary">Taking Beta to the MAX!</string>
+
+    <!--  Alpha Changelog -->
+    <string name="alpha_changelog_title">Current changelog</string>
+    <string name="alpha_changelog_summary">View changes in the ROM installed</string>
+    <string name="alpha_changelog_error">Unable to load changelog</string>
 
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
