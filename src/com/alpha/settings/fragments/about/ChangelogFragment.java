@@ -81,7 +81,7 @@ public class ChangelogFragment extends PreferenceFragment {
             while ((numRead = inputReader.read(tmp)) >= 0) {
                 data.append(tmp, 0, numRead);
             }
-//            text = data.toString();
+            text = data.toString();
         } catch (IOException e) {
 //            text = getString(R.string.changelog_error);
         } finally {
