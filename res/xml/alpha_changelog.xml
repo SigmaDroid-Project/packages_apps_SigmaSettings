@@ -22,8 +22,8 @@
     <Preference
         android:key="alpha_changelog"
         android:icon="@drawable/ic_changelog"
-        android:title="@string/changelog_title"
-        android:summary="@string/changelog_summary">
+        android:title="@string/alpha_changelog_title"
+        android:summary="@string/alpha_changelog_summary">
         <intent android:action="android.intent.action.MAIN"
              android:targetPackage="com.android.settings"
              android:targetClass="com.alpha.settings.fragments.about.ChangelogActivity"/>
