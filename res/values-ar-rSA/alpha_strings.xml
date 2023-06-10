@@ -34,7 +34,7 @@
     <string name="preference_category_clock">Clock</string>
     <!-- Settings dashboard style -->
     <string name="settings_dashboard_style_title">Settings style</string>
-    <string name="settings_dashboard_style_summary">Settings homepage and BetaDroid Toolbox style</string>
+    <string name="settings_dashboard_style_summary">Settings homepage and SigmaDroid Toolbox style</string>
     <string name="settings_dashboard_style_aosp">AOSP</string>
     <string name="settings_dashboard_style_dot">DoT</string>
     <string name="settings_dashboard_style_nad">NAD</string>
@@ -253,7 +253,7 @@
     <string name="qs_haptic_feedback_title">QS haptic feedback</string>
     <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">BetaDroid Toolbox</string>
+    <string name="alpha_settings_title">SigmaDroid Toolbox</string>
     <string name="alpha_settings_summary">Taking Beta to the MAX</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
