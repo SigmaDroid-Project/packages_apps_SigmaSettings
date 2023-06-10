@@ -253,8 +253,8 @@
     <string name="qs_haptic_feedback_title">QS haptic feedback</string>
     <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">Alphabet</string>
-    <string name="alpha_settings_summary">There will be goodies!</string>
+    <string name="alpha_settings_title">SigmaDroid Toolbox</string>
+    <string name="alpha_settings_summary">Everything including the kichen sink!</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
@@ -272,7 +272,7 @@
     <string name="selinux_status_enforcing">Enforcing</string>
     <!-- Firmware info -->
     <string name="category_android_info">Android</string>
-    <string name="category_alpha_info">AlphaDroid</string>
+    <string name="category_alpha_info">BetaDroid</string>
     <string name="category_device_info">Device</string>
     <!-- Build info -->
     <string name="build_status_title">Build Status: %s</string>
