@@ -34,7 +34,7 @@
     <string name="preference_category_clock">Uhr</string>
     <!-- Settings dashboard style -->
     <string name="settings_dashboard_style_title">Einstellungsstil</string>
-    <string name="settings_dashboard_style_summary">Einstellungen der Startseite und Stil des Alphabets</string>
+    <string name="settings_dashboard_style_summary">Einstellungen der Startseite und Stil des SigmaDroid Toolboxs</string>
     <string name="settings_dashboard_style_aosp">AOSP</string>
     <string name="settings_dashboard_style_dot">DoT</string>
     <string name="settings_dashboard_style_nad">NAD</string>
@@ -252,7 +252,7 @@ Upload- und Downloadgeschwindigkeit.    </string>
     <string name="qs_haptic_feedback_title">Haptisches Feedback bei Schnelleinstellungen</string>
     <string name="qs_haptic_feedback_summary">Beim Berühren von Schnelleinstellungs-Kacheln vibrieren</string>
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">Alphabet</string>
+    <string name="alpha_settings_title">SigmaDroid Toolbox</string>
     <string name="alpha_settings_summary">Es wird Überraschungen geben!</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2016-2022 crDroid Android Project
-     Copyright (C) 2023 BetaDroid
+     Copyright (C) 2023 SigmaDroid
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -286,7 +286,7 @@
 
     <!--  Alpha settings -->
     <string name="alpha_settings_title">SigmaDroid Toolbox</string>
-    <string name="alpha_settings_summary">Taking Beta to the MAX!</string>
+    <string name="alpha_settings_summary">Everything including the kitchen sink!</string>
 
     <!--  Alpha Changelog -->
     <string name="alpha_changelog_title">Current changelog</string>
@@ -313,7 +313,7 @@
 
     <!-- Firmware info -->
     <string name="category_android_info">Android</string>
-    <string name="category_alpha_info">BetaDroid</string>
+    <string name="category_alpha_info">SigmaDroid</string>
     <string name="category_device_info">Device</string>
 
     <!-- Build info -->

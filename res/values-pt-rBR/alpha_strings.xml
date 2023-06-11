@@ -253,7 +253,7 @@
     <string name="qs_haptic_feedback_title">Vibrar</string>
     <string name="qs_haptic_feedback_summary">Vibrar ao tocar nas configurações rápidas</string>
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">Alphabet</string>
+    <string name="alpha_settings_title">SigmaDroid Toolbox</string>
     <string name="alpha_settings_summary">Guloseimas</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
