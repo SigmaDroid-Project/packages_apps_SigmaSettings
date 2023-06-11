@@ -14,12 +14,12 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/network_traffic_category_title">
 
-    <com.alpha.settings.preferences.SystemSettingMainSwitchPreference
+    <com.sigma.settings.preferences.SystemSettingMainSwitchPreference
         android:key="network_traffic_enabled"
         android:title="@string/enable_network_traffic"
         android:defaultValue="false" />
 
-    <com.alpha.settings.preferences.SystemSettingSeekBarPreference
+    <com.sigma.settings.preferences.SystemSettingSeekBarPreference
         android:key="network_traffic_auto_hide_threshold_tx"
         android:title="@string/statusbar_network_traffic_threshold_tx_title"
         android:defaultValue="0"
@@ -28,7 +28,7 @@
         settings:interval="128"
         settings:units="KiB/s" />
 
-    <com.alpha.settings.preferences.SystemSettingSeekBarPreference
+    <com.sigma.settings.preferences.SystemSettingSeekBarPreference
         android:key="network_traffic_auto_hide_threshold_rx"
         android:title="@string/statusbar_network_traffic_threshold_rx_title"
         android:defaultValue="0"
@@ -37,7 +37,7 @@
         settings:interval="128"
         settings:units="KiB/s" />
 
-    <com.alpha.settings.preferences.SystemSettingSeekBarPreference
+    <com.sigma.settings.preferences.SystemSettingSeekBarPreference
         android:key="network_traffic_unit_text_size"
         android:title="@string/statusbar_network_traffic_unit_text_size_title"
         android:defaultValue="21"
@@ -45,7 +45,7 @@
         android:min="15"
         settings:units="px" />
 
-    <com.alpha.settings.preferences.SystemSettingSeekBarPreference
+    <com.sigma.settings.preferences.SystemSettingSeekBarPreference
         android:key="network_traffic_rate_text_scale_factor"
         android:title="@string/statusbar_network_traffic_rate_text_scale_factor_title"
         android:defaultValue="15"

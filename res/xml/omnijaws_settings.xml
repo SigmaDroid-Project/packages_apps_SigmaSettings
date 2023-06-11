@@ -24,7 +24,7 @@
      <com.android.settingslib.widget.FooterPreference
             android:title="@string/weather_icon_pack_info_title" />
 
-      <com.alpha.settings.preferences.SystemSettingListPreference
+      <com.sigma.settings.preferences.SystemSettingListPreference
         android:key="kg_show_weather_temp"
         android:title="@string/kg_weather_title"
         android:dialogTitle="@string/kg_weather_title"
