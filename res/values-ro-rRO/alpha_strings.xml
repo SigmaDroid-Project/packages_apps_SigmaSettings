@@ -24,7 +24,7 @@
     <string name="preference_category_clock">Ceas</string>
     <!-- Settings dashboard style -->
     <string name="settings_dashboard_style_title">Stil setări</string>
-    <string name="settings_dashboard_style_summary">Pagina principală Setări și stil Alphabet</string>
+    <string name="settings_dashboard_style_summary">Pagina principală Setări și stil SigmaDroid</string>
     <string name="settings_dashboard_style_aosp">AOSP</string>
     <string name="settings_dashboard_style_dot">DoT</string>
     <string name="settings_dashboard_style_nad">NAD</string>
@@ -164,7 +164,7 @@ După comutare, trebuie schimbată sau întreruptă muzica, sau de mutat bara de
     <string name="qs_haptic_feedback_title">Vibrații la atingere setări rapide</string>
     <string name="qs_haptic_feedback_summary">Vibrează la atingerea dalelor setărilor rapide</string>
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">Alphabet</string>
+    <string name="alpha_settings_title">SigmaDroid</string>
     <string name="alpha_settings_summary">Vor fi bunătăți!</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
