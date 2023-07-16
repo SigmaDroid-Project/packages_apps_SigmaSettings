@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2016-2022 crDroid Android Project
-     Copyright (C) 2023 AlphaDroid
+     Copyright (C) 2023 SigmaDroid
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -176,7 +176,7 @@
     <string name="selinux_status_enforcing">Enforcing</string>
     <!-- Firmware info -->
     <string name="category_android_info">Android</string>
-    <string name="category_alpha_info">AlphaDroid</string>
+    <string name="category_alpha_info">SigmaDroid</string>
     <string name="category_device_info">Appareil</string>
     <!-- Build info -->
     <string name="build_status_title">Build Status: %s</string>
