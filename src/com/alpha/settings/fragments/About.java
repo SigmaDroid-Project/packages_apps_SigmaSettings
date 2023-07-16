@@ -78,11 +78,11 @@ public class About extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mDonate) {
-            launchUrl("https://paypal.me/alphadroidproject");
+            launchUrl("https://paypal.me/albinoman887");
         } else if (preference == mSourceUrl) {
-            launchUrl("https://github.com/alphadroid-project");
+            launchUrl("https://github.com/sigmadroid-project");
         } else if (preference == mTelegramUrl) {
-            launchUrl("https://t.me/alphadroid_chat");
+            launchUrl("https://t.me/PantahRomsPixel7and7Pro");
         } else if (preference == mShare) {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
@@ -91,11 +91,11 @@ public class About extends SettingsPreferenceFragment {
                     getActivity().getString(R.string.share_message), Build.MODEL));
             startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
         } else if (preference == mTranslate) {
-            launchUrl("https://crowdin.com/project/alphadroid_alphasettings");
+            launchUrl("https://crowdin.com/project/sigmadroid_sigmasettings");
         } else if (preference == mWebsite) {
-            launchUrl("https://t.me/alphadroid_chat");
+            launchUrl("https://t.me/PantahRomsPixel7and7Pro");
         } else if (preference == mTelegramChannelUrl) {
-            launchUrl("https://t.me/alphadroid_releases");
+            launchUrl("https://t.me/PantahRomsPixel7and7Pro");
         }
 
         return super.onPreferenceTreeClick(preference);
