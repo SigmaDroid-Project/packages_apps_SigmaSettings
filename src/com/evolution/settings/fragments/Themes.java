@@ -46,6 +46,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.evolution.EvolutionUtils;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -61,11 +62,13 @@ public class Themes extends DashboardFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "Themes";
+    private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
 
     private Handler mHandler;
     private IOverlayManager mOverlayManager;
     private IOverlayManager mOverlayService;
     private SystemSettingListPreference mQsStyle;
+    private ListPreference mDashBoardStyle;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -82,11 +85,18 @@ public class Themes extends DashboardFragment implements
 
         mOverlayService = IOverlayManager.Stub
         .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+
+        mDashBoardStyle = (ListPreference) prefScreen.findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         Context mContext = getActivity().getApplicationContext();
+        if (preference == mDashBoardStyle) {
+            EvolutionUtils.showSettingsRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
