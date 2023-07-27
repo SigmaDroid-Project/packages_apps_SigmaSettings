@@ -53,7 +53,7 @@ public class BatteryLight extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_battery_light;
+        return R.xml.sigma_settings_battery_light;
     }
 
     @Override
@@ -157,5 +157,5 @@ public class BatteryLight extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_battery_light);
+            new BaseSearchIndexProvider(R.xml.sigma_settings_battery_light);
 }

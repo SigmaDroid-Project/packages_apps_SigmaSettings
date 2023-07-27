@@ -43,7 +43,7 @@ class EdgeLightSettings : EvolutionDashboardFragment(), OnMainSwitchChangeListen
         }
     }
 
-    override protected fun getPreferenceScreenResId() = R.xml.evolution_settings_edge_light
+    override protected fun getPreferenceScreenResId() = R.xml.sigma_settings_edge_light
 
     override protected fun getLogTag() = TAG
 
@@ -77,7 +77,7 @@ class EdgeLightSettings : EvolutionDashboardFragment(), OnMainSwitchChangeListen
         )
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.evolution_settings_edge_light) {
+        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.sigma_settings_edge_light) {
             override fun createPreferenceControllers(
                 context: Context
             ): List<AbstractPreferenceController> = buildPreferenceControllers(

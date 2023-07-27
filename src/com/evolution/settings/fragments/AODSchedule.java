@@ -61,7 +61,7 @@ public class AODSchedule extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_always_on_display_schedule;
+        return R.xml.sigma_settings_always_on_display_schedule;
     }
 
     @Override
@@ -195,5 +195,5 @@ public class AODSchedule extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_always_on_display_schedule);
+            new BaseSearchIndexProvider(R.xml.sigma_settings_always_on_display_schedule);
 }

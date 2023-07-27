@@ -37,7 +37,7 @@ class AppLockSettingsFragment : EvolutionDashboardFragment(),
     private var debugEnabled = SystemProperties.get(DEBUG_PROPERTY, null) == LEVEL_DEBUG
     private var handledClick = false
 
-    override protected fun getPreferenceScreenResId() = R.xml.evolution_settings_app_lock
+    override protected fun getPreferenceScreenResId() = R.xml.sigma_settings_app_lock
 
     override protected fun getLogTag() = TAG
 
@@ -78,6 +78,6 @@ class AppLockSettingsFragment : EvolutionDashboardFragment(),
         private const val MENU_ITEM_DEBUG_ID = 101
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.evolution_settings_app_lock)
+        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.sigma_settings_app_lock)
     }
 }

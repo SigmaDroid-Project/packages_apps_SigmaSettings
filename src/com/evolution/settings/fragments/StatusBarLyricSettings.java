@@ -34,7 +34,7 @@ public class StatusBarLyricSettings extends DashboardFragment {
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_status_bar_lyric;
+        return R.xml.sigma_settings_status_bar_lyric;
     }
 
     @Override
@@ -53,5 +53,5 @@ public class StatusBarLyricSettings extends DashboardFragment {
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_status_bar_lyric);
+            new BaseSearchIndexProvider(R.xml.sigma_settings_status_bar_lyric);
 }

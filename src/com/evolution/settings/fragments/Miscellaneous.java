@@ -60,7 +60,7 @@ public class Miscellaneous extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_miscellaneous;
+        return R.xml.sigma_settings_miscellaneous;
     }
 
     @Override
@@ -100,7 +100,7 @@ public class Miscellaneous extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_miscellaneous) {
+            new BaseSearchIndexProvider(R.xml.sigma_settings_miscellaneous) {
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);

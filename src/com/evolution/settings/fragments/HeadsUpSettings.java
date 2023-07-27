@@ -75,7 +75,7 @@ public class HeadsUpSettings extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_heads_up;
+        return R.xml.sigma_settings_heads_up;
     }
 
     @Override
@@ -130,5 +130,5 @@ public class HeadsUpSettings extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_heads_up);
+            new BaseSearchIndexProvider(R.xml.sigma_settings_heads_up);
 }

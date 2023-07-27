@@ -82,7 +82,7 @@ public class SensorBlockSettings extends DashboardFragment implements
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_sensor_block;
+        return R.xml.sigma_settings_sensor_block;
     }
 
     @Override
@@ -337,5 +337,5 @@ public class SensorBlockSettings extends DashboardFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_sensor_block);
+            new BaseSearchIndexProvider(R.xml.sigma_settings_sensor_block);
 }

@@ -110,7 +110,7 @@ public class Buttons extends ActionFragment implements
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.evolution_settings_buttons);
+        addPreferencesFromResource(R.xml.sigma_settings_buttons);
 
         final Resources res = getResources();
         final ContentResolver resolver = getActivity().getContentResolver();
@@ -281,7 +281,7 @@ public class Buttons extends ActionFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.evolution_settings_buttons) {
+            new BaseSearchIndexProvider(R.xml.sigma_settings_buttons) {
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {

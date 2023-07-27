@@ -30,7 +30,7 @@ public class AboutEvolutionX extends DashboardFragment {
     private static final String TAG = "AboutEvolutionX";
 
     protected int getPreferenceScreenResId() {
-        return R.xml.evolution_settings_about;
+        return R.xml.sigma_settings_about;
     }
 
     @Override

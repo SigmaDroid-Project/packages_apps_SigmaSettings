@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2019-2023 Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/misc_title">
+
+    <!-- Pocket Judge -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="pocket_judge"
+        android:title="@string/pocket_judge_title"
+        android:summary="@string/pocket_judge_summary"
+        android:defaultValue="false" />
+
+    <!-- Parallel Space -->
+    <Preference
+        android:key="parallel_space"
+        android:title="@string/laboratory_parallel_space_title"
+        android:summary="@string/laboratory_parallel_space_summary">
+        <intent
+            android:targetPackage="ink.kscope.parallelspace"
+            android:targetClass="ink.kscope.parallelspace.MainActivity" />
+    </Preference>
+
+    <!-- Game Space -->
+    <Preference
+        android:key="game_settings"
+        android:title="@string/game_space_title"
+        android:summary="@string/game_space_summary">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="io.chaldeaprjkt.gamespace"
+            android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
+    </Preference>
+
+    <!-- Smart Pixels -->
+    <Preference
+        android:key="smart_pixels"
+        android:title="@string/smart_pixels_title" 
+        android:summary="@string/smart_pixels_summary" 
+        android:fragment="com.evolution.settings.fragments.SmartPixels" />
+
+    <!-- Launch music player when headset is connected -->
+    <com.evolution.settings.preference.SystemSettingSwitchPreference
+        android:key="headset_connect_player"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary"
+        android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="pulse_category"
+        android:title="@string/pulse_category">
+
+        <Preference
+            android:key="pulse_settings"
+            android:title="@string/pulse_settings"
+            android:summary="@string/pulse_settings_summary"
+            android:fragment="com.evolution.settings.fragments.Pulse" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="spoof_category"
+        android:title="@string/spoof_title">
+
+        <!-- Unlimited Photos storage -->
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.gphotos"
+            android:title="@string/photos_spoof_title"
+            android:summary="@string/photos_spoof_summary"
+            android:defaultValue="true" />
+
+        <!-- Unlock FPS for specific games -->
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.games"
+            android:title="@string/games_spoof_title"
+            android:summary="@string/games_spoof_summary"
+            android:defaultValue="false" />
+
+        <!-- Netflix -->
+        <com.evolution.settings.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.netflix"
+            android:title="@string/netflix_spoof_title"
+            android:summary="@string/netflix_spoof_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="uibench"
+        android:title="@string/category_uibench">
+
+        <Preference
+            android:key="jitter"
+            android:title="@string/jitter_test_title"
+            android:summary="@string/jitter_test_summary"
+            android:persistent="false">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.evolution.settings.fragments.uibench.JitterTestActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/dev_options_title" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/ignore_window_secure_title"
+            android:summary="@string/ignore_window_secure_summary"
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SecureSettingSwitchPreference
+            android:key="show_cpu_overlay"
+            android:title="@string/show_cpu_info"
+            android:summary="@string/show_cpu_info_summary" 
+            android:defaultValue="false" />
+
+        <com.evolution.settings.preference.SystemSettingSwitchPreference
+            android:key="toast_icon"
+            android:title="@string/toast_icon_title"
+            android:summary="@string/toast_icon_summary"
+            android:defaultValue="true" />
+
+        <!-- Sensor Block -->
+        <com.evolution.settings.preference.SystemSettingPrimarySwitchPreference
+            android:key="sensor_block"
+            android:title="@string/sensor_block_title"
+            android:summary="@string/sensor_block_summary"
+            android:defaultValue="false"
+            android:fragment="com.evolution.settings.fragments.SensorBlockSettings"
+            settings:observe="true" />
+
+        <Preference
+            android:key="wakelock_blocker"
+            android:title="@string/wakelock_blocker_title"
+            android:summary="@string/wakelock_blocker_summary"
+            android:fragment="com.evolution.settings.fragments.WakeLockBlocker" />
+
+        <Preference
+            android:key="alarm_blocker"
+            android:title="@string/alarm_blocker_title"
+            android:summary="@string/alarm_blocker_summary"
+            android:fragment="com.evolution.settings.fragments.AlarmBlocker" />
+
+        <Preference
+            android:key="default_usb_configuration"
+            android:fragment="com.android.settings.connecteddevice.usb.UsbDefaultFragment"
+            android:title="@string/usb_default_config_title"
+            android:summary="@string/usb_default_config_summary" />
+
+</PreferenceScreen>
