@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="alphabet_summary">好的！</string>
+    <string name="alphabet_summary">Everything including the Kitchen Sink!</string>
     <!-- Preference categories -->
     <string name="preference_category_brightness">亮度</string>
     <string name="preference_category_battery">电池</string>
@@ -24,7 +24,7 @@
     <string name="preference_category_clock">时钟</string>
     <!-- Settings dashboard style -->
     <string name="settings_dashboard_style_title">设置样式</string>
-    <string name="settings_dashboard_style_summary">设置主页和 Alphabet 风格</string>
+    <string name="settings_dashboard_style_summary">设置主页和 SigmaDroid 风格</string>
     <string name="settings_dashboard_style_aosp">AOSP</string>
     <string name="settings_dashboard_style_dot">DoT</string>
     <string name="settings_dashboard_style_nad">NAD</string>
@@ -163,8 +163,8 @@
     <string name="qs_haptic_feedback_title">触摸反馈</string>
     <string name="qs_haptic_feedback_summary">触摸快速设置磁贴时振动</string>
     <!--  Alpha settings -->
-    <string name="alpha_settings_title">Alphabet</string>
-    <string name="alpha_settings_summary">将会有好东西！</string>
+    <string name="alpha_settings_title">SigmaDroid</string>
+    <string name="alpha_settings_summary">Everything including the Kitchen Sink!</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>

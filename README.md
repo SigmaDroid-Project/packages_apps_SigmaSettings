@@ -1,7 +1,7 @@
 # AlphaDroid Settings repo #
 
 ### Description ###
-There will be goodies! :)
+Everything including the Kitchen Sink! :)
 
 ### Translations ###
 If you want to help out on translations, please click below badge

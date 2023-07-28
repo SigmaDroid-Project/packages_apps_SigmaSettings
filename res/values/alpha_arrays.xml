@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2016-2022 crDroid Android Project
-     Copyright (C) 2023 AlphaDroid
+     Copyright (C) 2023 SigmaDroid
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -208,7 +208,7 @@
         <item>11</item>
         <item>12</item>
     </string-array>
-    
+
     <!-- VoLTE Icon Type -->
     <string-array name="volte_icon_type_entries" translatable="false">
         <item>@string/volte_icon_off</item>
