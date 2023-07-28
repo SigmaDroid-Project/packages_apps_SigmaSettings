@@ -636,7 +636,7 @@
 
     <!-- Custom logo style -->
     <string-array name="status_bar_logo_style_entries" translatable="false">
-        <item>@string/status_bar_logo_style_alpha</item>
+        <item>@string/status_bar_logo_style_sigma</item>
         <item>@string/status_bar_logo_style_crdroid</item>
         <item>@string/status_bar_logo_style_android</item>
         <item>@string/status_bar_logo_style_adidas</item>
