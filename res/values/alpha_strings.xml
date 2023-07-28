@@ -181,7 +181,7 @@
     <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
 
     <!--  Sigma settings -->
-    <string name="alpha_settings_title">SigmaDroid Toolbox</string>
+    <string name="alpha_settings_title">Sigma Toolbox</string>
     <string name="alpha_settings_summary">Everything including the kitchen sink!</string>
 
     <!-- UiBench -->

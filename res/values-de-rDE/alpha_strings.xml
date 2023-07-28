@@ -163,7 +163,7 @@
     <string name="qs_haptic_feedback_title">Haptisches Feedback bei Schnelleinstellungen</string>
     <string name="qs_haptic_feedback_summary">Beim Berühren von Schnelleinstellungs-Kacheln vibrieren</string>
     <!--  Sigma settings -->
-    <string name="alpha_settings_title">SigmaDroid Toolbox</string>
+    <string name="alpha_settings_title">Sigma Toolbox</string>
     <string name="alpha_settings_summary">Everything including the Kitchen Sink!</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
