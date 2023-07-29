@@ -255,7 +255,7 @@
             android:icon="@drawable/ic_vibrate"
             android:title="@string/qs_haptic_feedback_title"
             android:summary="@string/qs_haptic_feedback_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
