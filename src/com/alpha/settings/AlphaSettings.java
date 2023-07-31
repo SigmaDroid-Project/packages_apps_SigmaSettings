@@ -102,13 +102,7 @@ public class AlphaSettings extends DashboardFragment {
             }
 
             if (mDashBoardStyle > 0) { // 0 = stock aosp style
-                if (mDashBoardStyle == 1 && mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.alpha_dashboard_preference_full_accent);
-                } else if (mDashBoardStyle == 2 && mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.alpha_dashboard_preference_full_accent_2);
-                } else {
-                    mPreference.setLayoutResource(R.layout.alpha_dashboard_preference_full);
-                }
+                mPreference.setLayoutResource(R.layout.alpha_dashboard_preference_full);
             }
         }
     }
