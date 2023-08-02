@@ -93,7 +93,7 @@
         android:key="power_menu_animations_cat"
         android:title="@string/power_menu_anim_cat">
 
-        <com.alpha.settings.preferences.SystemSettingListPreference
+        <com.sigma.settings.preferences.SystemSettingListPreference
             android:key="power_menu_animations"
             android:icon="@drawable/ic_power_menu_animation"
             android:title="@string/power_menu_animation_title"

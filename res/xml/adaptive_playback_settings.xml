@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 
-<PreferenceScreen 
+<PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -35,7 +35,7 @@
         android:key="adaptive_playback_intro_text"
         android:title="@string/adaptive_playback_intro_text"/>
 
-    <com.alpha.settings.preferences.SystemSettingSeekBarPreference
+    <com.sigma.settings.preferences.SystemSettingSeekBarPreference
         android:key="adaptive_playback_timeout"
         android:title="@string/adaptive_playback_timeout_title"
         android:defaultValue="30"

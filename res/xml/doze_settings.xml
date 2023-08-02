@@ -18,17 +18,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/doze_display_title">
 
-    <com.alpha.settings.preferences.SecureSettingSwitchPreference
+    <com.sigma.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_enabled"
         android:title="@string/doze_title"
         android:summary="@string/doze_summary" />
 
-    <com.alpha.settings.preferences.SecureSettingSwitchPreference
+    <com.sigma.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_always_on"
         android:title="@string/doze_always_on_title"
         android:summary="@string/doze_always_on_summary" />
 
-    <com.alpha.settings.preferences.SecureSettingSwitchPreference
+    <com.sigma.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_on_charge"
         android:title="@string/doze_on_charge_title"
         android:summary="@string/doze_on_charge_summary" />
@@ -41,7 +41,7 @@
             android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
     </lineageos.preference.RemotePreference>
 
-    <com.alpha.settings.preferences.SecureSettingSwitchPreference
+    <com.sigma.settings.preferences.SecureSettingSwitchPreference
         android:key="pulse_on_new_tracks"
         android:title="@string/pulse_on_new_tracks_title"
         android:summary="@string/pulse_on_new_tracks_summary" />
@@ -50,50 +50,50 @@
         android:key="edge_light_settings"
         android:title="@string/edge_light_title"
         android:summary="@string/edge_light_summary"
-        android:fragment="com.alpha.settings.fragments.ui.doze.EdgeLightSettings"
+        android:fragment="com.sigma.settings.fragments.ui.doze.EdgeLightSettings"
         android:dependency="doze_enabled" />
 
     <Preference
          android:key="ambient_customization"
          android:title="@string/ambient_text_category_title"
          android:summary="@string/ambient_text_category_summary"
-         android:fragment="com.alpha.settings.fragments.ui.AmbientCustomizations" />
+         android:fragment="com.sigma.settings.fragments.ui.AmbientCustomizations" />
 
     <PreferenceCategory
         android:key="doze_sensor"
         android:title="@string/doze_sensor_title" >
 
-        <com.alpha.settings.preferences.SecureSettingSwitchPreference
+        <com.sigma.settings.preferences.SecureSettingSwitchPreference
             android:key="doze_tilt_gesture"
             android:defaultValue="false"
             android:title="@string/tilt_title"
             android:summary="@string/tilt_summary" />
 
-        <com.alpha.settings.preferences.SecureSettingSwitchPreference
+        <com.sigma.settings.preferences.SecureSettingSwitchPreference
             android:key="doze_pick_up_gesture"
             android:defaultValue="false"
             android:title="@string/pickup_title"
             android:summary="@string/pickup_summary" />
 
-        <com.alpha.settings.preferences.SecureSettingSwitchPreference
+        <com.sigma.settings.preferences.SecureSettingSwitchPreference
             android:key="doze_handwave_gesture"
             android:defaultValue="false"
             android:title="@string/handwave_title"
             android:summary="@string/handwave_summary" />
 
-        <com.alpha.settings.preferences.SecureSettingSwitchPreference
+        <com.sigma.settings.preferences.SecureSettingSwitchPreference
             android:key="doze_pocket_gesture"
             android:defaultValue="false"
             android:title="@string/pocket_title"
             android:summary="@string/pocket_summary" />
 
-        <com.alpha.settings.preferences.SecureSettingSwitchPreference
+        <com.sigma.settings.preferences.SecureSettingSwitchPreference
             android:key="raise_to_wake_gesture"
             android:defaultValue="false"
             android:title="@string/raise_to_wake_title"
             android:summary="@string/raise_to_wake_summary" />
 
-        <com.alpha.settings.preferences.SecureSettingSeekBarPreference
+        <com.sigma.settings.preferences.SecureSettingSeekBarPreference
             android:key="doze_gesture_vibrate"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
