@@ -145,16 +145,22 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
                 getActivity().getContentResolver(),
                 Settings.System.UDFPS_ANIM, 1
             );
+            Settings.System.putInt(getActivity().getContentResolver(),
+                            Settings.System.UDFPS_ANIM_STYLE, 0);
             mEnabled = true;
             mSwitch.setChecked(true);
             setEnabled(true);
+            switchBar.setTitle(getActivity().getString(R.string.enable));
+            switchBar.addOnSwitchChangeListener(this);
+            switchBar.show();
+            // updateActivatedStatus();
         }
-
         mSwitch.setChecked(mEnabled);
         setEnabled(mEnabled);
         switchBar.setTitle(getActivity().getString(R.string.enable));
         switchBar.addOnSwitchChangeListener(this);
         switchBar.show();
+        // updateActivatedStatus();
     }
 
     @Override
