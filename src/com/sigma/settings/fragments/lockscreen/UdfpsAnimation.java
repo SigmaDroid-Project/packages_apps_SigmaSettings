@@ -130,8 +130,26 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
         final SettingsActivity activity = (SettingsActivity) getActivity();
         final SettingsMainSwitchBar switchBar = activity.getSwitchBar();
         mSwitch = switchBar.getSwitch();
-        mEnabled = Settings.System.getInt(getActivity().getContentResolver(),
-                       Settings.System.UDFPS_ANIM, 0) == 1;
+
+        String udfps_anim = Settings.System.getString(
+        getActivity().getContentResolver(), Settings.System.UDFPS_ANIM);
+
+        // Check if UDFPS_ANIM is either "0" or "1"
+        if (udfps_anim != null && (udfps_anim.equals("0") || udfps_anim.equals("1"))) {
+            mEnabled = Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.UDFPS_ANIM, 0) == 1;
+        } else {
+            // If UDFPS_ANIM is neither "0" nor "1", then set its value to 1
+            Settings.System.putInt(
+                getActivity().getContentResolver(),
+                Settings.System.UDFPS_ANIM, 1
+            );
+            mEnabled = true;
+            mSwitch.setChecked(true);
+            setEnabled(true);
+        }
+
         mSwitch.setChecked(mEnabled);
         setEnabled(mEnabled);
         switchBar.setTitle(getActivity().getString(R.string.enable));
@@ -193,7 +211,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
             holder.name.setText(mTitles[position]);
 
             if (position == Settings.System.getInt(context.getContentResolver(),
-                Settings.System.UDFPS_ANIM_STYLE, 0)) {
+                Settings.System.UDFPS_ANIM_STYLE, 24)) {
                 mAppliedAnim = animName;
                 if (mSelectedAnim == null) {
                     mSelectedAnim = animName;

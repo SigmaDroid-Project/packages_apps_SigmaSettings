@@ -31,7 +31,7 @@
         android:title="@string/udfps_recog_animation_effect_title"
         android:summary="@string/udfps_recog_animation_effect_summary"
         android:fragment="com.sigma.settings.fragments.lockscreen.UdfpsAnimation"
-        android:defaultValue="true" />
+        android:defaultValue="1" />
 
     <Preference
         android:key="udfps_pressedicon_picker"
