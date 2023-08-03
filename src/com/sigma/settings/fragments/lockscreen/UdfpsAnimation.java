@@ -211,11 +211,11 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
             holder.name.setText(mTitles[position]);
 
             if (position == Settings.System.getInt(context.getContentResolver(),
-                Settings.System.UDFPS_ANIM_STYLE, 24)) {
+                Settings.System.UDFPS_ANIM_STYLE, 0)) {
                 mAppliedAnim = animName;
-                if (mSelectedAnim == null) {
+                //if (mSelectedAnim == null) {
                     mSelectedAnim = animName;
-                }
+                //}
             }
 
             holder.itemView.setActivated(animName == mSelectedAnim);
