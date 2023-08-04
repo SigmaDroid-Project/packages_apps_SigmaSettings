@@ -29,7 +29,10 @@
             android:icon="@drawable/ic_header"
             android:fragment="com.alpha.settings.fragments.qs.QsHeaderImageSettings"
             android:title="@string/qs_header_image_title"
-            android:summary="@string/qs_header_image_summary" />
+            android:defaultValue="0"
+            settings:interval="1"
+            android:max="36"
+            android:min="0" />
 
         <!-- QS clock
         <com.sigma.settings.preferences.SystemSettingSwitchPreference
