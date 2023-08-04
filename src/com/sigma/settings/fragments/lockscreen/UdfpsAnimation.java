@@ -83,7 +83,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     private String[] mAnimPreviews;
     private String[] mTitles;
 
-    private boolean mEnabled;
+    private boolean mEnabled = true;
     private UdfpsAnimAdapter mUdfpsAnimAdapter;
 
     @Override
