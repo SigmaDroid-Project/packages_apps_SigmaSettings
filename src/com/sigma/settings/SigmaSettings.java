@@ -101,8 +101,16 @@ public class SigmaSettings extends DashboardFragment {
                 continue;
             }
 
-            if (mDashBoardStyle > 0) { // 0 = stock aosp style
+            if (mDashBoardStyle == 2) { // 0 = stock , 1 = Dot, 2 = Nad, 3 = Sigma
                 mPreference.setLayoutResource(R.layout.sigma_dashboard_preference_full);
+            } else if (mDashBoardStyle == 1 || mDashBoardStyle == 3){
+               if (mKey.equals("ui_settings_category")) {
+                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
+                } else if (mKey.equals("misc_settings_category")) {
+                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
+                } else {
+                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
+                }  
             }
         }
     }
