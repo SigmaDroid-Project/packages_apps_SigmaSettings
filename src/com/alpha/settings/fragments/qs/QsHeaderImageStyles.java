@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.alpha.settings.fragments.qs;
+package com.sigma.settings.fragments.qs;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -125,6 +125,7 @@ public class QsHeaderImageStyles extends SettingsPreferenceFragment {
         public void onBindViewHolder(CustomViewHolder holder, final int position) {
 
             int currentHeaderNumber = getCurrentHeaderNumber();
+            if (currentHeaderNumber == 0) return; //reserved to mark disabled state
 
             String loadedImage = mQsHeaderImages.get(position);
             Bitmap background = getBitmap(holder.qsHeaderImage.getContext(), loadedImage);
