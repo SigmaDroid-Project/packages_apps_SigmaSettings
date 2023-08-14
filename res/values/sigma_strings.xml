@@ -211,8 +211,8 @@
     <string name="build_status_summary">Maintained by: %s</string>
     <string name="build_status_oopsie">Searching for maintainer...</string>
 
-    <string name="build_is_official_title">Device is officially supported!</string>
-    <string name="build_is_community_title">Device is not officially supported!</string>
+    <string name="build_is_official_title">Officially supported!</string>
+    <string name="build_is_community_title">Not officially supported!</string>
     <string name="build_is_community_summary">Unofficial build by %s</string>
     
     <!-- About page -->
