@@ -254,4 +254,7 @@
     <!-- Force LTE_CA -->
     <string name="force_lte_ca">Force LTE CA</string>
     <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+        <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Data icon style</string>
+    <string name="theme_customization_data_summary">Set custom data icon style</string>
 </resources>

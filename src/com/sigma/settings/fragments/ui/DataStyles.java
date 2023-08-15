@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.alpha.settings.fragments.ui;
+package com.sigma.settings.fragments.ui;
 
 import android.content.ContentResolver;
 import android.content.Context;
