@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.alpha.settings.fragments.qs;
+package com.sigma.settings.fragments.qs;
 
 import android.content.ContentResolver;
 import android.content.Context;
