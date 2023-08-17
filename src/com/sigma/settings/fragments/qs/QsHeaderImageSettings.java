@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alpha.settings.fragments.qs;
+package com.sigma.settings.fragments.qs;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -46,7 +46,7 @@ import com.android.settings.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.alpha.settings.preferences.colorpicker.ColorPickerPreference;
+import com.sigma.settings.preferences.colorpicker.ColorPickerPreference;
 
 import java.util.ArrayList;
 import java.util.Collections;
