@@ -259,6 +259,10 @@
     <string name="volte_icon_volit">Volit Icon</string>
     <string name="volte_icon_zirco">Ziroc Icon</string>
 
+    <!-- Custom Data icons -->
+    <string name="theme_customization_data_title">Data icon style</string>
+    <string name="theme_customization_data_summary">Set custom data icon style</string>
+
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi Icon</string>
     <string name="vowifi_icon_summary">Display VoWiFi icon when available</string>
