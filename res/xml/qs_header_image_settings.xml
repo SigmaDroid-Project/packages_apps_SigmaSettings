@@ -39,8 +39,8 @@
         android:defaultValue="0xffffffff" />
 
     <com.sigma.settings.preferences.SystemSettingSeekBarPreference
-        android:key="qs_header_image_sigma"
-        android:title="@string/qs_header_image_sigma_title"
+        android:key="qs_header_image_alpha"
+        android:title="@string/qs_header_image_alpha_title"
         android:max="255"
         settings:min="0"
         android:dependency="qs_header_image_enabled"
