@@ -81,7 +81,7 @@
             android:title="Misc Signal and Wifi Icon Settings"
             android:summary="customize statusbar signal wifi icon settings" />
 
-        <com.alpha.settings.preferences.SystemSettingSwitchPreference
+        <com.sigma.settings.preferences.SystemSettingSwitchPreference
             android:key="use_old_mobiletype"
             android:icon="@drawable/ic_signal"
             android:title="@string/old_mobiletype_title"

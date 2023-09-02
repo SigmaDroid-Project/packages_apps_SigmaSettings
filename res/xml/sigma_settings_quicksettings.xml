@@ -27,7 +27,7 @@
         <Preference
             android:key="qs_header_image"
             android:icon="@drawable/ic_header"
-            android:fragment="com.alpha.settings.fragments.qs.QsHeaderImageSettings"
+            android:fragment="com.sigma.settings.fragments.qs.QsHeaderImageSettings"
             android:title="@string/qs_header_image_title"
             android:summary="@string/qs_header_image_summary" />
 
