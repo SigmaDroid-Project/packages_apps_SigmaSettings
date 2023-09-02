@@ -152,7 +152,7 @@
         android:icon="@drawable/ic_wifi"
         android:title="@string/theme_customization_wifi_icon_title"
         android:summary="@string/theme_customization_wifi_icon_summary"
-        android:fragment="com.alpha.settings.fragments.ui.WifiIcons"/>
+        android:fragment="com.sigma.settings.fragments.ui.WifiIcons"/>
 
      <!-- Data icon style -->
         <Preference
