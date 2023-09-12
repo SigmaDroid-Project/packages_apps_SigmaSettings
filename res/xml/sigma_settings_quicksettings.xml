@@ -110,6 +110,13 @@
             android:defaultValue="0" />
 
         <com.sigma.settings.preferences.SystemSettingSwitchPreference
+            android:title="@string/bb_show_percentage_title"
+            android:key="show_brightness_bar_percentage"
+            android:icon="@drawable/ic_percent"
+            android:summary="@string/bb_show_percentage_summary"
+            android:defaultValue="false" />
+
+        <com.sigma.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_brightness_slider_haptic"
             android:icon="@drawable/ic_brightness"
             android:title="@string/qs_brightness_slider_haptic_title"
