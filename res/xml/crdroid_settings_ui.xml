@@ -29,6 +29,10 @@
         android:summary="%s"
         android:defaultValue="2" />
 
+    <com.android.settingslib.widget.IllustrationPreference
+        android:key="ui_illustration"
+        lineage:lottie_rawRes="@raw/ui_illustration" />
+
     <!-- Ambient Display -->
     <Preference
         android:key="doze_fragment"
