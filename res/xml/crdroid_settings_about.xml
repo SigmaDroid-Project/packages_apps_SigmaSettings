@@ -20,6 +20,10 @@
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
     android:title="@string/about_crdroid" >
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="matrixx_about"
+        android:layout="@layout/matrixx_about" />
+        
     <!-- crDroid Changelog -->
     <Preference
         android:key="crdroid_changelog"
