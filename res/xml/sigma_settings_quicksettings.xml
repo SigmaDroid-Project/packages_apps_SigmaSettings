@@ -37,7 +37,7 @@
             android:icon="@drawable/ic_clock"
             android:title="@string/qs_clock_title"
             android:summary="@string/qs_clock_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true" /> -->
 
         <com.sigma.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_header_clock_size"
@@ -47,8 +47,7 @@
             settings:min="10"
             settings:interval="1"
             android:defaultValue="14"
-            android:dependency="show_qs_clock"
-            settings:units="@string/unit_pixels" /> -->
+            settings:units="@string/unit_pixels" />
 
         <!-- QS date
         <com.sigma.settings.preferences.SystemSettingSwitchPreference
