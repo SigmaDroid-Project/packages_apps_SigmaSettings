@@ -92,9 +92,17 @@
     <string name="doze_double_tap_title">Double tap to check phone</string>
     <string name="doze_double_tap_summary">Pulse notifications by a double tap</string>
 
+    <!-- Media player settings -->
+    <string name="media_controls_always_show_time_title">Always show time</string>
+    <string name="media_controls_always_show_time_summary">Always show passed and total time on media player</string>
+
     <!-- UDFPS pressed color -->
     <string name="udfps_pressed_color_title">Udfps pressed color</string>
     <string name="udfps_pressed_color_summary">Choose your favorite udfps pressed color</string>
+
+    <!-- Text Brightness -->
+    <string name="bb_show_percentage_title">Brightness percentage</string>
+    <string name="bb_show_percentage_summary">Show brightness percentage text in brightness bar</string>
 
     <!-- Quick settings tiles layout -->
     <string name="qs_tile_secondary_label_size_title">Secondary Label text size</string>
@@ -366,6 +374,10 @@
     <!-- Fastcharge -->
     <string name="restricted_current_summary">Set max allowed current (mA)</string>
     <string name="fastcharge_disabled_extended_summary">Charge limited to: <xliff:g id="current" example="3000 mA">%1$s</xliff:g>.</string>
+
+    <!-- USB configuration -->
+    <string name="usb_default_config_title">USB configuration</string>
+    <string name="usb_default_config_summary">Choose the default USB configuration</string>
 
     <!-- QS header image -->
     <string name="qs_header_image_summary">Pick QS background header image</string>
