@@ -207,7 +207,7 @@
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_tile_layout_title"
             android:summary="@string/qs_tile_layout_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <com.sigma.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_layout_columns"
