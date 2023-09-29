@@ -153,6 +153,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_LABEL_HIDE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_LABEL_SIZE, 15, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_SECONDARY_LABEL_SIZE, 13, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_HEADER_SIZE, 155, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
