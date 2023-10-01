@@ -74,6 +74,13 @@
             android:title="Misc Signal and Wifi Icon Settings"
             android:summary="customize statusbar signal wifi icon settings" />
 
+        <Preference
+            android:key="misc_signalwifisb"
+            android:icon="@drawable/ic_signal"
+            android:fragment="com.sigma.settings.fragments.statusbar.MiscSignalAndWifiIconSettings"
+            android:title="Misc Signal and Wifi Icon Settings"
+            android:summary="customize statusbar signal wifi icon settings" />
+
         <com.sigma.settings.preferences.SystemSettingSwitchPreference
             android:key="use_old_mobiletype"
             android:icon="@drawable/ic_signal"
