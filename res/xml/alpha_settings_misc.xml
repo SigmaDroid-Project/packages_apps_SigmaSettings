@@ -72,6 +72,15 @@
         android:summary="@string/gms_enabled_summary"
         android:fragment="com.alpha.settings.fragments.misc.GmsSwitch"/> -->
 
+    <!-- Hide developer and adb status  -->
+    <Preference
+        android:key="hide_developer_status_settings"
+        android:icon="@drawable/ic_window_secure"
+        android:title="@string/hide_developer_status_title"
+        android:summary="@string/hide_developer_status_summary"
+        android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
+        settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+
     <!-- Parallel space
     <Preference
         android:key="parallel_space"
@@ -123,7 +132,7 @@
         android:defaultValue="true" />
 
     <!-- Display Cutout -->
-    <!--Preference
+    <Preference
         android:key="display_cutout_force_fullscreen_settings"
         android:icon="@drawable/ic_fullscreen"
         android:title="@string/display_cutout_force_fullscreen_title"
@@ -131,7 +140,7 @@
         <intent android:action="android.intent.action.MAIN"
              android:targetPackage="com.android.settings"
              android:targetClass="com.alpha.settings.fragments.misc.DisplayCutoutForceFullscreenActivity"/>
-    </Preference-->
+    </Preference>
 
     <!-- Screen Off animation -->
     <com.alpha.settings.preferences.SystemSettingListPreference
