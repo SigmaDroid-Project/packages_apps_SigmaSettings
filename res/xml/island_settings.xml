@@ -20,13 +20,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/island_notification_title">
 
-    <com.alpha.settings.preferences.SystemSettingSwitchPreference
+    <com.sigma.settings.preferences.SystemSettingSwitchPreference
         android:key="island_notification"
         android:title="@string/island_notification_title"
         android:summary="@string/island_notification_summary"
         android:defaultValue="false" />
 
-    <!--<com.alpha.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.sigma.settings.preferences.SystemSettingSwitchPreference
         android:key="island_notification_now_playing"
         android:title="@string/island_notification_now_playing_title"
         android:summary="@string/island_notification_now_playing_summary"

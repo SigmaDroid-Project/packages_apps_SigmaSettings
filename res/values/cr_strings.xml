@@ -66,20 +66,21 @@
     <string name="changelog_crdroid_summary">View changes in the ROM installed</string>
     <string name="changelog_crdroid_error">Unable to load changelog</string>
 
-    <!-- About AlphaDroid -->
-    <string name="about_crdroid">About AlphaDroid</string>
+    <!-- About SigmaDroid -->
+    <string name="about_crdroid">About SigmaDroid</string>
     <string name="about_device_name">Device</string>
 
-    <!-- Share AlphaDroid -->
-    <string name="share_crdroid_title">Share AlphaDroid</string>
-    <string name="share_crdroid_summary">Let others know about AlphaDroid</string>
-    <string name="share_message">Check out if #AlphaDroidAndroid is available for your device @ https://t.me/alphadroid_releases</string>
-    <string name="share_chooser_title">Share AlphaDroid</string>
 
-    <!-- Sites AlphaDroid -->
+    <!-- Share SigmaDroid -->
+    <string name="share_crdroid_title">Share SigmaDroid</string>
+    <string name="share_crdroid_summary">Let others know about SigmaDroid</string>
+    <string name="share_message">Check out if #SigmaDroidAndroid is available for your device @ https://t.me/alphadroid_releases</string>
+    <string name="share_chooser_title">Share SigmaDroid</string>
+
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">We love open source, check us out</string>
-    <string name="crdroid_telegram_title">AlphaDroid community</string>
+    <string name="crdroid_telegram_title">SigmaDroid community</string>
     <string name="crdroid_telegram_summary">We are on telegram. Join us!</string>
     <string name="crdroid_telegram_channel_title">Updates channel</string>
     <string name="crdroid_telegram_channel_summary">Get notified of new builds on Telegram</string>
@@ -92,10 +93,10 @@
     <string name="crdroid_buildserversponsor_title" translatable="false">InterServer</string>
     <string name="crdroid_buildserversponsor_summary">We recommend their servers if interested in one</string>
 
-    <!-- Donate AlphaDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Support us</string>
     <string name="donate_crdroid_summary">Donate to support further development</string>
-    <string name="donate_team_title">AlphaDroid team</string>
+    <string name="donate_team_title">SigmaDroid team</string>
     <string name="donate_team_summary">Donate to support server hosting, site uptime and overall management</string>
 
     <!-- The Drill -->
@@ -618,8 +619,8 @@
     <string name="qs_footer_services_icon_title">Running services shortcut</string>
     <string name="qs_footer_settings_icon_title">Settings shortcut</string>
 
-    <!-- Device Info screen. AlphaDroid legal. -->
-    <string name="crdroid_license_title">AlphaDroid legal</string>
+    <!-- Device Info screen. SigmaDroid legal. -->
+    <string name="crdroid_license_title">SigmaDroid legal</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Brightness slider</string>
@@ -1116,7 +1117,7 @@
     <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
     <string name="status_bar_logo_position_title">Logo position</string>
     <string name="status_bar_logo_style_title">Logo style</string>
-    <string name="status_bar_logo_style_alpha">AlphaDroid</string>
+    <string name="status_bar_logo_style_alpha">SigmaDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>

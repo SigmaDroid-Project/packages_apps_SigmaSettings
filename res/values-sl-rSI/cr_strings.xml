@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">AlphaDroid nastavitve</string>
+    <string name="crdroid_settings_title">SigmaDroid nastavitve</string>
     <string name="crdroid_settings_summary">Odprte dobrote</string>
     <string name="reset_settings_title">Ponastavi nastavitve</string>
     <string name="reset_settings_message">To bo ponastavilo večino nastavitev na njihove privzete vrednosti za trenutnega uporabnika. Ali želite nadaljevati?</string>
@@ -58,18 +58,18 @@
     <string name="changelog_crdroid_title">Trenutni dnevnik sprememb</string>
     <string name="changelog_crdroid_summary">Pokaži spremembe v nameščenem ROM-u</string>
     <string name="changelog_crdroid_error">Dnevnika sprememb ni mogoče naložiti</string>
-    <!-- About AlphaDroid -->
-    <string name="about_crdroid">O AlphaDroid-u</string>
+    <!-- About SigmaDroid -->
+    <string name="about_crdroid">O SigmaDroid-u</string>
     <string name="about_device_name">Naprava</string>
-    <!-- Share AlphaDroid -->
-    <string name="share_crdroid_title">Deli AlphaDroid</string>
-    <string name="share_crdroid_summary">Dajte drugim vedeti o AlphaDroid-u</string>
-    <string name="share_message">Preverite, če je #AlphaDroidAndroid na voljo za vašo napravo na https://t.me/alphadroid_releases/</string>
-    <string name="share_chooser_title">Deli AlphaDroid</string>
-    <!-- Sites AlphaDroid -->
+    <!-- Share SigmaDroid -->
+    <string name="share_crdroid_title">Deli SigmaDroid</string>
+    <string name="share_crdroid_summary">Dajte drugim vedeti o SigmaDroid-u</string>
+    <string name="share_message">Preverite, če je #SigmaDroidAndroid na voljo za vašo napravo na https://t.me/alphadroid_releases/</string>
+    <string name="share_chooser_title">Deli SigmaDroid</string>
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Radi imamo odprto kodo, preverite nas</string>
-    <string name="crdroid_telegram_title">AlphaDroid skupnost</string>
+    <string name="crdroid_telegram_title">SigmaDroid skupnost</string>
     <string name="crdroid_telegram_summary">Smo na telegramu. Pridružite se nam!</string>
     <string name="crdroid_telegram_channel_title">Kanal s posodobitvami</string>
     <string name="crdroid_telegram_channel_summary">Bodite obveščeni o novih izgradnjah na Telegramu</string>
@@ -79,10 +79,10 @@
     <string name="crdroid_translate_summary">Pomagajte s prevajanjem ROM-a v vaš jezik!</string>
     <string name="crdroid_sponsor_summary">Obiščite gostitelja naše spletne strani</string>
     <string name="crdroid_buildserversponsor_summary">Priporočamo njihove strežnike, v kolikor se zanimate zanje</string>
-    <!-- Donate AlphaDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Podprite nas</string>
     <string name="donate_crdroid_summary">Prispevajte, da podprete nadaljnji razvoj</string>
-    <string name="donate_team_title">AlphaDroid ekipa</string>
+    <string name="donate_team_title">SigmaDroid ekipa</string>
     <string name="donate_team_summary">Prispevajte, da podprete gostovanje strežnika, čas delovanja strani in upravljanje na splošno</string>
     <!-- The Drill -->
     <string name="drill_title">Postopek</string>
@@ -551,8 +551,8 @@
     <string name="qs_footer_show_power_menu_title">Bližnjica menija za izklop</string>
     <string name="qs_footer_services_icon_title">Bližnjica storitev v izvajanju</string>
     <string name="qs_footer_settings_icon_title">Bližnjica nastavitev</string>
-    <!-- Device Info screen. AlphaDroid legal. -->
-    <string name="crdroid_license_title">AlphaDroid pravo</string>
+    <!-- Device Info screen. SigmaDroid legal. -->
+    <string name="crdroid_license_title">SigmaDroid pravo</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Drsnik za svetlost</string>
     <string name="qs_show_brightness_slider_title">Drsnik za svetlost</string>

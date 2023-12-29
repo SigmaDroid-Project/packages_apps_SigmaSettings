@@ -18,7 +18,7 @@
     android:key="haptics_settings">
 
     <!-- Back gesture intensity -->
-    <com.alpha.settings.preferences.CustomSeekBarPreference
+    <com.sigma.settings.preferences.CustomSeekBarPreference
         android:key="back_gesture_haptic_intensity"
         android:title="@string/back_gesture_haptic_intensity_title"
         android:order="-999"
@@ -28,7 +28,7 @@
         settings:interval="1"/>
 
     <!-- Brightness slider intensity -->
-    <com.alpha.settings.preferences.CustomSeekBarPreference
+    <com.sigma.settings.preferences.CustomSeekBarPreference
         android:key="brightness_slider_haptics_intensity"
         android:title="@string/brightness_slider_haptics_intensity_title"
         android:order="-998"
@@ -38,7 +38,7 @@
         settings:interval="1"/>
 
     <!-- Edge scrolling intensity -->
-    <com.alpha.settings.preferences.CustomSeekBarPreference
+    <com.sigma.settings.preferences.CustomSeekBarPreference
         android:key="edge_scrolling_haptics_intensity"
         android:title="@string/edge_scrolling_haptics_intensity_title"
         android:order="-997"
@@ -48,7 +48,7 @@
         settings:interval="1"/>
 
     <!-- Volume slider intensity -->
-    <com.alpha.settings.preferences.CustomSeekBarPreference
+    <com.sigma.settings.preferences.CustomSeekBarPreference
         android:key="volume_slider_haptics_intensity"
         android:title="@string/volume_slider_haptics_intensity_title"
         android:order="-996"

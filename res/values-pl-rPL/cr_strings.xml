@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Ustawienia AlphaDroid</string>
+    <string name="crdroid_settings_title">Ustawienia SigmaDroid</string>
     <string name="crdroid_settings_summary">Spersonalizuj swój system</string>
     <string name="reset_settings_title">Zresetuj ustawienia</string>
     <string name="reset_settings_message">To zresetuje większość ustawień Alpha do ich wartości domyślnych dla bieżącego użytkownika. Czy chcesz kontynuować?</string>
@@ -58,18 +58,18 @@
     <string name="changelog_crdroid_title">Bieżąca lista zmian</string>
     <string name="changelog_crdroid_summary">Pokaż zmiany w systemie</string>
     <string name="changelog_crdroid_error">Nie można załadować dziennika zmian</string>
-    <!-- About AlphaDroid -->
-    <string name="about_crdroid">O AlphaDroid</string>
+    <!-- About SigmaDroid -->
+    <string name="about_crdroid">O SigmaDroid</string>
     <string name="about_device_name">Urządzenie</string>
-    <!-- Share AlphaDroid -->
-    <string name="share_crdroid_title">Udostępnij AlphaDroid</string>
-    <string name="share_crdroid_summary">Powiadom innych o AlphaDroid</string>
-    <string name="share_message">Sprawdź, czy #AlphaDroidAndroid jest dostępny dla twojego urządzenia @ https://t.me/alphadroid_releases/</string>
-    <string name="share_chooser_title">Udostępnij AlphaDroid</string>
-    <!-- Sites AlphaDroid -->
+    <!-- Share SigmaDroid -->
+    <string name="share_crdroid_title">Udostępnij SigmaDroid</string>
+    <string name="share_crdroid_summary">Powiadom innych o SigmaDroid</string>
+    <string name="share_message">Sprawdź, czy #SigmaDroidAndroid jest dostępny dla twojego urządzenia @ https://t.me/alphadroid_releases/</string>
+    <string name="share_chooser_title">Udostępnij SigmaDroid</string>
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Kochamy open source, sprawdź nas</string>
-    <string name="crdroid_telegram_title">Społeczność AlphaDroid</string>
+    <string name="crdroid_telegram_title">Społeczność SigmaDroid</string>
     <string name="crdroid_telegram_summary">Jesteśmy na Telegram. Dołącz do nas!</string>
     <string name="crdroid_telegram_channel_title">Kanał aktualizacji</string>
     <string name="crdroid_telegram_channel_summary">Otrzymuj powiadomienia o nowych wersjach na Telegramie</string>
@@ -79,10 +79,10 @@
     <string name="crdroid_translate_summary">Pomóż w tłumaczeniu systemu na swój język!</string>
     <string name="crdroid_sponsor_summary">Odwiedź naszego hosta strony internetowej</string>
     <string name="crdroid_buildserversponsor_summary">Zalecamy ich serwery, jeśli są one połączone w jeden</string>
-    <!-- Donate AlphaDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Wesprzyj nas</string>
     <string name="donate_crdroid_summary">Wspomóż dalszy rozwój</string>
-    <string name="donate_team_title">zespół AlphaDroid</string>
+    <string name="donate_team_title">zespół SigmaDroid</string>
     <string name="donate_team_summary">Datek do obsługi serwera hostingu, działaniu strony i ogólnego zarządzania</string>
     <!-- The Drill -->
     <string name="drill_title">Wiadomość od deweloperów</string>
@@ -551,8 +551,8 @@
     <string name="qs_footer_show_power_menu_title">Skrót menu zasilania</string>
     <string name="qs_footer_services_icon_title">Skrót do działających usług</string>
     <string name="qs_footer_settings_icon_title">Skrót do ustawień</string>
-    <!-- Device Info screen. AlphaDroid legal. -->
-    <string name="crdroid_license_title">AlphaDroid legalny</string>
+    <!-- Device Info screen. SigmaDroid legal. -->
+    <string name="crdroid_license_title">SigmaDroid legalny</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Pasek jasności</string>
     <string name="qs_show_brightness_slider_title">Pasek jasności</string>
