@@ -1,7 +1,7 @@
-# AlphaDroid Settings repo #
+# SigmaDroid Settings repo #
 
 ### Description ###
-There will be goodies! :)
+Everything including the kitchen sink! :)
 
 ### Translations ###
 If you want to help out on translations, please click below badge

@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">AlphaDroid Ayarları</string>
+    <string name="crdroid_settings_title">SigmaDroid Ayarları</string>
     <string name="crdroid_settings_summary">Çeşitli özelleştirmeler</string>
     <string name="reset_settings_title">Ayarları sıfırla</string>
     <string name="reset_settings_message">Bu mevcut kullanıcı için çoğu Alpha ayarlarını varsayılan değerlerine sıfırlar. Devam etmek ister misin?</string>
@@ -58,18 +58,18 @@
     <string name="changelog_crdroid_title">Mevcut değişiklikler</string>
     <string name="changelog_crdroid_summary">Yüklü ROM\'daki değişiklikleri görüntüleyin</string>
     <string name="changelog_crdroid_error">Değişiklikler yüklenemiyor</string>
-    <!-- About AlphaDroid -->
-    <string name="about_crdroid">AlphaDroid hakkında</string>
+    <!-- About SigmaDroid -->
+    <string name="about_crdroid">SigmaDroid hakkında</string>
     <string name="about_device_name">Cihaz</string>
-    <!-- Share AlphaDroid -->
-    <string name="share_crdroid_title">AlphaDroid\'i paylaş</string>
-    <string name="share_crdroid_summary">Başkalarına AlphaDroid hakkında bilgi verin</string>
-    <string name="share_message">Cihazınız için #AlphaDroidAndroid\'in mevcut olup olmadığını kontrol edin @ https://t.me/alphadroid_releases/</string>
-    <string name="share_chooser_title">AlphaDroid\'i paylaş</string>
-    <!-- Sites AlphaDroid -->
+    <!-- Share SigmaDroid -->
+    <string name="share_crdroid_title">SigmaDroid\'i paylaş</string>
+    <string name="share_crdroid_summary">Başkalarına SigmaDroid hakkında bilgi verin</string>
+    <string name="share_message">Cihazınız için #SigmaDroidAndroid\'in mevcut olup olmadığını kontrol edin @ https://t.me/alphadroid_releases/</string>
+    <string name="share_chooser_title">SigmaDroid\'i paylaş</string>
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Kaynak kodumuzu görüntüleyin</string>
-    <string name="crdroid_telegram_title">AlphaDroid topluluğu</string>
+    <string name="crdroid_telegram_title">SigmaDroid topluluğu</string>
     <string name="crdroid_telegram_summary">Biz de telegramdayız. Bize katılın!</string>
     <string name="crdroid_telegram_channel_title">Güncelleme kanalı</string>
     <string name="crdroid_telegram_channel_summary">Telegram\'daki yeni yapılardan haberdar olun</string>
@@ -79,10 +79,10 @@
     <string name="crdroid_translate_summary">ROM\'u kendi dilinize çevirmek için bize yardım edin!</string>
     <string name="crdroid_sponsor_summary">Web sitesi barındırma ortağımızı ziyaret edin</string>
     <string name="crdroid_buildserversponsor_summary">Biriyle ilgileniyorsanız sunucularını öneririz</string>
-    <!-- Donate AlphaDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Bizi destekle</string>
     <string name="donate_crdroid_summary">Daha fazla gelişmeyi desteklemek için bağış yapın</string>
-    <string name="donate_team_title">AlphaDroid ekibi</string>
+    <string name="donate_team_title">SigmaDroid ekibi</string>
     <string name="donate_team_summary">Sunucu hostingi, site çalışma zamanı ve genel yönetimi desteklemek için bağış yapın</string>
     <!-- The Drill -->
     <string name="drill_title">The drill</string>
@@ -549,8 +549,8 @@
     <string name="qs_footer_show_power_menu_title">Güç menüsü kısayolu</string>
     <string name="qs_footer_services_icon_title">Çalışan hizmetler kısayolu</string>
     <string name="qs_footer_settings_icon_title">Ayarlar kısayolu</string>
-    <!-- Device Info screen. AlphaDroid legal. -->
-    <string name="crdroid_license_title">AlphaDroid yasal</string>
+    <!-- Device Info screen. SigmaDroid legal. -->
+    <string name="crdroid_license_title">SigmaDroid yasal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Parlaklık kaydırıcısı</string>
     <string name="qs_show_brightness_slider_title">Parlaklık kaydırıcısı</string>
