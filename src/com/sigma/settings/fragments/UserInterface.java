@@ -37,24 +37,41 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
-
+import com.android.internal.util.crdroid.CustomUtils;
 import com.sigma.settings.fragments.ui.MonetSettings;
 
 import java.util.List;
 
 @SearchIndexable
-public class UserInterface extends SettingsPreferenceFragment {
+public class UserInterface extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener{
 
     public static final String TAG = "UserInterface";
+
+    private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
+
+    private ListPreference mDashBoardStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         addPreferencesFromResource(R.xml.sigma_settings_ui);
 
+        mDashBoardStyle = (ListPreference) findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
+
     }
 
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mDashBoardStyle) {
+            CustomUtils.showSettingsRestartDialog(getContext());
+            return true;
+        } 
+        return false;
+    }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();

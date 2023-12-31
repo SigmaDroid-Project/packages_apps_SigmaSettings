@@ -83,7 +83,7 @@
 
         <!-- About SigmaDroid -->
         <Preference
-            android:key="about_alphadroid"
+            android:key="about_sigmadroid"
             android:title="@string/about_crdroid"
             android:fragment="com.sigma.settings.fragments.About"
             android:icon="@drawable/ic_settings_about"/>
