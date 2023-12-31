@@ -21,13 +21,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/notifications_title">
 
-    <!-- Notifications style -->
-    <!--Preference
+     <!-- Notifications style -->
+    <Preference
         android:key="android.theme.customization.nf_style"
         android:icon="@drawable/ic_notifications"
         android:title="@string/theme_customization_notifications_title"
         android:summary="@string/theme_customization_notifications_summary"
-        android:fragment="com.sigma.settings.fragments.notifications.NotificationStyles" /-->
+        android:fragment="com.sigma.settings.fragments.notifications.NotificationStyles" />
 
     <com.sigma.settings.preferences.SystemSettingSeekBarPreference
         android:key="max_visible_notification_icons"
