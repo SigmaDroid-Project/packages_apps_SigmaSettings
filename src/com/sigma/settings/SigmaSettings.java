@@ -90,11 +90,11 @@ public class SigmaSettings extends DashboardFragment {
                 }  
             } else  if (mDashBoardStyle == 3){
                             if (mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.top_level_preference_top_card);
+                    mPreference.setLayoutResource(R.layout.sigma_dashboard_preference_top);
                 } else if (mKey.equals("about_sigmadroid")) {
-                    mPreference.setLayoutResource(R.layout.top_level_preference_bottom_card);
+                    mPreference.setLayoutResource(R.layout.sigma_dashboard_preference_bottom);
                 } else {
-                    mPreference.setLayoutResource(R.layout.top_level_preference_middle_card); 
+                    mPreference.setLayoutResource(R.layout.sigma_dashboard_preference_middle); 
                 } 
             }
         }
