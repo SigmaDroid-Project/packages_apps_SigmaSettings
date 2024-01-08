@@ -77,4 +77,8 @@
     <string name="maintainer_title">Maintainer</string>
     <string name="maintainer_summary">Searching for maintainer...</string>
 
+    <string name="gaming_category">Gaming</string>
+    <string name="spoofing_category">Spoofing</string>
+    <string name="misc_category">Miscellaneous</string>     
+
 </resources>
