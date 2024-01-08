@@ -18,7 +18,7 @@
 
     <!-- App Title -->
     <string name="reset_settings_title">Reset settings</string>
-    <string name="reset_settings_message">This will reset most Alpha settings to their default values for the current user. Would you like to continue?</string>
+    <string name="reset_settings_message">This will reset most Sigma Toolbox settings to their default values for the current user. Would you like to continue?</string>
 
     <!-- Personalization Categories -->
     <string name="button_title">Buttons</string>
@@ -74,7 +74,7 @@
     <!-- Share SigmaDroid -->
     <string name="share_crdroid_title">Share SigmaDroid</string>
     <string name="share_crdroid_summary">Let others know about SigmaDroid</string>
-    <string name="share_message">Check out if #SigmaDroidAndroid is available for your device @ https://t.me/alphadroid_releases</string>
+    <string name="share_message">Check out if #SigmaDroidAndroid is available for your device @ https://t.me/SigmaDroidAnnouncements</string>
     <string name="share_chooser_title">Share SigmaDroid</string>
 
     <!-- Sites SigmaDroid -->
@@ -1117,7 +1117,7 @@
     <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
     <string name="status_bar_logo_position_title">Logo position</string>
     <string name="status_bar_logo_style_title">Logo style</string>
-    <string name="status_bar_logo_style_alpha">SigmaDroid</string>
+    <string name="status_bar_logo_style_sigma">SigmaDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>

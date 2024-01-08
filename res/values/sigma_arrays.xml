@@ -210,7 +210,7 @@
         <item>11</item>
         <item>12</item>
     </string-array>
-    
+
     <!-- VoLTE Icon Type -->
     <string-array name="volte_icon_type_entries" translatable="false">
         <item>@string/volte_icon_off</item>
@@ -364,7 +364,7 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    
+
     <!-- Fonts Customization for Functions-->
     <string-array name="function_fonts_entries">
         <item>@string/function_font_stock</item>
