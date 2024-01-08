@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="alphabet_summary">Goodies!</string>
+    <string name="alphabet_summary">The kitchen sink!</string>
     <!-- Preference categories -->
     <string name="preference_category_brightness">Brightness</string>
     <string name="preference_category_battery">Battery</string>
@@ -162,9 +162,9 @@
     <!-- QS haptic feedback -->
     <string name="qs_haptic_feedback_title">QS haptic feedback</string>
     <string name="qs_haptic_feedback_summary">Vibrate when touching QS tiles</string>
-    <!--  Alpha settings -->
+    <!--  Sigma settings -->
     <string name="sigma_settings_title">Sigma Toolbox</string>
-    <string name="sigma_settings_summary">Everything including the kitchen sink!</string>
+    <string name="sigma_settings_summary">Everything, including the kitchen sink!</string>
     <!-- UiBench -->
     <string name="category_uibench">UiBench</string>
     <string name="jitter_test_title">Jitter</string>
