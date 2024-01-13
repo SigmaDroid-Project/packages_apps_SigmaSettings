@@ -29,6 +29,7 @@
     <string name="settings_dashboard_style_aosp">AOSP</string>
     <string name="settings_dashboard_style_dot">DoT</string>
     <string name="settings_dashboard_style_nad">NAD</string>
+    <string name="settings_dashboard_style_sigma">Sigma</string>
 
     <!-- Max visible notification icons -->
     <string name="max_visible_notification_icons_title">Notification icons</string>
