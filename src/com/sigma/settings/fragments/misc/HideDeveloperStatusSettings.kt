@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.alpha.settings.fragments.misc;
+package com.sigma.settings.fragments.misc;
 
 import android.annotation.SuppressLint
 import android.app.ActivityManager
@@ -251,7 +251,7 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
             getLabel(packageInfo),
             packageInfo.applicationInfo.loadIcon(packageManager),
         )
-    
+
     private fun getLabel(packageInfo: PackageInfo) =
         packageInfo.applicationInfo.loadLabel(packageManager).toString()
 
@@ -310,7 +310,7 @@ class HideDeveloperStatusSettings: Fragment(R.layout.hide_developer_status_layou
         private val itemCallback = object: DiffUtil.ItemCallback<AppInfo>() {
             override fun areItemsTheSame(oldInfo: AppInfo, newInfo: AppInfo) =
                 oldInfo.packageName == newInfo.packageName
-            
+
             override fun areContentsTheSame(oldInfo: AppInfo, newInfo: AppInfo) =
                 oldInfo == newInfo
         }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.alpha.settings.fragments.misc;
+package com.sigma.settings.fragments.misc;
 
 import android.content.Context;
 import android.content.pm.UserInfo;
