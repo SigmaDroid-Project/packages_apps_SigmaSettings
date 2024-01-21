@@ -61,6 +61,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
+    private static final String VOLTE_ICON_STYLE = "volte_icon_style";
+    private static final String VOWIFI_ICON_STYLE = "vowifi_icon_style";
+
+    private SystemSettingListPreference mVolteIconStyle;
+    private SystemSettingListPreference mVowifiIconStyle;
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -127,6 +132,20 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mQuickPulldown.setOnPreferenceChangeListener(this);
         updateQuickPulldownSummary(mQuickPulldown.getIntValue(0));
 
+        PreferenceScreen prefSet = getPreferenceScreen();
+        mVowifiIconStyle = (SystemSettingListPreference) findPreference(VOWIFI_ICON_STYLE);
+        mVolteIconStyle = (SystemSettingListPreference) findPreference(VOLTE_ICON_STYLE);
+
+        int vowifiIconStyle = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOWIFI_ICON_STYLE, 1);
+        mVowifiIconStyle.setValue(String.valueOf(vowifiIconStyle));
+        mVowifiIconStyle.setOnPreferenceChangeListener(this);
+        if (vowifiIconStyle == 0) {
+            mVolteIconStyle.setEnabled(true);
+        } else {
+            mVolteIconStyle.setEnabled(false);
+        }
+
         // Adjust status bar preferences for RTL
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
@@ -136,6 +155,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
             int batterypercent = Settings.System.getIntForUser(getContentResolver(),
@@ -155,6 +175,17 @@ public class StatusBar extends SettingsPreferenceFragment implements
         } else if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
             updateQuickPulldownSummary(value);
+            return true;
+        } else if (preference == mVowifiIconStyle) {
+            int vowifiIconStyle = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putInt(resolver,
+                  Settings.System.VOWIFI_ICON_STYLE, vowifiIconStyle);
+            mVowifiIconStyle.setValue(String.valueOf(vowifiIconStyle));
+            if (vowifiIconStyle == 0) {
+                mVolteIconStyle.setEnabled(true);
+            } else {
+                mVolteIconStyle.setEnabled(false);
+            }
             return true;
         }
         return false;
