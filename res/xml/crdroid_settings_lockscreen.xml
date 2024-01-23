@@ -115,6 +115,15 @@
             android:summary="@string/dw_wallpaper_enabled_summary"
             android:fragment="com.crdroid.settings.fragments.lockscreen.WallpaperDepth"/>
 
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="lockscreen_charge_temp_unit"
+            android:icon="@drawable/ic_battery_charging"
+            android:title="@string/lockscreen_charge_temp_unit_title"
+            android:entries="@array/lockscreen_charge_temp_unit_entries"
+            android:entryValues="@array/lockscreen_charge_temp_unit_values"
+            android:dependency="lockscreen_battery_info"
+            android:defaultValue="1" />
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="sysui_keyguard_show_battery_bar"
             android:icon="@drawable/ic_battery_charging"
