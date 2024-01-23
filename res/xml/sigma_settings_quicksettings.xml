@@ -179,22 +179,32 @@
             android:summary="@string/theme_customization_qs_style_summary"
             android:fragment="com.sigma.settings.fragments.qs.QsPanelStyles" />
 
-        <com.sigma.settings.preferences.SystemSettingSwitchPreference
+        <!-- <com.sigma.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
             android:icon="@drawable/ic_text"
             android:title="@string/qs_tile_label_hide_title"
             android:summary="@string/qs_tile_label_hide_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false" /> -->
 
         <com.sigma.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_tile_label_size"
             android:icon="@drawable/ic_text"
             android:title="@string/qs_tile_label_size_title"
-            android:max="15"
-            settings:min="10"
+            android:max="20"
+            settings:min="0"
             settings:interval="1"
             settings:units="sp"
-            android:defaultValue="14" />
+            android:defaultValue="15" />
+
+        <com.sigma.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_tile_secondary_label_size"
+            android:icon="@drawable/ic_text"
+            android:title="@string/qs_tile_secondary_label_size_title"
+            android:max="18"
+            settings:min="0"
+            settings:interval="1"
+            settings:units="sp"
+            android:defaultValue="13" />
 
         <com.sigma.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_vertical_layout"
