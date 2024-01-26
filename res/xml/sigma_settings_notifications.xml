@@ -108,7 +108,7 @@
             android:dependency="heads_up_notifications_enabled" />
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="flashlight_category"
         android:title="@string/power_menu_torch_title">
 
@@ -136,7 +136,7 @@
             settings:min="1"
             settings:units="@string/unit_hz" />
 
-    </PreferenceCategory>-->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="light_brightness"
