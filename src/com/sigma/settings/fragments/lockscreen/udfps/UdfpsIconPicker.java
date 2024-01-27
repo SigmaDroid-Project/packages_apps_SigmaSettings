@@ -70,7 +70,7 @@ public class UdfpsIconPicker extends SettingsPreferenceFragment {
 
     private Resources udfpsRes;
 
-    private String mPkg = "com.sigma.udfps.icons";
+    private String mPkg = "com.crdroid.udfps.icons";
 
     private String[] mIcons;
 
@@ -148,13 +148,13 @@ public class UdfpsIconPicker extends SettingsPreferenceFragment {
 
             holder.name.setVisibility(View.GONE);
 
-            /*if (position == Settings.System.getInt(context.getContentResolver(),
+            if (position == Settings.System.getInt(context.getContentResolver(),
                 Settings.System.UDFPS_ICON, 0)) {
                 mAppliedIcon = iconRes;
                 if (mSelectedIcon == null) {
                     mSelectedIcon = iconRes;
                 }
-            }*/
+            }
             holder.itemView.setActivated(iconRes == mSelectedIcon);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -162,8 +162,8 @@ public class UdfpsIconPicker extends SettingsPreferenceFragment {
                     updateActivatedStatus(mSelectedIcon, false);
                     updateActivatedStatus(iconRes, true);
                     mSelectedIcon = iconRes;
-                    /*Settings.System.putInt(getActivity().getContentResolver(),
-                            Settings.System.UDFPS_ICON, position);*/
+                    Settings.System.putInt(getActivity().getContentResolver(),
+                            Settings.System.UDFPS_ICON, position);
                 }
             });
         }

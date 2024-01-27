@@ -70,7 +70,7 @@ public class UdfpsPressedIconPicker extends SettingsPreferenceFragment {
 
     private Resources udfpsRes;
 
-    private String mPkg = "com.sigma.udfps.pressedicons";
+    private String mPkg = "com.crdroid.udfps.pressedicons";
 
     private String[] mIcons;
 

@@ -98,9 +98,9 @@ public class LockScreen extends SettingsPreferenceFragment
             gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mScreenOffUdfps);
         } else {
-            //if (!Utils.isPackageInstalled(getContext(), "com.sigma.udfps.icons")) {
+            if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.icons")) {
                 interfaceCategory.removePreference(mUdfpsSettings);
-            //}
+            }
             Resources resources = getResources();
             boolean screenOffUdfpsAvailable = resources.getBoolean(
                     com.android.internal.R.bool.config_supportScreenOffUdfps) ||
@@ -189,9 +189,9 @@ public class LockScreen extends SettingsPreferenceFragment
                         keys.add(KEY_RIPPLE_EFFECT);
                         keys.add(SCREEN_OFF_UDFPS_ENABLED);
                     } else {
-                        //if (!Utils.isPackageInstalled(context, "com.sigma.udfps.icons")) {
+                        if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.icons")) {
                             keys.add(KEY_UDFPS_SETTINGS);
-                        //}
+                        }
                         Resources resources = context.getResources();
                         boolean screenOffUdfpsAvailable = resources.getBoolean(
                             com.android.internal.R.bool.config_supportScreenOffUdfps) ||

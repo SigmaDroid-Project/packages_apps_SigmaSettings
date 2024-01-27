@@ -72,14 +72,15 @@
         android:summary="@string/gms_enabled_summary"
         android:fragment="com.sigma.settings.fragments.misc.GmsSwitch"/> -->
 
-    <!-- Hide developer and adb status  -->
-    <Preference
-        android:key="hide_developer_status_settings"
-        android:icon="@drawable/ic_window_secure"
-        android:title="@string/hide_developer_status_title"
-        android:summary="@string/hide_developer_status_summary"
-        android:fragment="com.android.settings.security.HideDeveloperStatusSettings"
-        settings:controller="com.android.settings.security.HideDeveloperStatusPreferenceController" />
+		<!-- Play integrity fix -->
+		<Preference
+		    android:key="pif"
+		    android:title="@string/pif_title"
+		    android:summary="@string/pif_summary">
+		    <intent android:action="android.intent.action.MAIN"
+		        android:targetPackage="com.goolag.pif"
+		        android:targetClass="com.goolag.pif.PifActivity" />
+		</Preference>
 
     <!-- Hide developer and adb status  -->
     <Preference

@@ -65,21 +65,21 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
         Resources resources = getResources();
 
         final boolean udfpsResPkgAnimations = Utils.isPackageInstalled(getContext(),
-                "com.sigma.udfps.animations");
+                "com.crdroid.udfps.animations");
         mUdfpsAnimPreview = findPreference(UDFPS_ANIM_PREVIEW);
         if (!udfpsResPkgAnimations) {
             prefSet.removePreference(mUdfpsAnimPreview);
         }
 
         final boolean udfpsResPkgIcons = Utils.isPackageInstalled(getContext(),
-                "com.sigma.udfps.icons");
+                "com.crdroid.udfps.icons");
         mUdfpsIconPreview = findPreference(UDFPS_ICON_PICKER);
         if (!udfpsResPkgIcons) {
             prefSet.removePreference(mUdfpsIconPreview);
         }
 
         final boolean udfpsResPkgColors = Utils.isPackageInstalled(getContext(),
-                "com.sigma.udfps.pressedicons");
+                "com.crdroid.udfps.pressedicons");
         mUdfpsColorPreview = findPreference(UDFPS_COLOR);
         if (!udfpsResPkgColors) {
             prefSet.removePreference(mUdfpsColorPreview);
@@ -94,14 +94,14 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        /*Settings.System.putIntForUser(resolver,
+        Settings.System.putIntForUser(resolver,
                 Settings.System.UDFPS_ANIM, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.UDFPS_ANIM_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.UDFPS_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.UDFPS_COLOR, 0, UserHandle.USER_CURRENT);*/
+                Settings.System.UDFPS_COLOR, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SCREEN_OFF_UDFPS_ENABLED, 0, UserHandle.USER_CURRENT);
     }
