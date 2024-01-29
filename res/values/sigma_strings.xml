@@ -256,6 +256,13 @@
     <string name="shaded_layer_style">Shaded Layer style</string>
     <string name="volume_style_title">Volume panel styles</string>
 
+    <!-- Volume TextView -->
+    <string name="volume_persen_switch_title">Volume Percentage</string>
+    <string name="volume_persen_switch_summary">show volume panel percentage</string>
+    <string name="volume_persen_style_title">Percentage Location</string>
+    <string name="volume_persen_style_top">Top</string>
+    <string name="volume_persen_style_bottom">Bottom</string>
+
     <!-- Ambient battery bar settings -->
     <string name="ambient_battery_settings_title">Battery bar</string>
     <string name="ambient_battery_settings_summary">Display a battery bar on the ambient display</string>
