@@ -70,7 +70,7 @@ public class SigmaSettings extends DashboardFragment {
     }
 
     private void setSigmaDashboardStyle() {
-        int mDashBoardStyle = geSettingstDashboardStyle();
+        int mDashBoardStyle = getSettingsDashboardStyle();
         final PreferenceScreen mScreen = getPreferenceScreen();
         final int mCount = mScreen.getPreferenceCount();
         for (int i = 0; i < mCount; i++) {
@@ -81,29 +81,31 @@ public class SigmaSettings extends DashboardFragment {
             if (mKey == null) continue;
 
             if (mDashBoardStyle == 1 ){
-               if (mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
-                } else if (mKey.equals("about_sigmadroid")) {
-                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
-                } else {
-                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
-                }  
-            } else  if (mDashBoardStyle == 3){
-                            if (mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.sigma_dashboard_preference_top);
-                } else if (mKey.equals("about_sigmadroid")) {
-                    mPreference.setLayoutResource(R.layout.sigma_dashboard_preference_bottom);
-                } else {
-                    mPreference.setLayoutResource(R.layout.sigma_dashboard_preference_middle); 
-                } 
-            }
-        }
-    }
-
-    private int geSettingstDashboardStyle() {
-        return Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.SETTINGS_DASHBOARD_STYLE, 1, UserHandle.USER_CURRENT);
-    }
+                if (mKey.equals("ui_settings_category")) {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
+                 } else if (mKey.equals("about_sigmadroid")) {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
+                 } else {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
+                 }  
+             } else if (mDashBoardStyle == 2) {
+                 mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
+             } else  if (mDashBoardStyle == 3){
+                             if (mKey.equals("ui_settings_category")) {
+                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_top);
+                 } else if (mKey.equals("about_sigmadroid")) {
+                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_bottom);
+                 } else {
+                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_middle); 
+                 } 
+             } 
+         }
+     }
+ 
+     private int getSettingsDashboardStyle() {
+         return Settings.System.getIntForUser(getContext().getContentResolver(),
+                 Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
+     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
