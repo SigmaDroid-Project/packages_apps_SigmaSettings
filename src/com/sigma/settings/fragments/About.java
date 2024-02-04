@@ -93,7 +93,7 @@ public class About extends SettingsPreferenceFragment {
         } else if (preference == mTranslate) {
             launchUrl("https://crowdin.com/project/sigmadroid_sigmasettings");
         } else if (preference == mWebsite) {
-            launchUrl("https://t.me/PantahRomsPixel7and7Pro");
+            launchUrl("https://sigmadroid.xyz");
         } else if (preference == mTelegramChannelUrl) {
             launchUrl("https://t.me/PantahRomsPixel7and7Pro");
         }
