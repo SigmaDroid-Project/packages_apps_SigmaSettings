@@ -89,8 +89,8 @@
         android:icon="@drawable/ic_window_secure"
         android:title="@string/hide_developer_status_title"
         android:summary="@string/hide_developer_status_summary"
-        android:fragment="com.alpha.settings.fragments.misc.HideDeveloperStatusSettings"
-        settings:controller="com.alpha.settings.fragments.misc.HideDeveloperStatusPreferenceController" />
+        android:fragment="com.sigma.settings.fragments.misc.HideDeveloperStatusSettings"
+        settings:controller="com.sigma.settings.fragments.misc.HideDeveloperStatusPreferenceController" />
 
     <!-- Parallel space -->
     <Preference
