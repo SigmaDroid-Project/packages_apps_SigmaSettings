@@ -199,11 +199,6 @@
     <string name="qs_transitions_zoom_out">Zoom out</string>
     <string name="qs_transitions_zoom_out_slide">Zoom out slide</string>
 
-    <!-- Volume Styles -->
-    <string name="rui_style">Realme UI style</string>
-    <string name="rising_style">Rice style</string>
-    <string name="volume_style_title">Volume panel styles</string>
-
     <!-- Volume Media Output Toggle -->
     <string name="volume_media_output_toggle_title">Volume media output</string>
     <string name="volume_media_output_toggle_summary">Show media output toggle when there is an active stream</string>
@@ -408,5 +403,17 @@
     <!-- Pif -->
     <string name="pif_title">Play integrity fix</string>
     <string name="pif_summary">View current values used to spoof GMS</string>
+
+    <!-- Volume Styles -->
+    <string name="revamped_aosp_style">Revamped AOSP UI style</string>
+    <string name="rui_style">Realme UI style</string>
+    <string name="rising_style">Rising UI style</string>
+    <string name="double_layer_style">Double Layer style</string>
+    <string name="gradient_style">Gradient style</string>
+    <string name="neumorph_style">Neumorph style</string>
+    <string name="neumorph_outline_style">Neumorph Outline style</string>
+    <string name="outline_style">Outline style</string>
+    <string name="shaded_layer_style">Shaded Layer style</string>
+    <string name="volume_style_title">Volume panel styles</string>
 
 </resources>
