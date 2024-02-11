@@ -61,12 +61,23 @@ public class SigmaSettings extends DashboardFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        setSigmaDashboardStyle();
+        hideToolbar();
+        setAlphaDashboardStyle();
+    }
+
+    private void hideToolbar() {
+        if (mCollapsingToolbarLayout == null) {
+            mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
+        }
+        if (mCollapsingToolbarLayout != null) {
+            mCollapsingToolbarLayout.setVisibility(View.GONE);
+        }
     }
 
  public void onResume() {
         super.onResume();
-        setSigmaDashboardStyle();
+        hideToolbar();
+        setAlphaDashboardStyle();
     }
 
     private void setSigmaDashboardStyle() {
@@ -86,8 +97,8 @@ public class SigmaSettings extends DashboardFragment {
                  } else if (mKey.equals("about_sigmadroid")) {
                      mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
                  } else {
-                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
-                 }  
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle);
+                 }
              } else if (mDashBoardStyle == 2) {
                  mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
              } else  if (mDashBoardStyle == 3){
@@ -96,12 +107,12 @@ public class SigmaSettings extends DashboardFragment {
                  } else if (mKey.equals("about_sigmadroid")) {
                      mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_bottom);
                  } else {
-                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_middle); 
-                 } 
-             } 
+                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_middle);
+                 }
+             }
          }
      }
- 
+
      private int getSettingsDashboardStyle() {
          return Settings.System.getIntForUser(getContext().getContentResolver(),
                  Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
