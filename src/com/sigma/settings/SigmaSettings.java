@@ -1,6 +1,7 @@
 /*
- * Copyright (C) 2017-2022 crDroid Android Project
- * Copyright (C) 2023 SigmaDroid
+ * Copyright (C) 2017-2024 crDroid Android Project
+ * Copyright (C) 2023-2024 AlphaDroid
+ * Copyright (C) 2024 SigmaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,63 +22,70 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.R;
-
 import com.sigma.settings.fragments.Buttons;
 import com.sigma.settings.fragments.LockScreen;
-import com.sigma.settings.fragments.QuickSettings;
 import com.sigma.settings.fragments.Miscellaneous;
 import com.sigma.settings.fragments.Navigation;
 import com.sigma.settings.fragments.Notifications;
+import com.sigma.settings.fragments.QuickSettings;
 import com.sigma.settings.fragments.Sound;
 import com.sigma.settings.fragments.StatusBar;
 import com.sigma.settings.fragments.UserInterface;
+
+import com.android.internal.logging.nano.MetricsProto
+;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 @SearchIndexable
 public class SigmaSettings extends DashboardFragment {
 
     private static final String TAG = "SigmaSettings";
 
+//    protected CollapsingToolbarLayout mCollapsingToolbarLayout;
     private static final int MENU_RESET = Menu.FIRST;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        hideToolbar();
-        setAlphaDashboardStyle();
+        // hideToolbar();
+        setSigmaDashboardStyle();
     }
 
-    private void hideToolbar() {
-        if (mCollapsingToolbarLayout == null) {
-            mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
-        }
-        if (mCollapsingToolbarLayout != null) {
-            mCollapsingToolbarLayout.setVisibility(View.GONE);
-        }
-    }
+    // private void hideToolbar() {
+    //     if (mCollapsingToolbarLayout == null) {
+    //         mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
+    //     }
+    //     if (mCollapsingToolbarLayout != null) {
+    //         mCollapsingToolbarLayout.setVisibility(View.GONE);
+    //     }
+    // }
 
- public void onResume() {
+    public void onResume() {
         super.onResume();
-        hideToolbar();
-        setAlphaDashboardStyle();
+        // hideToolbar();
+        setSigmaDashboardStyle();
     }
 
     private void setSigmaDashboardStyle() {
@@ -90,6 +98,11 @@ public class SigmaSettings extends DashboardFragment {
             String mKey = mPreference.getKey();
 
             if (mKey == null) continue;
+
+            if (mKey.equals("sigma_settings_logo")) {
+                mPreference.setLayoutResource(R.layout.sigma_settings_logo);
+                continue;
+            }
 
             if (mDashBoardStyle == 1 ){
                 if (mKey.equals("ui_settings_category")) {
