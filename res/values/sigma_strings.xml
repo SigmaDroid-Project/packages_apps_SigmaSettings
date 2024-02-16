@@ -416,4 +416,8 @@
     <string name="shaded_layer_style">Shaded Layer style</string>
     <string name="volume_style_title">Volume panel styles</string>
 
+    <!-- Maintainer -->
+    <string name="maintainer_title">Maintainer</string>
+    <string name="maintainer_summary">Searching for maintainer...</string>
+
 </resources>
