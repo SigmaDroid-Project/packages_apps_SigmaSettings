@@ -82,7 +82,7 @@ public class About extends SettingsPreferenceFragment {
         } else if (preference == mSourceUrl) {
             launchUrl("https://github.com/sigmadroid-project");
         } else if (preference == mTelegramUrl) {
-            launchUrl("https://t.me/PantahRomsPixel7and7Pro");
+            launchUrl("https://t.me/SigmaDroidROMChat");
         } else if (preference == mShare) {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
@@ -95,7 +95,7 @@ public class About extends SettingsPreferenceFragment {
         } else if (preference == mWebsite) {
             launchUrl("https://sigmadroid.xyz");
         } else if (preference == mTelegramChannelUrl) {
-            launchUrl("https://t.me/PantahRomsPixel7and7Pro");
+            launchUrl("https://t.me/SigmaDroidROMChat");
         }
 
         return super.onPreferenceTreeClick(preference);
