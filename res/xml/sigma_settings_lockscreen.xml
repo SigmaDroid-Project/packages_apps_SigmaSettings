@@ -27,10 +27,18 @@
         android:title="@string/doze_display_title"
         android:summary="@string/doze_display_summary"
         android:fragment="com.sigma.settings.fragments.lockscreen.DozeSettings" />
+     
+  
+     <PreferenceCategory
+        android:title="Lockscreen Clock">
 
-    <PreferenceCategory
-        android:key="lockscreen_clock_category"
-        android:title="@string/qs_clock_title">
+        <com.sigma.settings.preferences.SystemSettingListPreference
+            android:entries="@array/clock_style_entries"
+            android:icon="@drawable/ic_clock"
+            android:title="Custom Clock style"
+            android:key="clock_style"
+            android:defaultValue="0"
+            android:entryValues="@array/clock_style_values" />
 
         <!-- Lockscreen Clock Font style -->
         <Preference
