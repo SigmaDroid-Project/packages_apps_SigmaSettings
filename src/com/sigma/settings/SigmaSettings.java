@@ -104,31 +104,23 @@ public class SigmaSettings extends DashboardFragment {
                 continue;
             }
 
-            if (mDashBoardStyle == 1 ){
+            if (mDashBoardStyle == 0 ){
                 if (mKey.equals("ui_settings_category")) {
-                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
+                     mPreference.setLayoutResource(R.layout.top_level_preference_top_card);
                  } else if (mKey.equals("about_sigmadroid")) {
-                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
+                     mPreference.setLayoutResource(R.layout.top_level_preference_bottom_card);
                  } else {
-                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle);
+                     mPreference.setLayoutResource(R.layout.top_level_preference_middle_card);
                  }
-             } else if (mDashBoardStyle == 2) {
-                 mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
-             } else  if (mDashBoardStyle == 3){
-                             if (mKey.equals("ui_settings_category")) {
-                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_top);
-                 } else if (mKey.equals("about_sigmadroid")) {
-                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_bottom);
-                 } else {
-                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_middle);
-                 }
-             }
+             } else if (mDashBoardStyle == 1 ){
+                    mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
+             } 
          }
      }
 
      private int getSettingsDashboardStyle() {
          return Settings.System.getIntForUser(getContext().getContentResolver(),
-                 Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
+                 Settings.System.SETTINGS_DASHBOARD_STYLE, 1, UserHandle.USER_CURRENT);
      }
 
     @Override
@@ -210,9 +202,9 @@ public class SigmaSettings extends DashboardFragment {
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.layout.sigma_settings;
+        return R.xml.sigma_settings;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.layout.sigma_settings);
+            new BaseSearchIndexProvider(R.xml.sigma_settings);
 }
