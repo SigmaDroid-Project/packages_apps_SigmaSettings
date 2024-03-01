@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2023 crDroid Android Project
+     Copyright (C) 2016-2023 SigmaDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -27,10 +27,21 @@
         android:title="@string/doze_display_title"
         android:summary="@string/doze_display_summary"
         android:fragment="com.sigma.settings.fragments.lockscreen.DozeSettings" />
+     
+     <Preference
+        android:key="lockscreen_preview"
+        settings:layout="@layout/lockscreen_preview" />
 
-    <PreferenceCategory
-        android:key="lockscreen_clock_category"
-        android:title="@string/qs_clock_title">
+     <PreferenceCategory
+        android:title="Lockscreen Clock">
+
+        <com.sigma.settings.preferences.SystemSettingListPreference
+            android:entries="@array/clock_style_entries"
+            android:icon="@drawable/ic_clock"
+            android:title="Custom Clock style"
+            android:key="clock_style"
+            android:defaultValue="0"
+            android:entryValues="@array/clock_style_values" />
 
         <!-- Lockscreen Clock Font style -->
         <Preference
