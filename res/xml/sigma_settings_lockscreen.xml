@@ -20,14 +20,6 @@
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
     android:title="@string/lockscreen_title">
 
-    <!-- Ambient Display -->
-    <Preference
-        android:key="doze_fragment"
-        android:icon="@drawable/ic_ambient"
-        android:title="@string/doze_display_title"
-        android:summary="@string/doze_display_summary"
-        android:fragment="com.sigma.settings.fragments.lockscreen.DozeSettings" />
-     
      <Preference
         android:key="lockscreen_preview"
         settings:layout="@layout/lockscreen_preview" />
@@ -86,6 +78,14 @@
     <PreferenceCategory
         android:key="lockscreen_interface_category"
         android:title="@string/lockscreen_interface_category">
+
+        <!-- Ambient Display -->
+        <Preference
+            android:key="doze_fragment"
+            android:icon="@drawable/ic_ambient"
+            android:title="@string/doze_display_title"
+            android:summary="@string/doze_display_summary"
+            android:fragment="com.sigma.settings.fragments.lockscreen.DozeSettings" />
 
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
