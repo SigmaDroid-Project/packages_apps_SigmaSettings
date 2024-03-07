@@ -20,9 +20,16 @@
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
     android:title="@string/lockscreen_title">
 
-     <Preference
-        android:key="lockscreen_preview"
-        settings:layout="@layout/lockscreen_preview" />
+    <PreferenceCategory
+        android:title="@string/lockscreen_preview_category"
+        android:key="lockscreen_preview_category">
+
+        <!-- Preview of the lockscreen -->
+        <Preference
+            android:key="lockscreen_preview"
+            settings:layout="@layout/lockscreen_preview" />
+
+    </PreferenceCategory>
 
      <PreferenceCategory
         android:title="@string/lockscreen_clock_category"

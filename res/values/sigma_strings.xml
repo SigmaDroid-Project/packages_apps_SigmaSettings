@@ -424,4 +424,6 @@
      <!-- Lockscreen Settings -->
     <string name="lockscreen_clock_category">Clock</string>
     <string name="custom_clock_style_title">Custom Clock style</string>
+    <string name="lockscreen_preview_category">Preview</string>
+
 </resources>
