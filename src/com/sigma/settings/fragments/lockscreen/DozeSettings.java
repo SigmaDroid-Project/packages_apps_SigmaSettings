@@ -65,7 +65,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE_PICK_UP_GESTURE = "doze_pick_up_gesture";
     private static final String KEY_DOZE_HANDWAVE_GESTURE = "doze_handwave_gesture";
     private static final String KEY_DOZE_POCKET_GESTURE = "doze_pocket_gesture";
-    private static final String KEY_RAISE_TO_WAKE_GESTURE = "raise_to_wake_gesture";
+    private static final String KEY_RAISE_TO_WAKE_GESTURE = "doze_pick_up_gesture_ambient";
     private static final String KEY_DOZE_GESTURE_VIBRATE = "doze_gesture_vibrate";
 
     private SwitchPreference mDozeEnabledPreference;

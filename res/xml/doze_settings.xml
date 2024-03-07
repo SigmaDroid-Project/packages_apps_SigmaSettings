@@ -96,10 +96,11 @@
             android:summary="@string/pocket_summary" />
 
         <com.sigma.settings.preferences.SecureSettingSwitchPreference
-            android:key="raise_to_wake_gesture"
+            android:key="doze_pick_up_gesture_ambient"
+            android:title="@string/doze_gesture_ambient_title"
+            android:summary="@string/doze_gesture_ambient_summary"
             android:defaultValue="false"
-            android:title="@string/raise_to_wake_title"
-            android:summary="@string/raise_to_wake_summary" />
+            android:dependency="doze_pick_up_gesture" />
 
         <com.sigma.settings.preferences.SecureSettingSeekBarPreference
             android:key="doze_gesture_vibrate"
