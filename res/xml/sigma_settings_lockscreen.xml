@@ -25,12 +25,14 @@
         settings:layout="@layout/lockscreen_preview" />
 
      <PreferenceCategory
-        android:title="Lockscreen Clock">
+        android:title="@string/lockscreen_clock_category"
+        android:key="lockscreen_clock_category">
 
+        <!-- Custom Clock style -->
         <com.sigma.settings.preferences.SystemSettingListPreference
             android:entries="@array/clock_style_entries"
             android:icon="@drawable/ic_clock"
-            android:title="Custom Clock style"
+            android:title="@string/custom_clock_style_title"
             android:key="clock_style"
             android:defaultValue="0"
             android:entryValues="@array/clock_style_values" />
