@@ -90,11 +90,11 @@ public class ProximitySensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isRaiseToWake = Utils.isRaiseToWakeEnabled(mContext);
+        boolean isDozePickupAmbient = Utils.isDozePickupAmbientEnabled(mContext);
         boolean isNear = event.values[0] < mSensor.getMaximumRange();
         if (mSawNear && !isNear) {
             if (shouldPulse(event.timestamp)) {
-                if (isRaiseToWake) {
+                if (!isDozePickupAmbient) {
                     mWakeLock.acquire(mWakelockTimeoutMs);
                     mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                         PowerManager.WAKE_REASON_GESTURE, TAG);

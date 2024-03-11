@@ -87,7 +87,7 @@ public class TiltSensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        boolean isRaiseToWake = Utils.isRaiseToWakeEnabled(mContext);
+        boolean isDozePickupAmbient = Utils.isDozePickupAmbientEnabled(mContext);
 
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
@@ -99,7 +99,7 @@ public class TiltSensor implements SensorEventListener {
         }
 
         if (event.values[0] == 1) {
-            if (isRaiseToWake) {
+            if (!isDozePickupAmbient) {
                 mWakeLock.acquire(mWakelockTimeoutMs);
                 mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                     PowerManager.WAKE_REASON_GESTURE, TAG);

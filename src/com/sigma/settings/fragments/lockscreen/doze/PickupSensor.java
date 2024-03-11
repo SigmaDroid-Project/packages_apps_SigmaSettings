@@ -145,8 +145,8 @@ public class PickupSensor implements SensorEventListener {
     }
 
     private void launchWakeOrPulse() {
-        boolean isRaiseToWake = Utils.isRaiseToWakeEnabled(mContext);
-        if (isRaiseToWake) {
+        boolean isDozePickupAmbient = Utils.isDozePickupAmbientEnabled(mContext);
+        if (!isDozePickupAmbient) {
             mWakeLock.acquire(mWakelockTimeoutMs);
             mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                 PowerManager.WAKE_REASON_GESTURE, TAG);

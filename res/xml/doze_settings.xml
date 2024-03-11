@@ -99,7 +99,7 @@
             android:key="doze_pick_up_gesture_ambient"
             android:title="@string/doze_gesture_ambient_title"
             android:summary="@string/doze_gesture_ambient_summary"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:dependency="doze_pick_up_gesture" />
 
         <com.sigma.settings.preferences.SecureSettingSeekBarPreference
@@ -111,7 +111,8 @@
             android:max="2000"
             settings:min="0"
             settings:interval="10"
-            settings:units="@string/unit_milliseconds" />
+            settings:units="@string/unit_milliseconds"
+            android:dependency="doze_pick_up_gesture_ambient" />
     </PreferenceCategory>
 
 </PreferenceScreen>
