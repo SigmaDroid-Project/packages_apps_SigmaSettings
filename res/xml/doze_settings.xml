@@ -112,7 +112,7 @@
             settings:min="0"
             settings:interval="10"
             settings:units="@string/unit_milliseconds"
-            android:dependency="doze_pick_up_gesture_ambient" />
+            android:dependency="doze_enabled" />
     </PreferenceCategory>
 
 </PreferenceScreen>
