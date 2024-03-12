@@ -17,6 +17,15 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+     <string name="settings_banner_widget_title">Settings banner widget</string>
+     <string name="settings_banner_widget_summary">Enable settings homepage  banner widget</string>
+
+     <string name="settings_storage_widget_title">Settings storage widget</string>
+     <string name="settings_storage_widget_summary">Enable settings homepage storage widges</string>
+
+     <string name="settings_battery_widget_title">Settings battery widget</string>
+     <string name="settings_battery_widget_summary">Enable settings homepage battery widget</string>
+    
     <!-- Preference categories -->
     <string name="preference_category_brightness">Brightness</string>
     <string name="preference_category_battery">Battery</string>
@@ -26,10 +35,9 @@
     <!-- Settings dashboard style -->
     <string name="settings_dashboard_style_title">Settings style</string>
     <string name="settings_dashboard_style_summary">Settings homepage and UI style</string>
-    <string name="settings_dashboard_style_aosp">AOSP</string>
+    <string name="settings_dashboard_style_sigma">Sigma</string>
     <string name="settings_dashboard_style_dot">DoT</string>
     <string name="settings_dashboard_style_nad">NAD</string>
-    <string name="settings_dashboard_style_sigma">Sigma</string>
 
     <!-- Max visible notification icons -->
     <string name="max_visible_notification_icons_title">Notification icons</string>

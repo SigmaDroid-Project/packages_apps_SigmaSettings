@@ -104,7 +104,9 @@ public class SigmaSettings extends DashboardFragment {
                 continue;
             }
 
-            if (mDashBoardStyle == 1 ){
+                if (mDashBoardStyle == 0){
+                mPreference.setLayoutResource(R.layout.top_level_preference_solo_card);
+                } else if (mDashBoardStyle == 1 ){
                 if (mKey.equals("ui_settings_category")) {
                      mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
                  } else if (mKey.equals("about_sigmadroid")) {
@@ -114,15 +116,7 @@ public class SigmaSettings extends DashboardFragment {
                  }
              } else if (mDashBoardStyle == 2) {
                  mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
-             } else  if (mDashBoardStyle == 3){
-                             if (mKey.equals("ui_settings_category")) {
-                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_top);
-                 } else if (mKey.equals("about_sigmadroid")) {
-                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_bottom);
-                 } else {
-                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_middle);
-                 }
-             }
+             } 
          }
      }
 
