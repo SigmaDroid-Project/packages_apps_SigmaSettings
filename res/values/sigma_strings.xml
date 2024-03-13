@@ -26,6 +26,18 @@
      <string name="settings_battery_widget_title">Settings battery widget</string>
      <string name="settings_battery_widget_summary">Enable settings homepage battery widget</string>
     
+    <!-- Toolbox Summary-->
+     <string name="toolbox_UI_summary">User Interface customizations</string>
+     <string name="toolbox_statusbar_summary">Statusbar customizations</string>
+     <string name="toolbox_quicksetting_summary">Quick setting customizations</string>
+     <string name="toolbox_buttons_summary">Button customizations</string>
+     <string name="toolbox_lockscreen_summary">Lockscreen customizations</string>
+     <string name="toolbox_notification_summary">Notification customizations</string>
+     <string name="toolbox_navigation_summary">Navigation customizations</string>
+     <string name="toolbox_sound_summary">Sound customizations</string>
+     <string name="toolbox_misc_summary">Misc customizations</string>
+     <string name="toolbox_sigma_summary">Information about SigmaDroid Project</string>
+
     <!-- Preference categories -->
     <string name="preference_category_brightness">Brightness</string>
     <string name="preference_category_battery">Battery</string>
