@@ -95,21 +95,6 @@
         android:summary="@string/theme_customization_icon_shape_summary"
         android:fragment="com.sigma.settings.fragments.ui.IconShapes"/>
 
-    <!-- Settings widgets -->
-    <SwitchPreference
-        android:key="settings_storage_widget"
-        android:icon="@drawable/ic_ui_styles"
-        android:title="@string/settings_storage_widget_title"
-        android:summary="@string/settings_storage_widget_summary"
-        android:defaultValue="false" />
-
-    <SwitchPreference
-        android:key="settings_battery_widget"
-        android:icon="@drawable/ic_ui_styles"
-        android:title="@string/settings_battery_widget_title"
-        android:summary="@string/settings_battery_widget_summary"
-        android:defaultValue="false" />
-
     <!-- Floating rotation button -->
     <com.sigma.settings.preferences.SystemSettingSwitchPreference
         android:key="enable_floating_rotation_button"
