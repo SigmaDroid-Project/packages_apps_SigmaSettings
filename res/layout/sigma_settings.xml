@@ -22,7 +22,6 @@
         <Preference
             android:key="ui_settings_category"
             android:title="@string/ui_title"
-            android:summary="@string/toolbox_UI_summary"
             android:fragment="com.sigma.settings.fragments.UserInterface"
             android:icon="@drawable/ic_themes"/>
 
@@ -30,7 +29,6 @@
         <Preference
             android:key="statusbar_settings_category"
             android:title="@string/statusbar_title"
-            android:summary="@string/toolbox_statusbar_summary"
             android:fragment="com.sigma.settings.fragments.StatusBar"
             android:icon="@drawable/ic_settings_statusbar"/>
 
@@ -38,7 +36,6 @@
         <Preference
             android:key="quick_settings_category"
             android:title="@string/quicksettings_title"
-            android:summary="@string/toolbox_quicksetting_summary"
             android:fragment="com.sigma.settings.fragments.QuickSettings"
             android:icon="@drawable/ic_settings_quicksettings"/>
 
@@ -46,7 +43,6 @@
         <Preference
             android:key="button_settings"
             android:title="@string/button_title"
-            android:summary="@string/toolbox_buttons_summary"
             android:icon="@drawable/ic_buttons"
             android:fragment="com.sigma.settings.fragments.Buttons"/>
 
@@ -54,7 +50,6 @@
         <Preference
             android:key="lockscreen_settings_category"
             android:title="@string/lockscreen_title"
-            android:summary="@string/toolbox_lockscreen_summary"
             android:fragment="com.sigma.settings.fragments.LockScreen"
             android:icon="@drawable/ic_settings_lockscreen"/>
 
@@ -62,7 +57,6 @@
         <Preference
             android:key="notification_settings_category"
             android:title="@string/notifications_title"
-            android:summary="@string/toolbox_notification_summary"
             android:fragment="com.sigma.settings.fragments.Notifications"
             android:icon="@drawable/ic_notifications"/>
 
@@ -70,7 +64,6 @@
         <Preference
             android:key="navigation_settings_category"
             android:title="@string/navigation_title"
-            android:summary="@string/toolbox_navigation_summary"
             android:fragment="com.sigma.settings.fragments.Navigation"
             android:icon="@drawable/ic_navigation"/>
 
@@ -78,7 +71,6 @@
         <Preference
             android:key="sound_settings_category"
             android:title="@string/sound_title"
-            android:summary="@string/toolbox_sound_summary"
             android:fragment="com.sigma.settings.fragments.Sound"
             android:icon="@drawable/ic_settings_sound"/>
 
@@ -86,7 +78,6 @@
         <Preference
             android:key="misc_settings_category"
             android:title="@string/misc_title"
-            android:summary="@string/toolbox_misc_summary"
             android:fragment="com.sigma.settings.fragments.Miscellaneous"
             android:icon="@drawable/ic_settings_misc"/>
 
@@ -94,7 +85,6 @@
         <Preference
             android:key="about_sigmadroid"
             android:title="@string/about_crdroid"
-            android:summary="@string/toolbox_sigma_summary"
             android:fragment="com.sigma.settings.fragments.About"
             android:icon="@drawable/ic_settings_about"/>
 </PreferenceScreen>
