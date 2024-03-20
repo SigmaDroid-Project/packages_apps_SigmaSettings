@@ -128,7 +128,7 @@ public class SigmaSettings extends DashboardFragment {
 
      private int getSettingsDashboardStyle() {
          return Settings.System.getIntForUser(getContext().getContentResolver(),
-                 Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
+                 Settings.System.SETTINGS_DASHBOARD_STYLE, 0, UserHandle.USER_CURRENT);
      }
 
     @Override
