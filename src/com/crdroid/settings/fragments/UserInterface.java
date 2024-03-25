@@ -30,6 +30,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.CustomUtils;
@@ -93,7 +94,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
         Context mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
+       // final Context mContext = getActivity().getApplicationContext();
+       final ContentResolver resolver = mContext.getContentResolver();
 	    final String displayCutout =
             mContext.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
 
@@ -109,10 +111,13 @@ public class UserInterface extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mSmartPixels);
 
         mThemeUtils = new ThemeUtils(getContext());
-        mDashBoardStyle = (ListPreference) prefScreen.findPreference(KEY_DASHBOARD_STYLE);
-        mDashBoardStyle.setOnPreferenceChangeListener(this);
         mHomepageStorageWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_STORAGE_WIDGET);
         mHomepageBatteryWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_BATTERY_WIDGET);
+        mDashBoardStyle = (ListPreference) findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
+        int dashboardStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.SETTINGS_DASHBOARD_STYLE , 0, UserHandle.USER_CURRENT);
+                updateSettingsWidgets(dashboardStyle );
 
         mHomepageBatteryWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
                 "settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
@@ -129,14 +134,17 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+
         if (preference == mDashBoardStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateSettingsWidgets(value);
             CustomUtils.showSettingsRestartDialog(getContext());
             return true;
         } else if (preference == mHomepageStorageWidgetToggle) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "settings_storage_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
-        return true;
+            return true;
 		} else if (preference == mHomepageBatteryWidgetToggle) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "settings_battery_widget", value ? 1 : 0);
@@ -170,13 +178,19 @@ public class UserInterface extends SettingsPreferenceFragment implements
         }
     }
 
+    private void updateSettingsWidgets(int dashboardStyle) {
+        mHomepageBatteryWidgetToggle.setEnabled(dashboardStyle == 0);
+        mHomepageStorageWidgetToggle.setEnabled(dashboardStyle == 0);
+    }
+
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ENABLE_ROTATION_BUTTON, 1, UserHandle.USER_CURRENT);
-
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SETTINGS_DASHBOARD_STYLE , 0, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
         MonetSettings.reset(mContext);
         SmartPixels.reset(mContext);
