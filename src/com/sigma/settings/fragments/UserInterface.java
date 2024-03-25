@@ -49,8 +49,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     public static final String TAG = "UserInterface";
 
     private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
-    private static final String KEY_SETTINGS_STORAGE_WIDGET = "settings_storage_widget";
-    private static final String KEY_SETTINGS_BATTERY_WIDGET = "settings_battery_widget";
+    private static final String KEY_SETTINGS_STORAGE_WIDGET = "enable_settings_storage_widget";
+    private static final String KEY_SETTINGS_BATTERY_WIDGET = "enable_settings_battery_widget";
 
     private ListPreference mDashBoardStyle;
     private SwitchPreference mHomepageStorageWidgetToggle;
@@ -60,48 +60,63 @@ public class UserInterface extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
+       final Context mContext = getActivity().getApplicationContext();
+       final ContentResolver resolver = mContext.getContentResolver();
         addPreferencesFromResource(R.xml.sigma_settings_ui);
 
-        mDashBoardStyle = (ListPreference) findPreference(KEY_DASHBOARD_STYLE);
-        mDashBoardStyle.setOnPreferenceChangeListener(this);
         mHomepageStorageWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_STORAGE_WIDGET);
         mHomepageBatteryWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_BATTERY_WIDGET);
+        mDashBoardStyle = (ListPreference) findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
+        int dashboardStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.SETTINGS_DASHBOARD_STYLE , 0, UserHandle.USER_CURRENT);
+                updateSettingsWidgets(dashboardStyle );
 
         mHomepageBatteryWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                "settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
+                "enable_settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
         mHomepageStorageWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                "settings_storage_widget", 0, UserHandle.USER_CURRENT) != 0);
+                "enable_settings_storage_widget", 0, UserHandle.USER_CURRENT) != 0);
 
         mHomepageStorageWidgetToggle.setOnPreferenceChangeListener(this);
         mHomepageBatteryWidgetToggle.setOnPreferenceChangeListener(this);
+
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+
         if (preference == mDashBoardStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateSettingsWidgets(value);
             CustomUtils.showSettingsRestartDialog(getContext());
             return true;
         } 
         if (preference == mHomepageStorageWidgetToggle) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(), "settings_storage_widget", value ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_storage_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
-        return true;
-		} else if (preference == mHomepageBatteryWidgetToggle) {
+            return true;
+		} 
+        if (preference == mHomepageBatteryWidgetToggle) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(), "settings_battery_widget", value ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_battery_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
-        return true;
+            return true;
 		}
         return false;
+    }
+
+    private void updateSettingsWidgets(int dashboardStyle) {
+        mHomepageBatteryWidgetToggle.setEnabled(dashboardStyle == 0);
+        mHomepageStorageWidgetToggle.setEnabled(dashboardStyle == 0);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.ENABLE_FLOATING_ROTATION_BUTTON, 1, UserHandle.USER_CURRENT);
-
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SETTINGS_DASHBOARD_STYLE , 0, UserHandle.USER_CURRENT);
         //MonetSettings.reset(mContext);
     }
 
