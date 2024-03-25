@@ -30,6 +30,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.CustomUtils;
@@ -53,8 +54,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
-    private static final String KEY_SETTINGS_STORAGE_WIDGET = "settings_storage_widget";
-    private static final String KEY_SETTINGS_BATTERY_WIDGET = "settings_battery_widget";
+    private static final String KEY_SETTINGS_STORAGE_WIDGET = "enable_settings_storage_widget";
+    private static final String KEY_SETTINGS_BATTERY_WIDGET = "enable_settings_battery_widget";
 
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
@@ -70,7 +71,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
         Context mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-
+       // final Context mContext = getActivity().getApplicationContext();
+       final ContentResolver resolver = mContext.getContentResolver();
 	    final String displayCutout =
             mContext.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
 
@@ -85,37 +87,50 @@ public class UserInterface extends SettingsPreferenceFragment implements
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
 
-        mDashBoardStyle = (ListPreference) prefScreen.findPreference(KEY_DASHBOARD_STYLE);
-        mDashBoardStyle.setOnPreferenceChangeListener(this);
         mHomepageStorageWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_STORAGE_WIDGET);
         mHomepageBatteryWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_BATTERY_WIDGET);
+        mDashBoardStyle = (ListPreference) findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
+        int dashboardStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.SETTINGS_DASHBOARD_STYLE , 0, UserHandle.USER_CURRENT);
+                updateSettingsWidgets(dashboardStyle );
 
         mHomepageBatteryWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                "settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
+                "enable_settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
         mHomepageStorageWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                "settings_storage_widget", 0, UserHandle.USER_CURRENT) != 0);
+                "enable_settings_storage_widget", 0, UserHandle.USER_CURRENT) != 0);
 
         mHomepageStorageWidgetToggle.setOnPreferenceChangeListener(this);
         mHomepageBatteryWidgetToggle.setOnPreferenceChangeListener(this);
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+
         if (preference == mDashBoardStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateSettingsWidgets(value);
             CustomUtils.showSettingsRestartDialog(getContext());
             return true;
         } 
         if (preference == mHomepageStorageWidgetToggle) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(), "settings_storage_widget", value ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_storage_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
-        return true;
-		} else if (preference == mHomepageBatteryWidgetToggle) {
+            return true;
+		} 
+        if (preference == mHomepageBatteryWidgetToggle) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(), "settings_battery_widget", value ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_battery_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
-        return true;
+            return true;
 		}
         return false;
+    }
+
+    private void updateSettingsWidgets(int dashboardStyle) {
+        mHomepageBatteryWidgetToggle.setEnabled(dashboardStyle == 0);
+        mHomepageStorageWidgetToggle.setEnabled(dashboardStyle == 0);
     }
 
     public static void reset(Context mContext) {
@@ -124,7 +139,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ENABLE_ROTATION_BUTTON, 1, UserHandle.USER_CURRENT);
-
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SETTINGS_DASHBOARD_STYLE , 0, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
         MonetSettings.reset(mContext);
         SmartPixels.reset(mContext);
