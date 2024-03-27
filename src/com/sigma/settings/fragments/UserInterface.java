@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -82,22 +83,27 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     }
 
+    private int getCurrentSwDp() {
+        final Resources res = getContext().getResources();
+        final DisplayMetrics metrics = res.getDisplayMetrics();
+        final float density = metrics.density;
+        final int minDimensionPx = Math.min(metrics.widthPixels, metrics.heightPixels);
+        return (int) (minDimensionPx / density);
+    }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-
         if (preference == mDashBoardStyle) {
             int value = Integer.parseInt((String) newValue);
             updateSettingsWidgets(value);
             CustomUtils.showSettingsRestartDialog(getContext());
             return true;
-        } 
-        if (preference == mHomepageStorageWidgetToggle) {
+        } else if (preference == mHomepageStorageWidgetToggle) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_storage_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;
-		} 
-        if (preference == mHomepageBatteryWidgetToggle) {
+		} else if (preference == mHomepageBatteryWidgetToggle) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_battery_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
@@ -107,8 +113,11 @@ public class UserInterface extends SettingsPreferenceFragment implements
     }
 
     private void updateSettingsWidgets(int dashboardStyle) {
+        final int mDensity = getCurrentSwDp();
+        if ( dashboardStyle !=0  || mDensity >=  500) {
         mHomepageBatteryWidgetToggle.setEnabled(dashboardStyle == 0);
         mHomepageStorageWidgetToggle.setEnabled(dashboardStyle == 0);
+        }
     }
 
     public static void reset(Context mContext) {
