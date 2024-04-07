@@ -82,10 +82,6 @@
     <string name="matrixx_legal_desc">Legal terms of use</string>    
     <string name="default_string">Default</string>
 
-    <!-- Homepage widgets -->    
-    <string name="settings_homepage_widgets_title">Settings homepage widgets</string>
-    <string name="settings_homepage_widgets_summary">Enable settings homepage widgets</string>
-
     <!-- UI styles -->
     <string name="theme_customization_ui_style_title">UI Style</string>
     <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
@@ -98,6 +94,22 @@
 
     <string name="brightness_percent_title">Brightness Percentage</string>
     <string name="brightness_percent_summary">Show hide brightness percentage text</string>    
+
+    <!-- Statusbar Clock background chip -->
+    <string name="statusbar_clock_chip_title">Background chip</string>
+    <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
+    <string name="solid_accent">Solid color accent</string>
+    <string name="outline">Outline</string>
+    <string name="solid_accent_gradient">Solid color accent gradient</string>   
+    <string name="solid_gradient">Solid Gradient side</string>
+    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
+    <string name="solid_gradient_void">Gradient Void</string>
+    <string name="solid_gradient_neumorph">Neumorph gradient</string>
+    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
+    <string name="solid_accent_transperent">Accent transperent</string>    
+    <string name="solid_gradient_light">Gradient light</string>
+    <string name="solid_gradient_shape">Sharp gradient corner</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
 
     <!-- Volume Styles -->
     <string name="revamped_aosp_style">Revamped AOSP UI style</string>
