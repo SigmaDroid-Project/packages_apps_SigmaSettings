@@ -17,7 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- App Title -->
-    <string name="crdroid_settings_title">Matrixx Settings</string>
+    <string name="crdroid_settings_title">crDroid Settings</string>
     <string name="crdroid_settings_summary">Open goodness</string>
     <string name="reset_settings_title">Reset settings</string>
     <string name="reset_settings_message">This will reset most crdroid settings to their default values for the current user. Would you like to continue?</string>
@@ -68,23 +68,41 @@
     <string name="changelog_crdroid_summary">View changes in the ROM installed</string>
     <string name="changelog_crdroid_error">Unable to load changelog</string>
 
-    <!-- About Matrixx -->
-    <string name="about_matrixx">About Matrixx</string>
+    <!-- About crDroid -->
+    <string name="about_crdroid">About crDroid</string>
     <string name="about_device_name">Device</string>
-    <string name="matrixx_source_title">GitHub</string>
-    <string name="matrixx_source_summary">We love open source, check us out</string>
-    <string name="matrixx_telegram_title">Matrixx community</string>
-    <string name="matrixx_telegram_summary">We are on telegram. Join us!</string>
 
-    <!-- Donate Matrixx -->
+    <!-- Share crDroid -->
+    <string name="share_crdroid_title">Share crDroid</string>
+    <string name="share_crdroid_summary">Let others know about crDroid</string>
+    <string name="share_message">Check out if #crDroidAndroid is available for your device @ https://crdroid.net/</string>
+    <string name="share_chooser_title">Share crDroid</string>
+
+    <!-- Sites crDroid -->
+    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_summary">We love open source, check us out</string>
+    <string name="crdroid_telegram_title">crDroid community</string>
+    <string name="crdroid_telegram_summary">We are on telegram. Join us!</string>
+    <string name="crdroid_telegram_channel_title">Updates channel</string>
+    <string name="crdroid_telegram_channel_summary">Get notified of new builds on Telegram</string>
+    <string name="crdroid_website_title">Official website</string>
+    <string name="crdroid_website_summary">Visit our official website</string>
+    <string name="crdroid_translate_title">Translations</string>
+    <string name="crdroid_translate_summary">Help with localisation of ROM in your language!</string>
+    <string name="crdroid_sponsor_title" translatable="false">ScopeHosts</string>
+    <string name="crdroid_sponsor_summary">Visit our website host partner</string>
+    <string name="crdroid_buildserversponsor_title" translatable="false">InterServer</string>
+    <string name="crdroid_buildserversponsor_summary">We recommend their servers if interested in one</string>
+
+    <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Support us</string>
     <string name="donate_crdroid_summary">Donate to support further development</string>
-    <string name="donate_team_title">Matrixx team</string>
+    <string name="donate_team_title">crDroid team</string>
     <string name="donate_team_summary">Donate to support server hosting, site uptime and overall management</string>
 
     <!-- OTA -->
-    <string name="matrixx_update_title">Updates</string>
-    <string name="matrixx_update_summary">Check and download latest update</string>
+    <string name="crdroid_update_title">Updates</string>
+    <string name="crdroid_update_summary">Check and download latest update</string>
 
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
@@ -142,7 +160,7 @@
 
     <!-- Button settings -->
     <string name="extras_title">Extras</string>
-    <string name="additional_buttons_title">Additional buttons settings</string>
+    <string name="additional_buttons_title">Additional buttons</string>
     <string name="hardware_keys_power_key_title">Power button</string>
     <string name="hardware_keys_home_key_title">Home button</string>
     <string name="hardware_keys_back_key_title">Back button</string>
@@ -611,8 +629,8 @@
     <string name="qs_footer_services_icon_title">Running services shortcut</string>
     <string name="qs_footer_settings_icon_title">Settings shortcut</string>
 
-    <!-- Device Info screen. Matrixx legal. -->
-    <string name="crdroid_license_title">Matrixx legal</string>
+    <!-- Device Info screen. crDroid legal. -->
+    <string name="crdroid_license_title">crDroid legal</string>
 
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Brightness slider</string>
@@ -1084,10 +1102,6 @@
     <string name="qqs_rows_portrait_title">Quick QS Rows (portrait)</string>
     <string name="qqs_rows_landscape_title">Quick QS Rows (landscape)</string>
 
-    <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Background chip</string>
-    <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
-
     <!-- Weather -->
     <string name="weather_settings_title">Weather settings</string>
     <string name="weather_settings_summary">Setup icon pack and weather service</string>
@@ -1113,7 +1127,7 @@
     <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
     <string name="status_bar_logo_position_title">Logo position</string>
     <string name="status_bar_logo_style_title">Logo style</string>
-    <string name="status_bar_logo_style_crdroid">Matrixx</string>
+    <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>
