@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2024 crDroid Android Project
+     Copyright (C) 2016-2024 SigmaDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid Ayarları</string>
+    <string name="crdroid_settings_title">SigmaDroid Ayarları</string>
     <string name="crdroid_settings_summary">Çeşitli özelleştirmeler</string>
     <string name="reset_settings_title">Ayarları sıfırla</string>
-    <string name="reset_settings_message">Bu mevcut kullanıcı için çoğu crdroid ayarlarını varsayılan değerlerine sıfırlar. Devam etmek ister misin?</string>
+    <string name="reset_settings_message">Bu mevcut kullanıcı için çoğu SigmaDroid ayarlarını varsayılan değerlerine sıfırlar. Devam etmek ister misin?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Tuşlar</string>
     <string name="lockscreen_title">Kilit ekranı</string>
@@ -58,18 +58,18 @@
     <string name="changelog_crdroid_title">Mevcut değişiklikler</string>
     <string name="changelog_crdroid_summary">Yüklü ROM\'daki değişiklikleri görüntüleyin</string>
     <string name="changelog_crdroid_error">Değişiklikler yüklenemiyor</string>
-    <!-- About crDroid -->
-    <string name="about_crdroid">crDroid hakkında</string>
+    <!-- About SigmaDroid -->
+    <string name="about_crdroid">SigmaDroid hakkında</string>
     <string name="about_device_name">Cihaz</string>
-    <!-- Share crDroid -->
-    <string name="share_crdroid_title">crDroid\'i paylaş</string>
-    <string name="share_crdroid_summary">Başkalarına crDroid hakkında bilgi verin</string>
-    <string name="share_message">Cihazınız için #crDroidAndroid\'in mevcut olup olmadığını kontrol edin @ https://crdroid.net/</string>
-    <string name="share_chooser_title">crDroid\'i paylaş</string>
-    <!-- Sites crDroid -->
+    <!-- Share SigmaDroid -->
+    <string name="share_crdroid_title">SigmaDroid\'i paylaş</string>
+    <string name="share_crdroid_summary">Başkalarına SigmaDroid hakkında bilgi verin</string>
+    <string name="share_message">Cihazınız için #crDroidAndroid\'in mevcut olup olmadığını kontrol edin @ https;//sigmadroid.xyz/</string>
+    <string name="share_chooser_title">SigmaDroid\'i paylaş</string>
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Kaynak kodumuzu görüntüleyin</string>
-    <string name="crdroid_telegram_title">crDroid topluluğu</string>
+    <string name="crdroid_telegram_title">SigmaDroid topluluğu</string>
     <string name="crdroid_telegram_summary">Biz de telegramdayız. Bize katılın!</string>
     <string name="crdroid_telegram_channel_title">Güncelleme kanalı</string>
     <string name="crdroid_telegram_channel_summary">Telegram\'daki yeni yapılardan haberdar olun</string>
@@ -79,10 +79,10 @@
     <string name="crdroid_translate_summary">ROM\'u kendi dilinize çevirmek için bize yardım edin!</string>
     <string name="crdroid_sponsor_summary">Web sitesi barındırma ortağımızı ziyaret edin</string>
     <string name="crdroid_buildserversponsor_summary">Biriyle ilgileniyorsanız sunucularını öneririz</string>
-    <!-- Donate crDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Bizi destekle</string>
     <string name="donate_crdroid_summary">Daha fazla gelişmeyi desteklemek için bağış yapın</string>
-    <string name="donate_team_title">crDroid ekibi</string>
+    <string name="donate_team_title">SigmaDroid ekibi</string>
     <string name="donate_team_summary">Sunucu hostingi, site çalışma zamanı ve genel yönetimi desteklemek için bağış yapın</string>
     <!-- The Drill -->
     <string name="drill_title">The drill</string>
@@ -547,8 +547,8 @@
     <string name="qs_footer_show_power_menu_title">Güç menüsü kısayolu</string>
     <string name="qs_footer_services_icon_title">Çalışan hizmetler kısayolu</string>
     <string name="qs_footer_settings_icon_title">Ayarlar kısayolu</string>
-    <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid yasal</string>
+    <!-- Device Info screen. SigmaDroid legal. -->
+    <string name="crdroid_license_title">SigmaDroid yasal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Parlaklık kaydırıcısı</string>
     <string name="qs_show_brightness_slider_title">Parlaklık kaydırıcısı</string>
@@ -948,7 +948,7 @@
     <string name="status_bar_logo_summary">Durum çubuğunun solunda veya sağında özel bir logo görüntüleyin</string>
     <string name="status_bar_logo_position_title">Logo konumu</string>
     <string name="status_bar_logo_style_title">Logo stili</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
+    <string name="status_bar_logo_style_crdroid">SigmaDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Uzaylı</string>
