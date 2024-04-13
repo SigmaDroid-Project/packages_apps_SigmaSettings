@@ -25,12 +25,14 @@ import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.CustomUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -43,15 +45,19 @@ import com.crdroid.settings.fragments.ui.MonetSettings;
 import java.util.List;
 
 @SearchIndexable
-public class UserInterface extends SettingsPreferenceFragment {
+public class UserInterface extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener{
 
     public static final String TAG = "UserInterface";
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
+
 
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
+    private ListPreference mDashBoardStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +81,17 @@ public class UserInterface extends SettingsPreferenceFragment {
                 com.android.internal.R.bool.config_supportSmartPixels);
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
+
+        mDashBoardStyle = (ListPreference) prefScreen.findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mDashBoardStyle) {
+            CustomUtils.showSettingsRestartDialog(getContext());
+        return true;
+        }
+	return false;
     }
 
     public static void reset(Context mContext) {
