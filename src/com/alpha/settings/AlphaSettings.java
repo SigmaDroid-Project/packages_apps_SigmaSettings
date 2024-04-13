@@ -1,5 +1,7 @@
 /*
- * Copyright (C) 2017-2022 crDroid Android Project
+ * Copyright (C) 2017-2024 crDroid Android Project
+ * Copyright (C) 2023-2024 AlphaDroid
+ * Copyright (C) 2024 SigmaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.crdroid.settings;
+package com.sigma.settings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -37,16 +39,15 @@ import android.widget.Toolbar;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
-import com.crdroid.settings.fragments.About;
-import com.crdroid.settings.fragments.Buttons;
-import com.crdroid.settings.fragments.LockScreen;
-import com.crdroid.settings.fragments.Miscellaneous;
-import com.crdroid.settings.fragments.Navigation;
-import com.crdroid.settings.fragments.Notifications;
-import com.crdroid.settings.fragments.QuickSettings;
-import com.crdroid.settings.fragments.Sound;
-import com.crdroid.settings.fragments.StatusBar;
-import com.crdroid.settings.fragments.UserInterface;
+import com.sigma.settings.fragments.Buttons;
+import com.sigma.settings.fragments.LockScreen;
+import com.sigma.settings.fragments.Miscellaneous;
+import com.sigma.settings.fragments.Navigation;
+import com.sigma.settings.fragments.Notifications;
+import com.sigma.settings.fragments.QuickSettings;
+import com.sigma.settings.fragments.Sound;
+import com.sigma.settings.fragments.StatusBar;
+import com.sigma.settings.fragments.UserInterface;
 
 import com.android.internal.logging.nano.MetricsProto
 ;
@@ -57,43 +58,39 @@ import com.android.settings.search.BaseSearchIndexProvider;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-import android.os.UserHandle;
-import android.provider.Settings;
+@SearchIndexable
+public class SigmaSettings extends DashboardFragment {
 
-public class crDroidSettingsLayout extends DashboardFragment {
+    private static final String TAG = "SigmaSettings";
 
-    private static final String TAG = "crDroidSettingsLayout";
-
-    protected CollapsingToolbarLayout mCollapsingToolbarLayout;
+//    protected CollapsingToolbarLayout mCollapsingToolbarLayout;
     private static final int MENU_RESET = Menu.FIRST;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        hideToolbar();
+        // hideToolbar();
         setSigmaDashboardStyle();
     }
 
-    private void hideToolbar() {
-        if (mCollapsingToolbarLayout == null) {
-            mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
-        }
-        if (mCollapsingToolbarLayout != null) {
-            mCollapsingToolbarLayout.setVisibility(View.GONE);
-        }
-    }
+    // private void hideToolbar() {
+    //     if (mCollapsingToolbarLayout == null) {
+    //         mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
+    //     }
+    //     if (mCollapsingToolbarLayout != null) {
+    //         mCollapsingToolbarLayout.setVisibility(View.GONE);
+    //     }
+    // }
 
     public void onResume() {
         super.onResume();
-        hideToolbar();
+        // hideToolbar();
         setSigmaDashboardStyle();
     }
 
     private void setSigmaDashboardStyle() {
-        int mDashBoardStyle = geSettingstDashboardStyle();
+        int mDashBoardStyle = getSettingsDashboardStyle();
         final PreferenceScreen mScreen = getPreferenceScreen();
-        //mScreen.setTitle(" ");
-        if (mScreen == null) return;
         final int mCount = mScreen.getPreferenceCount();
         for (int i = 0; i < mCount; i++) {
             final Preference mPreference = mScreen.getPreference(i);
@@ -102,48 +99,31 @@ public class crDroidSettingsLayout extends DashboardFragment {
 
             if (mKey == null) continue;
 
-            if (mKey.equals("sigma_header")) {
-                mPreference.setLayoutResource(R.layout.settings_sigma_toolbox_header);
+            if (mKey.equals("sigma_settings_logo")) {
+                mPreference.setLayoutResource(R.layout.sigma_settings_logo);
                 continue;
             }
 
-            if (mDashBoardStyle == 1 ){
+                if (mDashBoardStyle == 0){
+                mPreference.setLayoutResource(R.layout.top_level_preference_solo_card);
+                } else if (mDashBoardStyle == 1 ){
                 if (mKey.equals("ui_settings_category")) {
                      mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
-                } else if (mKey.equals("about_sigmadroid")) {
-                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
-                } else {
-                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
-                }  
-            } else if (mDashBoardStyle == 2) {
-                mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
-            } else if (mDashBoardStyle == 3) {
-                            if (mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_top);
-                } else if (mKey.equals("about_sigmadroid")) {
-                    mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_bottom);
-                } else {
-                    mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_middle); 
-                } 
-            } 
-        }
-    }
+                 } else if (mKey.equals("about_sigmadroid")) {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
+                 } else {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle);
+                 }
+             } else if (mDashBoardStyle == 2) {
+                 mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
+             } 
+         }
+     }
 
-
-    private int geSettingstDashboardStyle() {
-        return Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle saveState) {
-        super.onSaveInstanceState(saveState);
-    }
+     private int getSettingsDashboardStyle() {
+         return Settings.System.getIntForUser(getContext().getContentResolver(),
+                 Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
+     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -183,10 +163,10 @@ public class crDroidSettingsLayout extends DashboardFragment {
         protected Void doInBackground(Void... params) {
             Buttons.reset(rContext);
             LockScreen.reset(rContext);
+            QuickSettings.reset(rContext);
             Miscellaneous.reset(rContext);
             Navigation.reset(rContext);
             Notifications.reset(rContext);
-            QuickSettings.reset(rContext);
             Sound.reset(rContext);
             StatusBar.reset(rContext);
             UserInterface.reset(rContext);
@@ -210,8 +190,8 @@ public class crDroidSettingsLayout extends DashboardFragment {
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.SIGMA;
-     }
-    
+    }
+
     @Override
     protected String getLogTag() {
         return TAG;
@@ -229,5 +209,4 @@ public class crDroidSettingsLayout extends DashboardFragment {
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.layout.sigma_settings);
-
 }
