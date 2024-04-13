@@ -17,8 +17,14 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:key="alpha_settings_preference_screen"
-    android:title="@string/alpha_settings_title">
+    android:key="sigma_settings_preference_screen"
+    android:title="@string/sigma_settings_title">
+
+        <!-- Sigma header -->
+        <Preference
+            android:key="sigma_header"
+            android:selectable="false"
+            settings:layout="@layout/settings_sigma_toolbox_header" />
 
         <!-- UI -->
         <Preference
@@ -85,7 +91,7 @@
 
         <!-- About AlphaDroid -->
         <Preference
-            android:key="about_alphadroid"
+            android:key="about_sigmadroid"
             android:title="@string/about_crdroid"
             android:fragment="com.crdroid.settings.fragments.About"
             android:icon="@drawable/ic_settings_about"/>

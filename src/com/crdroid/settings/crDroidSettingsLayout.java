@@ -63,30 +63,36 @@ import android.provider.Settings;
 public class crDroidSettingsLayout extends DashboardFragment {
 
     private static final String TAG = "crDroidSettingsLayout";
-    // ViewPager mViewPager;
-    // ViewGroup mContainer;
-    // PagerSlidingTabStrip mTabs;
-    // SectionsPagerAdapter mSectionsPagerAdapter;
-    // protected Context mContext;
 
+    protected CollapsingToolbarLayout mCollapsingToolbarLayout;
     private static final int MENU_RESET = Menu.FIRST;
 
     @Override
     public void onCreate(Bundle icicle) {
-        // super.onCreate(savedInstanceState);
         super.onCreate(icicle);
-        // getActivity().setTitle(R.string.crdroid_settings_title);
+        hideToolbar();
         setSigmaDashboardStyle();
+    }
+
+    private void hideToolbar() {
+        if (mCollapsingToolbarLayout == null) {
+            mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
+        }
+        if (mCollapsingToolbarLayout != null) {
+            mCollapsingToolbarLayout.setVisibility(View.GONE);
+        }
     }
 
     public void onResume() {
         super.onResume();
+        hideToolbar();
         setSigmaDashboardStyle();
     }
 
     private void setSigmaDashboardStyle() {
         int mDashBoardStyle = geSettingstDashboardStyle();
         final PreferenceScreen mScreen = getPreferenceScreen();
+        //mScreen.setTitle(" ");
         if (mScreen == null) return;
         final int mCount = mScreen.getPreferenceCount();
         for (int i = 0; i < mCount; i++) {
@@ -96,40 +102,38 @@ public class crDroidSettingsLayout extends DashboardFragment {
 
             if (mKey == null) continue;
 
+            if (mKey.equals("sigma_header")) {
+                mPreference.setLayoutResource(R.layout.settings_sigma_toolbox_header);
+                continue;
+            }
+
             if (mDashBoardStyle == 1 ){
-               if (mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
-                } else if (mKey.equals("about_crdroid")) {
+                if (mKey.equals("ui_settings_category")) {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
+                } else if (mKey.equals("about_sigmadroid")) {
                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
                 } else {
                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
                 }  
             } else if (mDashBoardStyle == 2) {
                 mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
+            } else if (mDashBoardStyle == 3) {
+                            if (mKey.equals("ui_settings_category")) {
+                    mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_top);
+                } else if (mKey.equals("about_sigmadroid")) {
+                    mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_bottom);
+                } else {
+                    mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_middle); 
+                } 
             } 
         }
     }
 
+
     private int geSettingstDashboardStyle() {
         return Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.SETTINGS_DASHBOARD_STYLE, 0, UserHandle.USER_CURRENT);
+                Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
     }
-
-    // @Override
-    // public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    //     mContainer = container;
-    //     View view = inflater.inflate(R.layout.crdroid_settings, container, false);
-    //     mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
-    //     mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
-    //     mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
-    //     mViewPager.setAdapter(mSectionsPagerAdapter);
-    //     mViewPager.setClipChildren(true);
-    //     mViewPager.setClipToPadding(true);
-    //     mTabs.setViewPager(mViewPager);
-    //     mContext = getActivity().getApplicationContext();
-
-    //     return view;
-    // }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -203,61 +207,9 @@ public class crDroidSettingsLayout extends DashboardFragment {
         }
     }
 
-    // class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-    //     String titles[] = getTitles();
-    //     private Fragment frags[] = new Fragment[titles.length];
-
-    //     public SectionsPagerAdapter(FragmentManager fm) {
-    //         super(fm);
-    //         frags[0] = new StatusBar();
-    //         frags[1] = new QuickSettings();
-    //         frags[2] = new LockScreen();
-    //         frags[3] = new Navigation();
-    //         frags[4] = new Buttons();
-    //         frags[5] = new UserInterface();
-    //         frags[6] = new Notifications();
-    //         frags[7] = new Sound();
-    //         frags[8] = new Miscellaneous();
-    //         frags[9] = new About();
-    //     }
-
-    //     @Override
-    //     public Fragment getItem(int position) {
-    //         return frags[position];
-    //     }
-
-    //     @Override
-    //     public int getCount() {
-    //         return frags.length;
-    //     }
-
-    //     @Override
-    //     public CharSequence getPageTitle(int position) {
-    //         return titles[position];
-    //     }
-    // }
-
-    // private String[] getTitles() {
-    //     String titleString[];
-    //     titleString = new String[] {
-    //         getString(R.string.statusbar_title),
-    //         getString(R.string.quicksettings_title),
-    //         getString(R.string.lockscreen_title),
-    //         getString(R.string.navigation_title),
-    //         getString(R.string.button_title),
-    //         getString(R.string.ui_title),
-    //         getString(R.string.notifications_title),
-    //         getString(R.string.sound_title),
-    //         getString(R.string.misc_title),
-    //         getString(R.string.about_crdroid)
-    //     };
-    //     return titleString;
-    // }
-
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+        return MetricsProto.MetricsEvent.SIGMA;
      }
     
     @Override
@@ -272,10 +224,10 @@ public class crDroidSettingsLayout extends DashboardFragment {
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.layout.alpha_settings;
+        return R.layout.sigma_settings;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.layout.alpha_settings);
+            new BaseSearchIndexProvider(R.layout.sigma_settings);
 
 }

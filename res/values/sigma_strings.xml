@@ -296,4 +296,52 @@
     <string name="pulse_custom_gravity_center">Center</string>
     <string name="visualizer_center_mirrored_title">Center mirrored</string>
     <string name="visualizer_center_mirrored_summary">Set the visualizer in center mirrored mode</string>
+
+    <!-- Preference categories -->
+    <string name="preference_category_brightness">Brightness</string>
+    <string name="preference_category_battery">Battery</string>
+    <string name="preference_category_style">Style</string>
+    <string name="preference_category_clock">Clock</string>
+
+    <!-- Settings dashboard style -->
+    <string name="settings_dashboard_style_title">Settings style</string>
+    <string name="settings_dashboard_style_summary">Settings homepage and Alphabet style</string>
+    <string name="settings_dashboard_style_aosp">AOSP</string>
+    <string name="settings_dashboard_style_dot">DoT</string>
+    <string name="settings_dashboard_style_nad">NAD</string>
+    <string name="settings_dashboard_style_sigma">Sigma</string>
+
+    <!--  Alpha settings -->
+    <string name="alpha_settings_title">Sigma Toolbox</string>
+    <string name="alpha_settings_summary">Everything, including the kitchen sink!</string>
+    <string name="sigma_settings_title">Sigma Toolbox</string>
+    <string name="sigma_settings_summary">Everything, including the kitchen sink!</string>
+    <string name="alphabet_summary">Goodies!</string>
+
+    <!-- UiBench -->
+    <string name="category_uibench">UiBench</string>
+    <string name="jitter_test_title">Jitter</string>
+    <string name="jitter_test_summary">Calculate rendering jitter</string>
+
+    <!-- SELinux status -->
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
+
+    <!-- Firmware info -->
+    <string name="category_android_info">Android</string>
+    <string name="category_alpha_info">AlphaDroid</string>
+    <string name="category_device_info">Device</string>
+
+    <!-- Build info -->
+    <string name="build_status_title">Build Status: %s</string>
+    <string name="build_status_summary_placeholder">Ahoy</string>
+    <string name="build_status_official">Official</string>
+    <string name="build_status_summary">Maintained by: %s</string>
+    <string name="build_status_oopsie">Searching for maintainer...</string>
+
+    <!-- Maintainer -->
+    <string name="maintainer_title">Maintainer</string>
+    <string name="maintainer_summary">Searching for maintainer...</string>
 </resources>
