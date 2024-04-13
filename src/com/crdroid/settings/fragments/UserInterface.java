@@ -55,7 +55,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
-
+    private static final String KEY_SETTINGS_STORAGE_WIDGET = "settings_storage_widget";
+    private static final String KEY_SETTINGS_BATTERY_WIDGET = "settings_battery_widget";
     private static final String KEY_NOTIFICATION_STYLE = "notification_style";
     private static final String KEY_POWERMENU_STYLE = "powermenu_style";
 
@@ -78,6 +79,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
     private ListPreference mDashBoardStyle;
+    private SwitchPreference mHomepageStorageWidgetToggle;
+    private SwitchPreference mHomepageBatteryWidgetToggle;
     private ListPreference mNotificationStylePref;
     private ListPreference mPowermenuStylePref;
     private ThemeUtils mThemeUtils;
@@ -108,6 +111,16 @@ public class UserInterface extends SettingsPreferenceFragment implements
         mThemeUtils = new ThemeUtils(getContext());
         mDashBoardStyle = (ListPreference) prefScreen.findPreference(KEY_DASHBOARD_STYLE);
         mDashBoardStyle.setOnPreferenceChangeListener(this);
+        mHomepageStorageWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_STORAGE_WIDGET);
+        mHomepageBatteryWidgetToggle = (SwitchPreference) findPreference(KEY_SETTINGS_BATTERY_WIDGET);
+
+        mHomepageBatteryWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
+                "settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
+        mHomepageStorageWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
+                "settings_storage_widget", 0, UserHandle.USER_CURRENT) != 0);
+
+        mHomepageStorageWidgetToggle.setOnPreferenceChangeListener(this);
+        mHomepageBatteryWidgetToggle.setOnPreferenceChangeListener(this);
         mNotificationStylePref = findPreference(KEY_NOTIFICATION_STYLE);
         mNotificationStylePref.setOnPreferenceChangeListener(this);
         mPowermenuStylePref = findPreference(KEY_POWERMENU_STYLE);
@@ -119,6 +132,16 @@ public class UserInterface extends SettingsPreferenceFragment implements
         if (preference == mDashBoardStyle) {
             CustomUtils.showSettingsRestartDialog(getContext());
             return true;
+        } else if (preference == mHomepageStorageWidgetToggle) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(), "settings_storage_widget", value ? 1 : 0);
+			CustomUtils.showSettingsRestartDialog(getContext());
+        return true;
+		} else if (preference == mHomepageBatteryWidgetToggle) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(), "settings_battery_widget", value ? 1 : 0);
+			CustomUtils.showSettingsRestartDialog(getContext());
+        return true;
         } else if (preference == mNotificationStylePref) {
             int value = Integer.parseInt((String) newValue);
             updateNotifStyle(value);
