@@ -1,6 +1,7 @@
 /*
- * Copyright (C) 2017-2022 crDroid Android Project
- * Copyright (C) 2023 AlphaDroid
+ * Copyright (C) 2017-2024 crDroid Android Project
+ * Copyright (C) 2023-2024 AlphaDroid
+ * Copyright (C) 2024 SigmaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,53 +16,114 @@
  * limitations under the License.
  */
 
-package com.alpha.settings;
+package com.sigma.settings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.R;
+import com.sigma.settings.fragments.Buttons;
+import com.sigma.settings.fragments.LockScreen;
+import com.sigma.settings.fragments.Miscellaneous;
+import com.sigma.settings.fragments.Navigation;
+import com.sigma.settings.fragments.Notifications;
+import com.sigma.settings.fragments.QuickSettings;
+import com.sigma.settings.fragments.Sound;
+import com.sigma.settings.fragments.StatusBar;
+import com.sigma.settings.fragments.UserInterface;
 
-import com.alpha.settings.fragments.Buttons;
-import com.alpha.settings.fragments.LockScreen;
-import com.alpha.settings.fragments.QuickSettings;
-import com.alpha.settings.fragments.Miscellaneous;
-import com.alpha.settings.fragments.Navigation;
-import com.alpha.settings.fragments.Notifications;
-import com.alpha.settings.fragments.Sound;
-import com.alpha.settings.fragments.StatusBar;
-import com.alpha.settings.fragments.UserInterface;
+import com.android.internal.logging.nano.MetricsProto
+;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.settings.R;
+import com.android.settings.search.BaseSearchIndexProvider;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 @SearchIndexable
-public class AlphaSettings extends DashboardFragment {
+public class SigmaSettings extends DashboardFragment {
 
-    private static final String TAG = "AlphaSettings";
+    private static final String TAG = "SigmaSettings";
 
+//    protected CollapsingToolbarLayout mCollapsingToolbarLayout;
     private static final int MENU_RESET = Menu.FIRST;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        // hideToolbar();
+        setSigmaDashboardStyle();
     }
+
+    // private void hideToolbar() {
+    //     if (mCollapsingToolbarLayout == null) {
+    //         mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
+    //     }
+    //     if (mCollapsingToolbarLayout != null) {
+    //         mCollapsingToolbarLayout.setVisibility(View.GONE);
+    //     }
+    // }
+
+    public void onResume() {
+        super.onResume();
+        // hideToolbar();
+        setSigmaDashboardStyle();
+    }
+
+    private void setSigmaDashboardStyle() {
+        int mDashBoardStyle = getSettingsDashboardStyle();
+        final PreferenceScreen mScreen = getPreferenceScreen();
+        final int mCount = mScreen.getPreferenceCount();
+        for (int i = 0; i < mCount; i++) {
+            final Preference mPreference = mScreen.getPreference(i);
+
+            String mKey = mPreference.getKey();
+
+            if (mKey == null) continue;
+
+            if (mKey.equals("sigma_settings_logo")) {
+                mPreference.setLayoutResource(R.layout.sigma_settings_logo);
+                continue;
+            }
+
+                if (mDashBoardStyle == 0){
+                mPreference.setLayoutResource(R.layout.top_level_preference_solo_card);
+                } else if (mDashBoardStyle == 1 ){
+                if (mKey.equals("ui_settings_category")) {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
+                 } else if (mKey.equals("about_sigmadroid")) {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
+                 } else {
+                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle);
+                 }
+             } else if (mDashBoardStyle == 2) {
+                 mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
+             } 
+         }
+     }
+
+     private int getSettingsDashboardStyle() {
+         return Settings.System.getIntForUser(getContext().getContentResolver(),
+                 Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
+     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -127,7 +189,7 @@ public class AlphaSettings extends DashboardFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ALPHA;
+        return MetricsProto.MetricsEvent.SIGMA;
     }
 
     @Override
@@ -142,9 +204,9 @@ public class AlphaSettings extends DashboardFragment {
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.layout.alpha_settings;
+        return R.layout.sigma_settings;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.layout.alpha_settings);
+            new BaseSearchIndexProvider(R.layout.sigma_settings);
 }
