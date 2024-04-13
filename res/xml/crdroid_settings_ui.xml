@@ -160,6 +160,21 @@
         android:summary="@string/smart_pixels_summary" 
         android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
 
+    <!-- Settings widgets -->
+    <SwitchPreference
+        android:key="settings_storage_widget"
+        android:icon="@drawable/ic_ui_styles"
+        android:title="@string/settings_storage_widget_title"
+        android:summary="@string/settings_storage_widget_summary"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="settings_battery_widget"
+        android:icon="@drawable/ic_ui_styles"
+        android:title="@string/settings_battery_widget_title"
+        android:summary="@string/settings_battery_widget_summary"
+        android:defaultValue="false" />
+
     <!-- Floating rotation button -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="enable_rotation_button"
