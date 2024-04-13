@@ -27,12 +27,12 @@
     <PreferenceCategory 
          android:title="@string/style_category">
 
-    <SwitchPreferenceCompat
+    <!-- <com.android.settings.preferences.SystemSwitchPreference
         android:key="settings_homepage_widgets"
-        android:icon="@drawable/ic_ui_styles"
         android:title="@string/settings_homepage_widgets_title"
         android:summary="@string/settings_homepage_widgets_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false"
+        app:restart_level="settings" /> -->
 
     <!-- Monet Theme Engine -->
     <Preference
