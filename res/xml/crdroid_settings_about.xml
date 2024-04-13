@@ -20,9 +20,9 @@
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
     android:title="@string/about_crdroid" >
 
-    <com.android.settingslib.widget.LayoutPreference
+    <!-- <com.android.settingslib.widget.LayoutPreference
         android:key="matrixx_about"
-        android:layout="@layout/matrixx_about" />
+        android:layout="@layout/matrixx_about" /> -->
         
     <!-- crDroid Changelog -->
     <Preference
@@ -85,18 +85,18 @@
         android:summary="@string/crdroid_telegram_channel_summary" />
 
     <!-- crDroid buildserver sponsor -->
-    <Preference
+    <!-- <Preference
         android:key="crdroid_buildserversponsor"
         android:icon="@drawable/ic_sponsor"
         android:title="@string/crdroid_buildserversponsor_title"
-        android:summary="@string/crdroid_buildserversponsor_summary" />
+        android:summary="@string/crdroid_buildserversponsor_summary" /> -->
 
     <!-- crDroid sponsor -->
-    <Preference
+    <!-- <Preference
         android:key="crdroid_sponsor"
         android:icon="@drawable/ic_sponsor"
         android:title="@string/crdroid_sponsor_title"
-        android:summary="@string/crdroid_sponsor_summary" />
+        android:summary="@string/crdroid_sponsor_summary" /> -->
 
     <!-- crDroid OTA update -->
     <Preference

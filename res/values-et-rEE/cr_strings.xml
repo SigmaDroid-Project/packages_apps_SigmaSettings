@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2024 crDroid Android Project
+     Copyright (C) 2016-2024 SigmaDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -58,18 +58,18 @@
     <string name="changelog_crdroid_title">Praegune muudatuste logi</string>
     <string name="changelog_crdroid_summary">Vaata paigaldatud ROMi muudatusi</string>
     <string name="changelog_crdroid_error">Muudatuste logi ei saanud laadida</string>
-    <!-- About crDroid -->
+    <!-- About SigmaDroid -->
     <string name="about_crdroid">Info crDroidi kohta</string>
     <string name="about_device_name">Seade</string>
-    <!-- Share crDroid -->
+    <!-- Share SigmaDroid -->
     <string name="share_crdroid_title">Jaga crDroidi</string>
     <string name="share_crdroid_summary">Anna teistele teada crDroidist</string>
-    <string name="share_message">Uuri kas #crDroidAndroid on saadaval sinu seadmele https://crdroid.net/</string>
+    <string name="share_message">Uuri kas #crDroidAndroid on saadaval sinu seadmele https;//sigmadroid.xyz/</string>
     <string name="share_chooser_title">Jaga crDroidi</string>
-    <!-- Sites crDroid -->
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Me armastame avatud tarkvara, tutvu meiega</string>
-    <string name="crdroid_telegram_title">crDroid kogukond</string>
+    <string name="crdroid_telegram_title">SigmaDroid kogukond</string>
     <string name="crdroid_telegram_summary">Liitu meie Telegrami kommuuniga!</string>
     <string name="crdroid_telegram_channel_title">Uuendustekanal</string>
     <string name="crdroid_telegram_channel_summary">Saa Telegramis uute versioonide teavitusi</string>
@@ -79,7 +79,7 @@
     <string name="crdroid_translate_summary">Aita ROM tõlkida oma emakeelde!</string>
     <string name="crdroid_sponsor_summary">Külasta meie veebisaidi hostpartnerit</string>
     <string name="crdroid_buildserversponsor_summary">Soovitame nende servereid, kui oled huvitatud</string>
-    <!-- Donate crDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Toeta meid</string>
     <string name="donate_crdroid_summary">Anneta edasise arenduse toetamiseks</string>
     <string name="donate_team_title">crDroidi meeskond</string>
@@ -542,7 +542,7 @@
     <string name="qs_footer_show_power_menu_title">Toitemenüü otsetee</string>
     <string name="qs_footer_services_icon_title">Töötavate teenuste otsetee</string>
     <string name="qs_footer_settings_icon_title">Seadete otsetee</string>
-    <!-- Device Info screen. crDroid legal. -->
+    <!-- Device Info screen. SigmaDroid legal. -->
     <string name="crdroid_license_title">crDroidi legaalne</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Heleduse liugur</string>
@@ -947,7 +947,7 @@
     <string name="status_bar_logo_summary">Kuva kohandatud logo olekuribast vasakul või paremal</string>
     <string name="status_bar_logo_position_title">Logo asukoht</string>
     <string name="status_bar_logo_style_title">Logo stiil</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
+    <string name="status_bar_logo_style_crdroid">SigmaDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Tulnukas</string>
