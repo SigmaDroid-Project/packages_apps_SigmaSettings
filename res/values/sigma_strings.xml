@@ -344,4 +344,14 @@
     <!-- Maintainer -->
     <string name="maintainer_title">Maintainer</string>
     <string name="maintainer_summary">Searching for maintainer...</string>
+
+     <!-- Settings Homepage Widgets -->
+     <string name="settings_banner_widget_title">Settings banner widget</string>
+     <string name="settings_banner_widget_summary">Enable settings homepage  banner widget</string>
+
+     <string name="settings_storage_widget_title">Settings storage widget</string>
+     <string name="settings_storage_widget_summary">Enable settings homepage storage widges</string>
+
+     <string name="settings_battery_widget_title">Settings battery widget</string>
+     <string name="settings_battery_widget_summary">Enable settings homepage battery widget</string>
 </resources>
