@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021 SigmaDroid Android Project
+     Copyright (C) 2016-2022 crDroid Android Project
+     Copyright (C) 2023 AlphaDroid
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,14 +15,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <color name="config_tab_color">@android:color/system_neutral1_900</color>
-    <color name="config_tab_text_color">@android:color/system_neutral1_10</color>
+    <string name="alphabet_summary">Goodies!</string>
 
-    <color name="theme_accent">@android:color/system_accent1_300</color>
-
-    <color name="homepage_crdroid_background">@android:color/system_neutral1_800</color>
-
-    <color name="option_border_default">#5f6368</color>
 </resources>
+

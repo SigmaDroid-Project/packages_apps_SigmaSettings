@@ -78,11 +78,11 @@ public class About extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mDonate) {
-            launchUrl("https://crdroid.net/donate.php");
+            launchUrl("https://paypal.me/albinoman887");
         } else if (preference == mSourceUrl) {
-            launchUrl("https://github.com/crdroidandroid");
+            launchUrl("https://github.com/SigmaDroid-Project");
         } else if (preference == mTelegramUrl) {
-            launchUrl("https://t.me/crDroidAndroid");
+            launchUrl("https://t.me/SigmaDroidROMChat");
         } else if (preference == mShare) {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
@@ -91,13 +91,13 @@ public class About extends SettingsPreferenceFragment {
                     getActivity().getString(R.string.share_message), Build.MODEL));
             startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
         } else if (preference == mTranslate) {
-            launchUrl("https://crdroid.net/translations.php");
+            launchUrl("https://crowdin.com/project/sigmadroid-project");
         } else if (preference == mWebsite) {
-            launchUrl("https://crdroid.net");
+            launchUrl("https://sigmadroid.xyz");
         } else if (preference == mTelegramChannelUrl) {
-            launchUrl("https://t.me/crDroidUpdates");
+            launchUrl("https://t.me/SigmaDroidROMChat");
         } else if (preference == mSponsor) {
-            launchUrl("https://www.scopehosts.com");
+            launchUrl("https://paypal.me/albinoman887");
         } else if (preference == mBuildServerSponsor){
             launchUrl("https://www.interserver.net/r/836686");
         }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2024 crDroid Android Project
+     Copyright (C) 2016-2024 SigmaDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid-Einstellungen</string>
+    <string name="crdroid_settings_title">SigmaDroid-Einstellungen</string>
     <string name="crdroid_settings_summary">Erweiterte Einstellungen öffnen</string>
     <string name="reset_settings_title">Einstellungen zurücksetzen</string>
-    <string name="reset_settings_message">Dadurch werden die meisten crDroid-Einstellungen für den aktuellen Nutzer auf die Standardwerte zurückgesetzt. Fortfahren?</string>
+    <string name="reset_settings_message">Dadurch werden die meisten SigmaDroid-Einstellungen für den aktuellen Nutzer auf die Standardwerte zurückgesetzt. Fortfahren?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Tasten</string>
     <string name="lockscreen_title">Sperrbildschirm</string>
@@ -58,18 +58,18 @@
     <string name="changelog_crdroid_title">Aktueller Changelog</string>
     <string name="changelog_crdroid_summary">Änderungen in der installierten ROM anzeigen</string>
     <string name="changelog_crdroid_error">Changelog konnte nicht geladen werden</string>
-    <!-- About crDroid -->
-    <string name="about_crdroid">Über crDroid</string>
+    <!-- About SigmaDroid -->
+    <string name="about_crdroid">Über SigmaDroid</string>
     <string name="about_device_name">Gerät</string>
-    <!-- Share crDroid -->
-    <string name="share_crdroid_title">crDroid teilen</string>
-    <string name="share_crdroid_summary">crDroid weiterempfehlen</string>
-    <string name="share_message">Finde heraus, ob es #crDroidAndroid schon für dein Gerät gibt auf: https://crdroid.net/</string>
-    <string name="share_chooser_title">crDroid teilen</string>
-    <!-- Sites crDroid -->
+    <!-- Share SigmaDroid -->
+    <string name="share_crdroid_title">SigmaDroid teilen</string>
+    <string name="share_crdroid_summary">SigmaDroid weiterempfehlen</string>
+    <string name="share_message">Finde heraus, ob es #crDroidAndroid schon für dein Gerät gibt auf: https;//sigmadroid.xyz/</string>
+    <string name="share_chooser_title">SigmaDroid teilen</string>
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Wir lieben Open Source, schau doch mal auf unserer GitHub-Seite vorbei</string>
-    <string name="crdroid_telegram_title">crDroid-Community</string>
+    <string name="crdroid_telegram_title">SigmaDroid-Community</string>
     <string name="crdroid_telegram_summary">Wir sind auch bei Telegram. Komm in die Gruppe!</string>
     <string name="crdroid_telegram_channel_title">Kanal für Updates</string>
     <string name="crdroid_telegram_channel_summary">Lass dich auf Telegram über neue Builds benachrichtigen</string>
@@ -79,10 +79,10 @@
     <string name="crdroid_translate_summary">Hilf mit bei der Übersetzung der ROM in deine Sprache!</string>
     <string name="crdroid_sponsor_summary">Besuche den Hostpartner unserer Webseite</string>
     <string name="crdroid_buildserversponsor_summary">Wir empfehlen diese Server, falls Interesse besteht</string>
-    <!-- Donate crDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Unterstütze uns</string>
     <string name="donate_crdroid_summary">Spende, um die Entwicklung zu unterstützen</string>
-    <string name="donate_team_title">crDroid-Team</string>
+    <string name="donate_team_title">SigmaDroid-Team</string>
     <string name="donate_team_summary">Spenden für Unterstützung beim Server-Hosting, bei der Webseitenverfügbarkeit und bei der Verwaltung</string>
     <!-- OTA -->
     <string name="crdroid_update_title">Updates</string>
@@ -542,8 +542,8 @@
     <string name="qs_footer_show_power_menu_title">Verknüpfung zum Ein-/Aus-Menü</string>
     <string name="qs_footer_services_icon_title">Verknüpfung zu aktiven Diensten</string>
     <string name="qs_footer_settings_icon_title">Verknüpfung zu Einstellungen</string>
-    <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Rechtliche Hinweise zu crDroid</string>
+    <!-- Device Info screen. SigmaDroid legal. -->
+    <string name="crdroid_license_title">Rechtliche Hinweise zu SigmaDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Helligkeitsregler</string>
     <string name="qs_show_brightness_slider_title">Helligkeitsregler</string>
@@ -947,7 +947,7 @@
     <string name="status_bar_logo_summary">Benutzerdefiniertes Logo rechts oder links in der Statusleiste anzeigen</string>
     <string name="status_bar_logo_position_title">Logoposition</string>
     <string name="status_bar_logo_style_title">Logostil</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
+    <string name="status_bar_logo_style_crdroid">SigmaDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>

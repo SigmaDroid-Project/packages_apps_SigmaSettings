@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2024 crDroid Android Project
+     Copyright (C) 2016-2024 SigmaDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Nastavení crDroid</string>
+    <string name="crdroid_settings_title">Nastavení SigmaDroid</string>
     <string name="crdroid_settings_summary">Odhalte jeho možnosti</string>
     <string name="reset_settings_title">Obnovit nastavení</string>
     <string name="reset_settings_message">Tímto obnovíte většinu nastavení crDroidu pro aktuálního uživatele na výchozí hodnoty. Přejete si pokračovat?</string>
@@ -58,15 +58,15 @@
     <string name="changelog_crdroid_title">Aktuální seznam změn</string>
     <string name="changelog_crdroid_summary">Zobrazit změny v\u00a0nainstalované ROM</string>
     <string name="changelog_crdroid_error">Nelze načíst seznam změn</string>
-    <!-- About crDroid -->
+    <!-- About SigmaDroid -->
     <string name="about_crdroid">O crDroidu</string>
     <string name="about_device_name">Zařízení</string>
-    <!-- Share crDroid -->
-    <string name="share_crdroid_title">Sdílet crDroid</string>
+    <!-- Share SigmaDroid -->
+    <string name="share_crdroid_title">Sdílet SigmaDroid</string>
     <string name="share_crdroid_summary">Dejte vědět ostatním o\u00a0crDroidu</string>
-    <string name="share_message">Podívejte se, jestli je k dispozici #crDroidAndroid pro vaše zařízení @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Sdílet crDroid</string>
-    <!-- Sites crDroid -->
+    <string name="share_message">Podívejte se, jestli je k dispozici #crDroidAndroid pro vaše zařízení @ https;//sigmadroid.xyz/</string>
+    <string name="share_chooser_title">Sdílet SigmaDroid</string>
+    <!-- Sites SigmaDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Máme rádi open source. Podívejte se, co děláme</string>
     <string name="crdroid_telegram_title">Komunita crDroidu</string>
@@ -79,7 +79,7 @@
     <string name="crdroid_translate_summary">Pomozte nám s\u00a0lokalizací ROM do vašeho jazyka!</string>
     <string name="crdroid_sponsor_summary">Navštivte hostitele našeho webu</string>
     <string name="crdroid_buildserversponsor_summary">Doporučujeme jejich servery, pokud o\u00a0ně máte zájem</string>
-    <!-- Donate crDroid -->
+    <!-- Donate SigmaDroid -->
     <string name="donate_crdroid_title">Podpořte nás</string>
     <string name="donate_crdroid_summary">Přispějte a\u00a0podpořte tak další vývoj</string>
     <string name="donate_team_title">Tým crDroidu</string>
@@ -544,8 +544,8 @@
     <string name="qs_footer_show_power_menu_title">Zkratka menu napájení</string>
     <string name="qs_footer_services_icon_title">Zástupce spuštěných služeb</string>
     <string name="qs_footer_settings_icon_title">Zástupce Nastavení</string>
-    <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">Licence crDroid</string>
+    <!-- Device Info screen. SigmaDroid legal. -->
+    <string name="crdroid_license_title">Licence SigmaDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Posuvník jasu</string>
     <string name="qs_show_brightness_slider_title">Posuvník jasu</string>
@@ -951,7 +951,7 @@
     <string name="status_bar_logo_summary">Zobrazit vlastní logo vlevo nebo vpravo na stavové liště</string>
     <string name="status_bar_logo_position_title">Umístění loga</string>
     <string name="status_bar_logo_style_title">Styl loga</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
+    <string name="status_bar_logo_style_crdroid">SigmaDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>
