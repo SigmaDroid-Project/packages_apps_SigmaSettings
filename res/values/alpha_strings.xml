@@ -311,4 +311,8 @@
     <string name="search">Search</string>
     <string name="search_apps">Search apps</string>
 
+    <!-- Maintainer -->
+    <string name="maintainer_title">Maintainer</string>
+    <string name="maintainer_summary">Searching for maintainer...</string>
+
 </resources>
