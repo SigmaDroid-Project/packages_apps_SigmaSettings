@@ -54,8 +54,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
-    private static final String KEY_SETTINGS_STORAGE_WIDGET = "enable_settings_storage_widget";
-    private static final String KEY_SETTINGS_BATTERY_WIDGET = "enable_settings_battery_widget";
+    private static final String KEY_SETTINGS_STORAGE_WIDGET = "settings_storage_widget";
+    private static final String KEY_SETTINGS_BATTERY_WIDGET = "settings_battery_widget";
 
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
@@ -96,9 +96,9 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 updateSettingsWidgets(dashboardStyle );
 
         mHomepageBatteryWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                "enable_settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
+                "settings_battery_widget", 0, UserHandle.USER_CURRENT) != 0);
         mHomepageStorageWidgetToggle.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                "enable_settings_storage_widget", 0, UserHandle.USER_CURRENT) != 0);
+                "settings_storage_widget", 0, UserHandle.USER_CURRENT) != 0);
 
         mHomepageStorageWidgetToggle.setOnPreferenceChangeListener(this);
         mHomepageBatteryWidgetToggle.setOnPreferenceChangeListener(this);
@@ -115,13 +115,13 @@ public class UserInterface extends SettingsPreferenceFragment implements
         } 
         if (preference == mHomepageStorageWidgetToggle) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_storage_widget", value ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(), "settings_storage_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;
 		} 
         if (preference == mHomepageBatteryWidgetToggle) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(), "enable_settings_battery_widget", value ? 1 : 0);
+            Settings.System.putInt(getActivity().getContentResolver(), "settings_battery_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;
 		}
