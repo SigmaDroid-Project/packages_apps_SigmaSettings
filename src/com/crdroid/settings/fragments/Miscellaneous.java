@@ -121,7 +121,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+        return MetricsProto.MetricsEvent.SIGMA;
     }
 
     /**
