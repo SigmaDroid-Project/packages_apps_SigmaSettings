@@ -133,7 +133,7 @@ public final class Utils {
 
     public static boolean isRaiseToWakeEnabled(Context context) {
         return Settings.Secure.getIntForUser(context.getContentResolver(),
-                Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
+                Settings.Secure.RAISE_TO_WAKE_GESTURE, 1, UserHandle.USER_CURRENT) == 1;
     }
 
     public static boolean sensorsEnabled(Context context) {
