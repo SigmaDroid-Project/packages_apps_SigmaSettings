@@ -96,7 +96,7 @@
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="raise_to_wake_gesture"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:title="@string/raise_to_wake_title"
             android:summary="@string/raise_to_wake_summary" />
 
