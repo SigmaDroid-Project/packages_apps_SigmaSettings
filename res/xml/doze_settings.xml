@@ -78,7 +78,7 @@
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="doze_pick_up_gesture"
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:title="@string/pickup_title"
             android:summary="@string/pickup_summary" />
 

@@ -118,7 +118,7 @@ public final class Utils {
 
     public static boolean pickUpEnabled(Context context) {
         return Settings.Secure.getIntForUser(context.getContentResolver(),
-                Settings.Secure.DOZE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
+                Settings.Secure.DOZE_PICK_UP_GESTURE, 1, UserHandle.USER_CURRENT) == 1;
     }
 
     public static boolean handwaveGestureEnabled(Context context) {
