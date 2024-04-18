@@ -29,6 +29,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.provider.Settings;
+import static android.provider.Settings.Secure.DOZE_ENABLED;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -56,7 +57,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
 
     public static final String TAG = "DozeSettings";
 
-    private static final String KEY_DOZE_ENABLED = "doze_enabled";
+    private static final String KEY_DOZE_ENABLED = "doze_for_notifications";
     private static final String KEY_DOZE_ALWAYS_ON = "doze_always_on";
     private static final String KEY_DOZE_ALWAYS_ON_SCHEDULE = "always_on_display_schedule";
 
@@ -139,6 +140,13 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 mHandwavePreference.setOnPreferenceChangeListener(this);
                 mPocketPreference.setOnPreferenceChangeListener(this);
             }
+                boolean pickupGestureAmbientDefault = Settings.Secure.getIntForUser(resolver,
+                            Settings.Secure.DOZE_PICK_UP_GESTURE_AMBIENT,
+                            0, UserHandle.USER_CURRENT) != 0;
+                boolean pickupGestureAmbient = Settings.Secure.getIntForUser(resolver,
+                        Settings.Secure.DOZE_PICK_UP_GESTURE_AMBIENT,
+                        pickupGestureAmbientDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+            mRaiseToWakePreference.setChecked(!pickupGestureAmbient);
             mRaiseToWakePreference.setOnPreferenceChangeListener(this);
             checkService(context);
         }
