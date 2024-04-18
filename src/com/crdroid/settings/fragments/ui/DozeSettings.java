@@ -197,6 +197,15 @@ public class DozeSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putIntForUser(resolver, Settings.Secure.RAISE_TO_WAKE_GESTURE, 
                  value ? 1 : 0, UserHandle.USER_CURRENT);
+
+        // Retrieve the new value of RAISE_TO_WAKE_GESTURE
+        int raiseToWakeGesture = Settings.Secure.getIntForUser(resolver, 
+            Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT);
+        // Set DOZE_PICK_UP_GESTURE_AMBIENT to the opposite value
+        int dozePickupGestureAmbient = raiseToWakeGesture == 1 ? 0 : 1;
+        Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_PICK_UP_GESTURE_AMBIENT, 
+            dozePickupGestureAmbient, UserHandle.USER_CURRENT);
+
             checkService(context);
             return true;
         }
@@ -269,7 +278,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_POCKET_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT);
+                Settings.Secure.RAISE_TO_WAKE_GESTURE, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_GESTURE_VIBRATE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
