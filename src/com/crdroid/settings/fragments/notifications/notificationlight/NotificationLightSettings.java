@@ -609,12 +609,12 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
 
     @Override
     public int getDialogMetricsCategory(int dialogId) {
-        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+        return MetricsProto.MetricsEvent.SIGMA;
      }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+        return MetricsProto.MetricsEvent.SIGMA;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

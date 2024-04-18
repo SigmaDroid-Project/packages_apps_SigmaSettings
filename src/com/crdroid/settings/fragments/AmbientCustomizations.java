@@ -181,7 +181,7 @@ public class AmbientCustomizations extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+        return MetricsProto.MetricsEvent.SIGMA;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
