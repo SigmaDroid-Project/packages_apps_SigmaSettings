@@ -361,4 +361,7 @@
     <!-- Quick settings tiles layout -->
     <string name="qs_tile_secondary_label_size_title">Secondary Label text size</string>
 
+    <!-- Adaptive Charging -->
+    <string name="adaptive_charging_enabled_title">Optimized Charging</string>
+    <string name="adaptive_charging_enabled_summary">Enable adaptive power strategy while device is charging</string>
 </resources>
