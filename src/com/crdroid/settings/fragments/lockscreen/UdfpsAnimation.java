@@ -106,7 +106,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment {
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
-                Settings.System.UDFPS_ANIM_STYLE, 0, UserHandle.USER_CURRENT);
+                Settings.System.UDFPS_ANIM_STYLE, 26, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -142,7 +142,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment {
             holder.name.setText(mTitles[position]);
 
             if (position == Settings.System.getInt(context.getContentResolver(),
-                Settings.System.UDFPS_ANIM_STYLE, 0)) {
+                Settings.System.UDFPS_ANIM_STYLE, 26)) {
                 mAppliedAnim = animName;
                 if (mSelectedAnim == null) {
                     mSelectedAnim = animName;
