@@ -1360,4 +1360,8 @@
     <string name="settings_dashboard_style_aosp">AOSP</string>
     <string name="settings_dashboard_style_dot">DoT</string>
     <string name="settings_dashboard_style_nad">NAD</string>
+
+    <!-- QS Bluetooth auto on -->
+    <string name="qs_bt_auto_on_title">Automatic Bluetooth on</string>
+    <string name="qs_bt_auto_on_summary">Always turn on Bluetooth when pressing the Bluetooth QS tile</string>
 </resources>

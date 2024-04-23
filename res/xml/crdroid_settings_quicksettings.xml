@@ -129,6 +129,14 @@
             android:summary="@string/qs_bt_auto_on_summary"
             android:defaultValue="false" />
 
+        <!-- QS Bluetooth auto on -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_bt_auto_on"
+            android:icon="@drawable/ic_bt"
+            android:title="@string/qs_bt_auto_on_title"
+            android:summary="@string/qs_bt_auto_on_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
