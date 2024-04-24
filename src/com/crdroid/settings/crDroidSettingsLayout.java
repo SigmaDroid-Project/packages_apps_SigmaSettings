@@ -117,7 +117,7 @@ public class crDroidSettingsLayout extends DashboardFragment {
                 }  
             } else if (mDashBoardStyle == 2) {
                 mPreference.setLayoutResource(R.layout.nad_dashboard_preference);
-            } else if (mDashBoardStyle == 3) {
+            } else if (mDashBoardStyle == 0) {
                             if (mKey.equals("ui_settings_category")) {
                     mPreference.setLayoutResource(R.layout.sigma_toolbox_preference_top);
                 } else if (mKey.equals("about_sigmadroid")) {
