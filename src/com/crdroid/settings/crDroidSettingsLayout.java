@@ -55,8 +55,6 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-
 import android.os.UserHandle;
 import android.provider.Settings;
 
@@ -64,28 +62,17 @@ public class crDroidSettingsLayout extends DashboardFragment {
 
     private static final String TAG = "crDroidSettingsLayout";
 
-    protected CollapsingToolbarLayout mCollapsingToolbarLayout;
     private static final int MENU_RESET = Menu.FIRST;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        hideToolbar();
         setSigmaDashboardStyle();
     }
 
-    private void hideToolbar() {
-        if (mCollapsingToolbarLayout == null) {
-            mCollapsingToolbarLayout = getActivity().findViewById(R.id.collapsing_toolbar);
-        }
-        if (mCollapsingToolbarLayout != null) {
-            mCollapsingToolbarLayout.setVisibility(View.GONE);
-        }
-    }
 
     public void onResume() {
         super.onResume();
-        hideToolbar();
         setSigmaDashboardStyle();
     }
 
