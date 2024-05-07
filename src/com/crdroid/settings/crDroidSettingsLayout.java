@@ -79,7 +79,7 @@ public class crDroidSettingsLayout extends DashboardFragment {
     private void setSigmaDashboardStyle() {
         int mDashBoardStyle = geSettingstDashboardStyle();
         final PreferenceScreen mScreen = getPreferenceScreen();
-        //mScreen.setTitle(" ");
+        mScreen.setTitle(" ");
         if (mScreen == null) return;
         final int mCount = mScreen.getPreferenceCount();
         for (int i = 0; i < mCount; i++) {
