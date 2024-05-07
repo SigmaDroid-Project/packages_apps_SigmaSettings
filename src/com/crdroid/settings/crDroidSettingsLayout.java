@@ -122,15 +122,15 @@ public class crDroidSettingsLayout extends DashboardFragment {
                 Settings.System.SETTINGS_DASHBOARD_STYLE, 2, UserHandle.USER_CURRENT);
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
+    // @Override
+    // public void onActivityCreated(Bundle savedInstanceState) {
+    //     super.onActivityCreated(savedInstanceState);
+    // }
 
-    @Override
-    public void onSaveInstanceState(Bundle saveState) {
-        super.onSaveInstanceState(saveState);
-    }
+    // @Override
+    // public void onSaveInstanceState(Bundle saveState) {
+    //     super.onSaveInstanceState(saveState);
+    // }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
