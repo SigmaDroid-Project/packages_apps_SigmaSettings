@@ -18,7 +18,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:key="sigma_settings_preference_screen"
-    android:title=" ">
+    android:title=" "
+    android:persistent="true">
 
         <!-- Sigma header -->
         <Preference
