@@ -121,7 +121,7 @@
             android:max="100"
             android:min="1" />
 
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        <!-- <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_footer_transparency"
             android:icon="@drawable/ic_color_bucket"
             android:title="@string/qs_footer_opacity_title"
@@ -130,7 +130,7 @@
             settings:interval="1"
             settings:units="%"
             android:max="100"
-            android:min="1" />
+            android:min="1" /> -->
 
         <!-- QS Bluetooth auto on -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference

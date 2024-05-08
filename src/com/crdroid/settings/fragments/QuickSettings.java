@@ -163,8 +163,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
   //              Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.QS_FOOTER_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
+        // Settings.System.putIntForUser(resolver,
+        //         Settings.System.QS_FOOTER_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
