@@ -118,6 +118,12 @@
             android:summary="@string/volume_show_volume_percent_summary"
             android:defaultValue="true"/>
 
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="volume_show_media_button"
+            android:title="@string/volume_show_media_button_title"
+            android:summary="@string/volume_show_media_button_summary"
+            android:defaultValue="true"/>
+
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="volume_dialog_dismiss_timeout"
             android:icon="@drawable/ic_clock"
