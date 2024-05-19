@@ -58,8 +58,7 @@
         settings:min="-100"
         settings:interval="1"
         settings:units="%"
-        android:defaultValue="-16"
-        lineage:position="bottom" />
+        android:defaultValue="-16" />
         
     <com.android.settingslib.widget.FooterPreference
         android:key="dw_footer"
