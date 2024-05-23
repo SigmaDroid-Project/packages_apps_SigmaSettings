@@ -68,23 +68,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+            android:key="miscellaneous_spoofing_category"
             android:title="@string/spoofing_category">
-    
-    <!-- Unlimited google photos storage -->
-    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.gphotos"
-        android:icon="@drawable/ic_backup"
-        android:title="@string/use_photos_spoof_title"
-        android:summary="@string/use_photos_spoof_summary"
-        android:defaultValue="true" />
 
-    <!-- Netflix -->
-    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.netflix"
-        android:icon="@drawable/ic_netflix"
-        android:title="@string/netflix_spoof_title"
-        android:summary="@string/netflix_spoof_summary"
-        android:defaultValue="false" />
+        <!-- Component spoofing -->
+        <Preference
+            android:key="spoofing"
+            android:title="@string/spoofing_title"
+            android:icon="@drawable/ic_settings_cogs"
+            android:summary="@string/spoofing_summary"
+            android:fragment="com.crdroid.settings.fragments.misc.Spoofing" />
 
     </PreferenceCategory>
 
