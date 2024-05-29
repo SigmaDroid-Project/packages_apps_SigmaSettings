@@ -38,6 +38,8 @@ import java.util.List;
 
 import lineageos.providers.LineageSettings;
 
+import com.android.internal.util.crdroid.systemUtils;
+
 @SearchIndexable
 public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -48,8 +50,10 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
+    private static final String QUICKSWITCH_KEY = "persist.sys.default_launcher";
 
     private Preference mPocketJudge;
+    private Preference quickSwitchPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,10 +69,17 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_pocketModeSupported);
         if (!mPocketJudgeSupported)
             prefScreen.removePreference(mPocketJudge);
+
+        quickSwitchPref = findPreference(QUICKSWITCH_KEY);
+        quickSwitchPref.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == quickSwitchPref) {
+            systemUtils.showSystemRestartDialog(getContext());
+            return true;
+        }
         return false;
     }
 
@@ -83,6 +94,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
+        SystemProperties.set(QUICKSWITCH_KEY, "0");
         SensorBlock.reset(mContext);
     }
 

@@ -75,7 +75,7 @@
         <Preference
             android:key="spoofing"
             android:title="@string/spoofing_title"
-            android:icon="@drawable/ic_settings_cogs"
+            android:icon="@drawable/ic_settings_24dp"
             android:summary="@string/spoofing_summary"
             android:fragment="com.crdroid.settings.fragments.misc.Spoofing" />
 
@@ -126,6 +126,23 @@
         android:title="@string/pocket_judge_title"
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
+
+   <!-- QuickSwitch -->
+    <!-- <Preference
+        android:key="quickswitch"
+        android:icon="@drawable/ic_home"
+        android:title="@string/quickswitch_launcher_title" 
+        android:summary="@string/quickswitch_launcher_summary" 
+        android:fragment="com.crdroid.settings.fragments.QuickSwitch" />  -->
+
+    <com.crdroid.settings.preferences.SystemPropertyListPreference
+        android:key="persist.sys.default_launcher"
+        android:icon="@drawable/ic_home"
+        android:title="@string/quickswitch_launcher_title"
+        android:entries="@array/quickswitch_launcher_entries"
+        android:entryValues="@array/quickswitch_launcher_values"
+        android:summary="%s"
+        />
 
     </PreferenceCategory>
 </PreferenceScreen>
