@@ -41,6 +41,8 @@ import lineageos.providers.LineageSettings;
 
 import static org.lineageos.internal.util.DeviceKeysConstants.*;
 
+import com.android.internal.util.crdroid.systemUtils;
+
 @SearchIndexable
 public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -52,9 +54,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
     private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
+    private static final String QUICKSWITCH_KEY = "persist.sys.default_launcher";
 
     private Preference mPocketJudge;
     private ListPreference mThreeFingersSwipeAction;
+    private Preference quickSwitchPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,9 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_pocketModeSupported);
         if (!mPocketJudgeSupported)
             prefScreen.removePreference(mPocketJudge);
+
+        quickSwitchPref = findPreference(QUICKSWITCH_KEY);
+        quickSwitchPref.setOnPreferenceChangeListener(this);
 
         Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
                 LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
@@ -99,7 +106,10 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mThreeFingersSwipeAction) {
+        if (preference == quickSwitchPref) {
+            systemUtils.showSystemRestartDialog(getContext());
+            return true;
+        } else if (preference == mThreeFingersSwipeAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION);
             return true;
@@ -116,6 +126,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
+        SystemProperties.set(QUICKSWITCH_KEY, "0");
         SensorBlock.reset(mContext);
     }
 
