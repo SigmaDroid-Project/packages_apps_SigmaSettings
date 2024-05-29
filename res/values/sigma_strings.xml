@@ -93,4 +93,12 @@
 
      <string name="settings_battery_widget_title">Sigma Dashboard  battery widget</string>
      <string name="settings_battery_widget_summary">Enable settings homepage battery widget</string>
+
+    <!-- QuickSwitch -->
+    <string name="quickswitch_launcher_title">Default Launcher</string>
+    <string name="quickswitch_launcher_summary">Customize default homescreen app</string>
+    <string name="nothing_launcher_customizations_title">Nothing launcher customizations</string>
+    <string name="nothing_launcher_customizations_summary">Customize nothing launcher homescreen app</string>
+    <string name="reevaluating_theme">Reloading system themes...</string>
+
 </resources>
