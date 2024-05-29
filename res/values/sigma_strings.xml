@@ -423,4 +423,12 @@
     <string name="spoofing_photos_summary">Spoof the device as a Pixel XL for the Google Photos app to unlock unlimited image backup storage</string>
     <string name="spoofing_games_title">Higher FPS in games</string>
     <string name="spoofing_games_summary">Spoof the device as different models for select games to unlock higher FPS</string>
+
+    <!-- QuickSwitch -->
+    <string name="quickswitch_launcher_title">Default Launcher</string>
+    <string name="quickswitch_launcher_summary">Customize default homescreen app</string>
+    <string name="nothing_launcher_customizations_title">Nothing launcher customizations</string>
+    <string name="nothing_launcher_customizations_summary">Customize nothing launcher homescreen app</string>
+    <string name="reevaluating_theme">Reloading system themes...</string>
+
 </resources>
