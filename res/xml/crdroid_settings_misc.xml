@@ -139,5 +139,15 @@
             android:summary="@string/pocket_judge_summary"
             android:defaultValue="false" />
 
+   <!-- QuickSwitch -->
+    <com.crdroid.settings.preferences.SystemPropertyListPreference
+        android:key="persist.sys.default_launcher"
+        android:icon="@drawable/ic_home"
+        android:title="@string/quickswitch_launcher_title"
+        android:entries="@array/quickswitch_launcher_entries"
+        android:entryValues="@array/quickswitch_launcher_values"
+        android:summary="%s"
+        />
+
     </PreferenceCategory>
 </PreferenceScreen>
