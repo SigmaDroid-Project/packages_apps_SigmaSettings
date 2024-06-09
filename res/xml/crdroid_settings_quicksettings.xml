@@ -132,6 +132,7 @@
         <!-- QS Media Player  -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_compact_media_player_mode"
+            android:icon="@drawable/ic_media_compact"
             android:title="@string/qs_compact_media_player_mode_title"
             android:summary="@string/qs_compact_media_player_mode_summary"
             android:defaultValue="true"  />
