@@ -431,4 +431,7 @@
     <string name="nothing_launcher_customizations_summary">Customize nothing launcher homescreen app</string>
     <string name="reevaluating_theme">Reloading system themes...</string>
 
+    <!-- Compact QS Media Player-->
+    <string name="qs_compact_media_player_mode_title">Compact QS Media player</string>
+    <string name="qs_compact_media_player_mode_summary">Enable compact mode for QuickSettings media player</string>
 </resources>
