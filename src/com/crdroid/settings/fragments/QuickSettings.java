@@ -43,7 +43,7 @@ import lineageos.providers.LineageSettings;
 import com.android.internal.util.crdroid.systemUtils;
 import com.android.internal.util.crdroid.ThemeUtils;
 
-import com.alpha.settings.utils.ResourceUtils;
+import com.crdroid.settings.utils.ResourceUtils;
 
 import java.util.List;
 import java.util.ArrayList;
