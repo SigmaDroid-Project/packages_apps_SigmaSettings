@@ -391,18 +391,6 @@
     <string name="notif_panel_maxnotif_summary">Enable adjustment of max Notif. Panel notifications</string>
     <string name="notif_panel_maxnotif_config">Max Notif. Panel notifications</string>
 
-    <!-- Notifications style -->
-    <string name="theme_customization_notifications_title">Notifications style</string>
-    <string name="theme_customization_notifications_summary">Set custom notifications style</string>
-
-    <!-- QS panel styles -->
-    <string name="theme_customization_qs_style_title">QS Panel style</string>
-    <string name="theme_customization_qs_style_summary">Set custom QS Panel style</string>
-
-    <!-- Brightness bar styles -->
-    <string name="theme_customization_brightness_bar_title">Brightness bar style</string>
-    <string name="theme_customization_brightness_bar_summary">Set custom brightness bar style</string>
-
     <!-- Miscellaneous -->
     <string name="miscellaneous_spoofing_category">Spoofing</string>
 
