@@ -194,7 +194,7 @@
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
              android:title="@string/brightness_percent_title"
              android:icon="@drawable/ic_brightness_percentage"
-             android:key="BRIGHTNESS_TEXTVIEW"
+             android:key="show_brightness_bar_percentage"
              android:summary="@string/brightness_percent_summary"
              android:defaultValue="false" />
     </PreferenceCategory>
