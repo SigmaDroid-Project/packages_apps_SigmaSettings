@@ -440,4 +440,8 @@
     <string name="qs_split_shade_summary">Split QS layout in landscape mode</string>
 
     <string name="system_navigation_summary">Configure navigation menus</string>
+
+    <!-- Volume Row Percent -->
+    <string name="volume_show_volume_percent_title">Show Volume Row Percentage</string>
+    <string name="volume_show_volume_percent_summary">Show volume row progress percentage</string>
 </resources>
