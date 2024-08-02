@@ -35,6 +35,13 @@
         android:entryValues="@array/toast_animation_values"
         android:persistent="false" />
 
+    <Preference
+        android:key="android.theme.customization.nf_style"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/theme_customization_notifications_title"
+        android:summary="@string/theme_customization_notifications_summary"
+        android:fragment="com.crdroid.settings.fragments.notifications.NotificationStyles" />
+
     <!-- Show clipboard overlay -->
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="show_clipboard_overlay"
@@ -64,7 +71,6 @@
         android:title="@string/notification_guts_kill_app_button_title"
         android:summary="@string/notification_guts_kill_app_button_summary" />
 
-    </PreferenceCategory>
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
          android:key="notif_panel_custom_notif"
@@ -83,13 +89,7 @@
          android:persistent="false"
          android:dependency="notif_panel_custom_notif" />
 
-    <!-- Notifications style -->
-    <Preference
-        android:key="android.theme.customization.nf_style"
-        android:icon="@drawable/ic_notifications"
-        android:title="@string/theme_customization_notifications_title"
-        android:summary="@string/theme_customization_notifications_summary"
-        android:fragment="com.crdroid.settings.fragments.notifications.NotificationStyles" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="heads_up"
