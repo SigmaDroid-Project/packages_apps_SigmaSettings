@@ -39,13 +39,11 @@ public class HapticsPreferenceFragmentController extends AbstractPreferenceContr
     private static final String KEY_BRIGHTNESS_SLIDER_HAPTICS_INTENSITY = "qs_brightness_slider_haptic";
     private static final String KEY_EDGE_SCROLLING_HAPTICS_INTENSITY = "edge_scrolling_haptics_intensity";
     private static final String KEY_QS_TILE_HAPTICS_INTENSITY = "qs_panel_tile_haptic";
-    private static final String KEY_VOLUME_SLIDER_HAPTICS_INTENSITY = "volume_slider_haptics_intensity";
 
     private CustomSeekBarPreference mBackIntensity;
     private CustomSeekBarPreference mBrightnessIntensity;
     private CustomSeekBarPreference mEdgeScrollingIntensity;
     private CustomSeekBarPreference mQsTileIntensity;
-    private CustomSeekBarPreference mVolumeSliderIntensity;
     
     private Context mContext;
 
@@ -71,7 +69,6 @@ public class HapticsPreferenceFragmentController extends AbstractPreferenceContr
         mBrightnessIntensity = (CustomSeekBarPreference) screen.findPreference(KEY_BRIGHTNESS_SLIDER_HAPTICS_INTENSITY);
         mEdgeScrollingIntensity = (CustomSeekBarPreference) screen.findPreference(KEY_EDGE_SCROLLING_HAPTICS_INTENSITY);
         mQsTileIntensity = (CustomSeekBarPreference) screen.findPreference(KEY_QS_TILE_HAPTICS_INTENSITY);
-        mVolumeSliderIntensity = (CustomSeekBarPreference) screen.findPreference(KEY_VOLUME_SLIDER_HAPTICS_INTENSITY);
         updateSettings();
     }
 
@@ -87,10 +84,6 @@ public class HapticsPreferenceFragmentController extends AbstractPreferenceContr
         int edgeScrollingIntensity = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.EDGE_SCROLLING_HAPTICS_INTENSITY, 3);
         mEdgeScrollingIntensity.setValue(edgeScrollingIntensity);
-
-        int volumeSliderIntensity = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.VOLUME_SLIDER_HAPTICS_INTENSITY, 1);
-        mVolumeSliderIntensity.setValue(volumeSliderIntensity);
         
         int qsTileHapticsIntensity = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.QS_PANEL_TILE_HAPTIC, 1);
@@ -100,7 +93,6 @@ public class HapticsPreferenceFragmentController extends AbstractPreferenceContr
         mBrightnessIntensity.setOnPreferenceChangeListener(this);
         mEdgeScrollingIntensity.setOnPreferenceChangeListener(this);
         mQsTileIntensity.setOnPreferenceChangeListener(this);
-        mVolumeSliderIntensity.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -126,11 +118,6 @@ public class HapticsPreferenceFragmentController extends AbstractPreferenceContr
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.QS_PANEL_TILE_HAPTIC, intensity);
             mQsTileIntensity.setValue(intensity);
-            isChanged = true;
-        } else if (preference == mVolumeSliderIntensity) {
-            Settings.System.putInt(mContext.getContentResolver(),
-                    Settings.System.VOLUME_SLIDER_HAPTICS_INTENSITY, intensity);
-            mVolumeSliderIntensity.setValue(intensity);
             isChanged = true;
         }
         if (isChanged) {
