@@ -63,6 +63,17 @@
         settings:min="0"
         android:defaultValue="1"
         settings:interval="1"/>
+
+    <!-- Volume slider intensity -->
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
+        android:key="volume_slider_haptics_intensity"
+        android:icon="@drawable/ic_settings_sound"
+        android:title="@string/volume_slider_haptics_intensity_title"
+        android:order="-996"
+        android:max="3"
+        settings:min="0"
+        android:defaultValue="1"
+        settings:interval="1"/>
         
     <!-- Edge scrolling intensity -->
     <com.crdroid.settings.preferences.CustomSeekBarPreference
