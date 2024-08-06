@@ -42,6 +42,17 @@
         android:defaultValue="1"
         settings:interval="1"/>
 
+    <!-- QS Fling haptics -->
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
+        android:key="qs_haptics_intensity"
+        android:icon="@drawable/ic_qs_tile"
+        android:title="@string/qs_haptics_intensity_title"
+        android:order="-997"
+        android:max="5"
+        settings:min="0"
+        android:defaultValue="1"
+        settings:interval="1"/>
+
     <!-- QS tile haptics intensity -->
     <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="qs_panel_tile_haptic"
