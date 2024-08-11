@@ -88,11 +88,11 @@
             android:summary="@string/volume_persen_switch_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="haptic_on_slider"
             android:icon="@drawable/ic_vibrate"
             android:title="@string/volume_panel_haptic_feedback_title"
-            android:defaultValue="false" />
+            android:defaultValue="false" /> -->
 
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="volume_panel_on_left"
