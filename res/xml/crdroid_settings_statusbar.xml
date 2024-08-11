@@ -63,7 +63,7 @@
             android:summary="@string/show_fourg_icon_summary"
             android:defaultValue="false"/>
 
-         <com.crdroid.settings.preferences.SystemSettingListPreference 
+        <com.crdroid.settings.preferences.SystemSettingListPreference 
             android:key="volte_icon_style"
             android:icon="@drawable/ic_volte"
             android:title="@string/volte_icon_style_title"
