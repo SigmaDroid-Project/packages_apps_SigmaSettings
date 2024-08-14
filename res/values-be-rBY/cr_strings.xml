@@ -117,9 +117,6 @@
     <string name="status_bar_battery_category_title">Налады батарэі</string>
     <!-- Gestures -->
     <string name="gestures_title">Жэсты</string>
-    <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Індыкатар роўмінгу</string>
-    <string name="roaming_indicator_icon_summary">Адлюстроўваць індыкатар роўмінгу ў значку сеткі пры знаходжанні ў роўмінгу</string>
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G значок</string>
     <string name="show_fourg_icon_summary">Паказваць значок 4G замест LTE у радку стану</string>
@@ -247,14 +244,12 @@
     <string name="monet_engine_tint_background_title">Адценне фону</string>
     <string name="monet_engine_tint_background_summary">Выбар яркасці і каляровасці, дазваляе таксама ўплываць на колеры фону</string>
     <string name="monet_engine_style_title"></string>
-    <string name="monet_engine_style_tonal_spot">Танальная пляма (Па змаўчанні)</string>
-    <string name="monet_engine_style_vibrant">Яркі</string>
-    <string name="monet_engine_style_expressive">Экспрэсіўны</string>
-    <string name="monet_engine_style_spritz">Пырскі</string>
-    <string name="monet_engine_style_rainbow">Вясёлка</string>
-    <string name="monet_engine_style_fruit_salad">Фруктовы салат</string>
-    <string name="monet_engine_style_muted">Без гуку</string>
-    <string name="monet_engine_style_content">Кантэнт</string>
+    <string name="monet_engine_style_tonal_spot">Tonal Spot (Default)</string>
+    <string name="monet_engine_style_vibrant">Vibrant</string>
+    <string name="monet_engine_style_expressive">Expressive</string>
+    <string name="monet_engine_style_spritz">Spritz</string>
+    <string name="monet_engine_style_rainbow">Rainbow</string>
+    <string name="monet_engine_style_fruit_salad">Fruit Salad</string>
     <!-- Auto pin confirm -->
     <string name="lock_screen_auto_pin_confirm_summary_custom">Разблакаваць аўтаматычна, калі ўведзены правільны PIN-код. Гэта менш бяспечна, чым націск кнопкі пацверджання.</string>
     <!-- Doze settings -->
