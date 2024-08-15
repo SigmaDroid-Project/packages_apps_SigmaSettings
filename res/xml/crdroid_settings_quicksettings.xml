@@ -98,6 +98,13 @@
             android:summary="@string/qs_split_shade_summary"
             android:defaultValue="false" />
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_vertical_layout"
+            android:icon="@drawable/ic_qs_tile"
+            android:title="@string/qs_tile_layout_title"
+            android:summary="@string/qs_tile_layout_summary"
+            android:defaultValue="false" />
+
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_layout_columns"
             android:icon="@drawable/ic_qs_tile"
@@ -168,13 +175,6 @@
             settings:interval="1"
             settings:units="sp"
             android:defaultValue="13" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_tile_vertical_layout"
-            android:icon="@drawable/ic_qs_tile"
-            android:title="@string/qs_tile_layout_title"
-            android:summary="@string/qs_tile_layout_summary"
-            android:defaultValue="false" />
 
     </PreferenceCategory>
 
