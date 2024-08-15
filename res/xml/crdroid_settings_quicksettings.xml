@@ -113,7 +113,7 @@
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_header_clock_size"
             android:icon="@drawable/ic_font"
-            android:title="@string/clock_font_size_title"
+            android:title="@string/qs_header_clock_size_title"
             android:max="27"
             settings:min="10"
             settings:interval="1"
@@ -123,7 +123,7 @@
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_tile_label_size"
             android:icon="@drawable/ic_text"
-            android:title="@string/qs_tile_label_size_title"
+            android:title="@string/tile_label_size_title"
             android:max="20"
             settings:min="0"
             settings:interval="1"
@@ -133,7 +133,7 @@
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_tile_secondary_label_size"
             android:icon="@drawable/ic_text"
-            android:title="@string/qs_tile_secondary_label_size_title"
+            android:title="@string/tile_secondary_label_size_title"
             android:max="18"
             settings:min="0"
             settings:interval="1"
