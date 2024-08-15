@@ -453,7 +453,7 @@
     <string name="qs_battery_category">Battery</string>
     <string name="qs_font_category">Font</string>
 
-    <string name="quicksettings_layout_category">QuickSettings Layout</string>
+    <string name="quicksettings_layout_category">Layout</string>
     <string name="system_navigation_summary">Configure navigation menus</string>
 
     <!-- Volume Row Percent -->
@@ -473,5 +473,10 @@
     <string name="general_button_settings_title">General Button Settings</string>
     <string name="system_navigation_category_title">System Navigation</string>
     <string name="navbar_visibility_category_title">Visibility and Animation</string>
+
+     <!-- QS -->
+     <string name="qs_header_clock_size_title">Header Clock font size</string>
+     <string name="tile_label_size_title">Tile label font size</string>
+     <string name="tile_secondary_label_size_title">Tile Secondary label font size</string>
 
 </resources>
