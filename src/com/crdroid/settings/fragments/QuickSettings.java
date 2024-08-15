@@ -41,6 +41,7 @@ import com.crdroid.settings.preferences.CustomSeekBarPreference;
 
 import lineageos.providers.LineageSettings;
 import com.android.internal.util.crdroid.systemUtils;
+import com.android.internal.util.crdroid.CustomUtils;
 import com.android.internal.util.crdroid.ThemeUtils;
 
 import com.crdroid.settings.utils.ResourceUtils;
@@ -143,7 +144,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updateAnimTileStyle(value);
             return true;
         } else if (preference == mQsCompactPlayer) {
-            systemUtils.showSystemUIRestartDialog(getActivity());
+            CustomUtils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mSplitShade) {
             updateSplitShadeState(((Boolean) newValue).booleanValue());
