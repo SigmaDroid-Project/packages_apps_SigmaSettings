@@ -94,6 +94,14 @@
             android:summary="@string/pocket_judge_summary"
             android:defaultValue="false" />
 
+        <!-- No storage restrict -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="no_storage_restrict"
+            android:icon="@drawable/ic_lock_alert"
+            android:title="@string/no_storage_restrict_title"
+            android:summary="@string/no_storage_restrict_summary"
+            android:defaultValue="false"/>
+
         <!-- QuickSwitch -->
         <com.crdroid.settings.preferences.SystemPropertyListPreference
             android:key="persist.sys.default_launcher"
