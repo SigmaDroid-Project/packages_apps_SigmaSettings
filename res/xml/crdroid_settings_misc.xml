@@ -45,12 +45,12 @@
                 android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
         </Preference>
 
-        <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+        <!-- <com.crdroid.settings.preferences.SystemPropertySwitchPreference
             android:key="persist.sys.pixelprops.games"
             android:icon="@drawable/ic_backup"
             android:title="@string/use_games_spoof_title"
             android:summary="@string/use_games_spoof_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false" /> -->
     </PreferenceCategory>
 
     <!-- Spoofing and Privacy -->
