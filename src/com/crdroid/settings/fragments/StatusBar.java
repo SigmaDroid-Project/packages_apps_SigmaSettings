@@ -54,6 +54,7 @@ import lineageos.providers.LineageSettings;
 import java.util.List;
 
 import com.android.internal.util.crdroid.CustomUtils;
+import com.android.internal.util.crdroid.systemUtils;
 
 @SearchIndexable
 public class StatusBar extends SettingsPreferenceFragment implements
@@ -208,14 +209,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                   Settings.System.VOWIFI_ICON_STYLE, vowifiIconStyle);
             mVowifiIconStyle.setValue(String.valueOf(vowifiIconStyle));
-            CustomUtils.showSystemUiRestartDialog(getContext());
+            systemUtils.showSystemUIRestartDialog(getContext());
             return true;
         } else if (preference == mVolteIconStyle) {
             int volteIconStyle = Integer.parseInt(((String) newValue).toString());
             Settings.System.putInt(resolver,
                   Settings.System.VOLTE_ICON_STYLE, volteIconStyle);
             mVolteIconStyle.setValue(String.valueOf(volteIconStyle));
-            CustomUtils.showSystemUiRestartDialog(getContext());
+            systemUtils.showSystemUIRestartDialog(getContext());
             return true;
         }
         return false;
