@@ -428,6 +428,8 @@
     <string name="spoofing_photos_summary">Spoof the device as a Pixel XL for the Google Photos app to unlock unlimited image backup storage</string>
     <string name="spoofing_games_title">Higher FPS in games</string>
     <string name="spoofing_games_summary">Spoof the device as different models for select games to unlock higher FPS</string>
+    <string name="spoofing_snapchat_title">Snapchat spoof</string>
+    <string name="spoofing_snapchat_summary">Spoof Snapchat as a Pixel XL to allow original quality captures</string>
 
     <!-- QuickSwitch -->
     <string name="quickswitch_launcher_title">Default Launcher</string>
