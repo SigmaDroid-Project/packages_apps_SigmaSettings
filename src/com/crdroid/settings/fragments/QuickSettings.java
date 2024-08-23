@@ -144,7 +144,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             updateAnimTileStyle(value);
             return true;
         } else if (preference == mQsCompactPlayer) {
-            CustomUtils.showSystemUiRestartDialog(getContext());
+            systemUtils.showSystemUIRestartDialog(getActivity());
             return true;
         } else if (preference == mSplitShade) {
             updateSplitShadeState(((Boolean) newValue).booleanValue());
