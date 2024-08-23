@@ -45,22 +45,12 @@
                 android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
         </Preference>
 
-    <!-- Google Play Integrity -->
-    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.pi"
-        android:icon="@drawable/ic_google"
-        android:title="@string/pi_spoof_title"
-        android:summary="@string/pi_spoof_summary"
-        android:defaultValue="true" />
-
-    <!-- Unlock FPS for specific games -->
-    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
-        android:key="persist.sys.pixelprops.games"
-        android:icon="@drawable/ic_backup"
-        android:title="@string/use_games_spoof_title"
-        android:summary="@string/use_games_spoof_summary"
-        android:defaultValue="false" />
-
+        <!-- <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+            android:key="persist.sys.pixelprops.games"
+            android:icon="@drawable/ic_backup"
+            android:title="@string/use_games_spoof_title"
+            android:summary="@string/use_games_spoof_summary"
+            android:defaultValue="false" /> -->
     </PreferenceCategory>
 
     <!-- Spoofing and Privacy -->
