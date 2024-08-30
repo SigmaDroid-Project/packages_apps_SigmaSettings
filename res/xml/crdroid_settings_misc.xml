@@ -58,12 +58,19 @@
             android:key="miscellaneous_spoofing_category"
             android:title="@string/spoofing_category">
 
-        <Preference
+        <!-- <Preference
             android:key="spoofing"
             android:title="@string/spoofing_title"
             android:icon="@drawable/ic_settings_24dp"
             android:summary="@string/spoofing_summary"
-            android:fragment="com.crdroid.settings.fragments.misc.Spoofing" />
+            android:fragment="com.crdroid.settings.fragments.misc.Spoofing" /> -->
+
+        <Preference
+            android:key="spoofing"
+            android:icon="@drawable/ic_key"
+            android:title="@string/spoofing_title"
+            android:summary="@string/spoofing_title_summary"
+            android:fragment="com.crdroid.settings.fragments.Spoof" />
     </PreferenceCategory>
 
     <!-- Miscellaneous Features -->
