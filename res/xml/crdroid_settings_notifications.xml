@@ -1,19 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2016-2024 crDroid Android Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:lineage="http://schemas.android.com/apk/res-auto"
@@ -24,73 +8,71 @@
         android:key="notification_illustration"
         lineage:lottie_rawRes="@raw/notification_illustration" />
 
+    <!-- General Notifications -->
     <PreferenceCategory
-            android:title="@string/misc_category">
+        android:title="@string/general_notifications_category">
 
-    <ListPreference
-        android:key="toast_animation"
-        android:icon="@drawable/ic_clipboard_alert"
-        android:title="@string/toast_animation_title"
-        android:entries="@array/toast_animation_entries"
-        android:entryValues="@array/toast_animation_values"
-        android:persistent="false" />
+        <Preference
+            android:key="android.theme.customization.nf_style"
+            android:icon="@drawable/ic_notifications"
+            android:title="@string/theme_customization_notifications_title"
+            android:summary="@string/theme_customization_notifications_summary"
+            android:fragment="com.crdroid.settings.fragments.notifications.NotificationStyles" />
 
-    <Preference
-        android:key="android.theme.customization.nf_style"
-        android:icon="@drawable/ic_notifications"
-        android:title="@string/theme_customization_notifications_title"
-        android:summary="@string/theme_customization_notifications_summary"
-        android:fragment="com.crdroid.settings.fragments.notifications.NotificationStyles" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_sound_vib_screen_on"
+            android:icon="@drawable/ic_bell_ring"
+            android:title="@string/notification_sound_vib_screen_on_title"
+            android:summary="@string/notification_sound_vib_screen_on_summary"
+            android:defaultValue="true" />
 
-    <!-- Show clipboard overlay -->
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="show_clipboard_overlay"
-        android:icon="@drawable/ic_clipboard_alert"
-        android:title="@string/show_clipboard_overlay_title"
-        android:summary="@string/show_clipboard_overlay_summary"
-        android:defaultValue="true"/>
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_guts_kill_app_button"
+            android:icon="@drawable/ic_kill"
+            android:title="@string/notification_guts_kill_app_button_title"
+            android:summary="@string/notification_guts_kill_app_button_summary" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="alert_slider_notifications"
-        android:icon="@drawable/ic_light_switch"
-        android:title="@string/alert_slider_notifications_title"
-        android:summary="@string/alert_slider_notifications_summary"
-        android:defaultValue="true" />
+        <ListPreference
+            android:key="toast_animation"
+            android:icon="@drawable/ic_clipboard_alert"
+            android:title="@string/toast_animation_title"
+            android:entries="@array/toast_animation_entries"
+            android:entryValues="@array/toast_animation_values"
+            android:persistent="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="notification_sound_vib_screen_on"
-        android:icon="@drawable/ic_bell_ring"
-        android:title="@string/notification_sound_vib_screen_on_title"
-        android:summary="@string/notification_sound_vib_screen_on_summary"
-        android:defaultValue="true" />
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="show_clipboard_overlay"
+            android:icon="@drawable/ic_clipboard_alert"
+            android:title="@string/show_clipboard_overlay_title"
+            android:summary="@string/show_clipboard_overlay_summary"
+            android:defaultValue="true"/>
 
-    <!-- Notification guts kill app button -->
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="notification_guts_kill_app_button"
-        android:icon="@drawable/ic_kill"
-        android:title="@string/notification_guts_kill_app_button_title"
-        android:summary="@string/notification_guts_kill_app_button_summary" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="alert_slider_notifications"
+            android:icon="@drawable/ic_light_switch"
+            android:title="@string/alert_slider_notifications_title"
+            android:summary="@string/alert_slider_notifications_summary"
+            android:defaultValue="true" />
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+             android:key="notif_panel_custom_notif"
+             android:icon="@drawable/ic_message_fast"
+             android:title="@string/notif_panel_maxnotif_title"
+             android:summary="@string/notif_panel_maxnotif_summary"
+             android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-         android:key="notif_panel_custom_notif"
-         android:icon="@drawable/ic_message_fast"
-         android:title="@string/notif_panel_maxnotif_title"
-         android:summary="@string/notif_panel_maxnotif_summary"
-         android:defaultValue="false" />
-
-    <com.crdroid.settings.preferences.CustomSeekBarPreference
-         android:key="notif_panel_max_notif_cofig"
-         android:icon="@drawable/ic_numbers"
-         android:title="@string/notif_panel_maxnotif_config"
-         android:max="6"
-         settings:min="1"
-         settings:units=""
-         android:persistent="false"
-         android:dependency="notif_panel_custom_notif" />
-
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+             android:key="notif_panel_max_notif_cofig"
+             android:icon="@drawable/ic_numbers"
+             android:title="@string/notif_panel_maxnotif_config"
+             android:max="6"
+             settings:min="1"
+             settings:units=""
+             android:persistent="false"
+             android:dependency="notif_panel_custom_notif" />
     </PreferenceCategory>
 
+    <!-- Heads-Up Notifications -->
     <PreferenceCategory
         android:key="heads_up"
         android:title="@string/notification_heads_up_title">
@@ -130,6 +112,7 @@
             android:dependency="heads_up_notifications_enabled" />
     </PreferenceCategory>
 
+    <!-- Flashlight on Call -->
     <PreferenceCategory
         android:key="flashlight_category"
         android:title="@string/power_menu_torch_title">
@@ -157,9 +140,9 @@
             android:max="5"
             settings:min="1"
             settings:units="@string/unit_hz" />
-
     </PreferenceCategory>
 
+    <!-- Light and Brightness -->
     <PreferenceCategory
         android:key="light_brightness"
         android:title="@string/light_brightness_category">
