@@ -115,6 +115,15 @@
             settings:min="1000"
             settings:interval="500"
             settings:units="@string/unit_milliseconds" />
+
+    <!-- System Haptics intensities preference -->
+    <Preference
+        android:key="haptics_settings"
+        android:title="@string/haptics_settings_title"
+        android:icon="@drawable/ic_cellphone_sound"
+        android:summary="@string/haptics_settings_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.HapticsPreferenceFragment"/>
+
     </PreferenceCategory>
 
     <!-- In-call feedback -->
