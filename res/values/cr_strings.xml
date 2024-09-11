@@ -151,7 +151,7 @@
 
     <!-- Statusbar categories -->
     <string name="status_bar_icons_category_title">Icons</string>
-    <string name="status_bar_battery_category_title">Battery customizations</string>
+    <!-- <string name="status_bar_battery_category_title">Battery customizations</string> -->
 
     <!-- Gestures -->
     <string name="gestures_title">Gestures</string>
