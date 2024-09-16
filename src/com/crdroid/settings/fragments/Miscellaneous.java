@@ -31,10 +31,13 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.Utils;
+import com.android.settingslib.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.misc.SensorBlock;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lineageos.providers.LineageSettings;
@@ -55,10 +58,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
     private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
     private static final String QUICKSWITCH_KEY = "persist.sys.default_launcher";
+    private static final String NOTHING_CUSTOMIZE_KEY = "nothing_launcher_customizations";
 
     private Preference mPocketJudge;
     private ListPreference mThreeFingersSwipeAction;
-    private Preference quickSwitchPref;
+    private ListPreference quickSwitchPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,8 +79,23 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         if (!mPocketJudgeSupported)
             prefScreen.removePreference(mPocketJudge);
 
+        int defaultLauncher = SystemProperties.getInt(QUICKSWITCH_KEY, 0);
         quickSwitchPref = findPreference(QUICKSWITCH_KEY);
         quickSwitchPref.setOnPreferenceChangeListener(this);
+        Context context = getContext();
+        List<String> launcherEntries = new ArrayList<>();
+        List<String> launcherValues = new ArrayList<>();
+        launcherEntries.add("SigmaDroid Launcher");
+        launcherValues.add("0");
+        launcherEntries.add("Pixel Launcher");
+        launcherValues.add("1");
+        if (SystemProperties.getInt("persist.sys.quickswitch_lawnchair_shipped", 0) != 0) {
+            launcherEntries.add("Lawnchair");
+            launcherValues.add("2");
+        }
+        quickSwitchPref.setEntries(launcherEntries.toArray(new CharSequence[launcherEntries.size()]));
+        quickSwitchPref.setEntryValues(launcherValues.toArray(new CharSequence[launcherValues.size()]));
+        quickSwitchPref.setValue(String.valueOf(defaultLauncher));
 
         Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
                 LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
