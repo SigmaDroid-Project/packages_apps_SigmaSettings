@@ -98,10 +98,10 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
         
         if (isPixelDevice) {
             mGoogleSpoof.setDefaultValue(false);
-            if (isMainlineTensorModel(model)) {
-                mGoogleSpoof.setEnabled(false);
-                mGoogleSpoof.setSummary(R.string.google_spoof_option_disabled);
-            }
+            // if (isMainlineTensorModel(model)) {
+            //     mGoogleSpoof.setEnabled(false);
+            //     mGoogleSpoof.setSummary(R.string.google_spoof_option_disabled);
+            // }
         }
 
         mGmsSpoof.setOnPreferenceChangeListener(this);
