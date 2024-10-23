@@ -212,7 +212,38 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
                     String json = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
                     Log.d(TAG, "Downloaded JSON data: " + json);
                     JSONObject jsonObject = new JSONObject(json);
+
+                    // Retrieve and parse the "FINGERPRINT" value
+                    if (jsonObject.has("FINGERPRINT")) {
+                        String fingerprint = jsonObject.getString("FINGERPRINT");
+                        // Split fingerprint into sections
+                        String[] sections = fingerprint.split(":");
+                        if (sections.length == 3) {
+                            // First section: BRAND/PRODUCT/DEVICE
+                            String[] firstSection = sections[0].split("/");
+                            if (firstSection.length == 3) {
+                                jsonObject.put("BRAND", firstSection[0]);
+                                jsonObject.put("PRODUCT", firstSection[1]);
+                                jsonObject.put("DEVICE", firstSection[2]);
+                            }
+                            // Second section: RELEASE/ID/INCREMENTAL
+                            String[] secondSection = sections[1].split("/");
+                            if (secondSection.length == 3) {
+                                jsonObject.put("RELEASE", secondSection[0]);
+                                jsonObject.put("ID", secondSection[1]);
+                                jsonObject.put("INCREMENTAL", secondSection[2]);
+                            }
+                            // Third section: TYPE/TAGS
+                            String[] thirdSection = sections[2].split("/");
+                            if (thirdSection.length == 2) {
+                                jsonObject.put("TYPE", thirdSection[0]);
+                                jsonObject.put("TAGS", thirdSection[1]);
+                            }
+                        }
+                    }
+
                     String spoofedModel = jsonObject.optString("MODEL", "Unknown model");
+                    // Update system properties
                     for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
                         String key = it.next();
                         String value = jsonObject.getString(key);
@@ -223,7 +254,6 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
                         String toastMessage = getString(R.string.toast_spoofing_success, spoofedModel);
                         Toast.makeText(getContext(), toastMessage, Toast.LENGTH_LONG).show();
                     });
-
                 } finally {
                     urlConnection.disconnect();
                 }
@@ -234,7 +264,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
                 });
             }
             mHandler.postDelayed(() -> {
-            systemUtils.showSystemRestartDialog(getContext());
+                systemUtils.showSystemRestartDialog(getContext());
             }, 1250);
         }).start();
     }
