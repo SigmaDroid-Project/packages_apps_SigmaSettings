@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2024 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="status_bar_battery_style_icon_landscape_buddy">Landscape Buddy</string>
+    <string name="status_bar_battery_style_icon_landscape_line">Landscape Line</string>
+    <string name="status_bar_battery_style_icon_landscape_musku">Landscape Musku</string>
+    <string name="status_bar_battery_style_icon_landscape_pill">Landscape Pill</string>
+    <string name="status_bar_battery_style_icon_landscape_signal">Landscape Signal</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_a">Landscape R Style A</string>
+    <string name="status_bar_battery_style_icon_landscape_style_a">Landscape L Style A</string>
+    <string name="status_bar_battery_style_icon_rlandscape_style_b">Landscape R Style B</string>
+    <string name="status_bar_battery_style_icon_landscape_style_b">Landscape L Style B</string>
+    <string name="status_bar_battery_style_icon_landscape_ios15">Landscape iOS 15</string>
+    <string name="status_bar_battery_style_icon_landscape_ios16">Landscape iOS 16</string>
+    <string name="status_bar_battery_style_icon_landscape_origami">Landscape Origami</string>
+    <string name="status_bar_battery_style_icon_landscape_miui_pill">Landscape MIUI Pill</string>
+</resources>
