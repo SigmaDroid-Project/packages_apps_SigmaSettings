@@ -22,7 +22,7 @@
 
     <com.android.settingslib.widget.IllustrationPreference
         android:key="lockscreen_illustration"
-        app:lottie_rawRes="@raw/lockscreen_illustration" />
+        lineage:lottie_rawRes="@raw/lockscreen_illustration" />
 
     <PreferenceCategory
         android:key="lockscreen_clock_category"
