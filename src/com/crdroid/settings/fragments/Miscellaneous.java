@@ -124,7 +124,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
-        SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
+        SystemProperties.set(SYS_PHOTOS_SPOOF, "false");
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
         SystemProperties.set(QUICKSWITCH_KEY, "0");
         SensorBlock.reset(mContext);
