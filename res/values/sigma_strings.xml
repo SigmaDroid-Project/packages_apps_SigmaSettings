@@ -79,8 +79,9 @@
 
     <string name="gaming_category">Gaming</string>
     <string name="spoofing_category">Spoofing</string>
-    <string name="misc_category">Miscellaneous</string>     
-
+    <string name="misc_category">Miscellaneous</string>
+    <string name="style_category">Themes and Styles</string>        
+  
      <!-- Settings Homepage Widgets -->
      <string name="settings_widget_title">Enable Sigma Dashboard widgets</string>
      <string name="settings_widget_summary">Allow Sigma Dashboard  widgets</string>
