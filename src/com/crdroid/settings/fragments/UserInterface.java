@@ -32,6 +32,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.CustomUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -53,6 +54,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
+
     private static final String KEY_NOTIFICATION_STYLE = "notification_style";
     private static final String KEY_POWERMENU_STYLE = "powermenu_style";
 
@@ -74,6 +77,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
+    private ListPreference mDashBoardStyle;
     private ListPreference mNotificationStylePref;
     private ListPreference mPowermenuStylePref;
     private ThemeUtils mThemeUtils;
@@ -102,6 +106,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mSmartPixels);
 
         mThemeUtils = new ThemeUtils(getContext());
+        mDashBoardStyle = (ListPreference) prefScreen.findPreference(KEY_DASHBOARD_STYLE);
+        mDashBoardStyle.setOnPreferenceChangeListener(this);
         mNotificationStylePref = findPreference(KEY_NOTIFICATION_STYLE);
         mNotificationStylePref.setOnPreferenceChangeListener(this);
         mPowermenuStylePref = findPreference(KEY_POWERMENU_STYLE);
@@ -110,7 +116,10 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNotificationStylePref) {
+        if (preference == mDashBoardStyle) {
+            CustomUtils.showSettingsRestartDialog(getContext());
+            return true;
+        } else if (preference == mNotificationStylePref) {
             int value = Integer.parseInt((String) newValue);
             updateNotifStyle(value);
             return true;
