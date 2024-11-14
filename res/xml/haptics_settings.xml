@@ -27,7 +27,7 @@
         android:order="-999"
         android:max="5"
         settings:min="0"
-        android:defaultValue="1"
+        android:defaultValue="2"
         settings:interval="1"/>
 
     <!-- Brightness slider intensity -->
@@ -37,7 +37,7 @@
         android:order="-998"
         android:max="3"
         settings:min="0"
-        android:defaultValue="0"
+        android:defaultValue="2"
         settings:interval="1"/>
 
     <!-- QS Fling haptics -->
@@ -57,7 +57,7 @@
         android:order="-997"
         android:max="5"
         settings:min="0"
-        android:defaultValue="0"
+        android:defaultValue="1"
         settings:interval="1"/>
         
     <!-- Edge scrolling intensity -->
@@ -67,7 +67,7 @@
         android:order="-997"
         android:max="5"
         settings:min="0"
-        android:defaultValue="1"
+        android:defaultValue="2"
         settings:interval="1"/>
 
     <!-- Volume slider intensity -->
