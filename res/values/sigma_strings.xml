@@ -102,6 +102,15 @@
     <string name="nothing_launcher_customizations_summary">Customize nothing launcher homescreen app</string>
     <string name="reevaluating_theme">Reloading system themes...</string>
 
+    <!-- Haptics Settings -->
+    <string name="haptics_settings_title">System haptics</string>
+    <string name="haptics_settings_summary">Modify system haptics intensities</string>
+    <string name="back_gesture_haptic_intensity_title">Back gesture haptics intensity</string>
+    <string name="brightness_slider_haptics_intensity_title">Brightness slider haptics intensity</string>
+    <string name="edge_scrolling_haptics_intensity_title">Edge scrolling haptics intensity</string>
+    <string name="volume_slider_haptics_intensity_title">Volume slider haptics intensity</string>
+    <string name="qs_panel_tile_haptic_intensity_title">QS tile haptics intensity</string>
+    <string name="qs_haptics_intensity_title">Qs fling haptics intensity</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_spoofing_category">Spoofing</string>
