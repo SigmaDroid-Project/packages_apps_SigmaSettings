@@ -231,4 +231,9 @@
     <string name="progress_bar_style2">Minimal Thumb</string>
     <string name="progress_bar_style3">Outline Thumb</string>
     <string name="progress_bar_style4">Shishu</string>
+
+    <!-- Ignore secure window -->
+    <string name="ignore_window_secure_title">Ignore window secure flags</string>
+    <string name="ignore_window_secure_summary">Fixes black screenshots and recordings, May lead to privacy leaks, Restart apps to apply changes</string>
+
 </resources>
