@@ -151,11 +151,22 @@
             android:entryValues="@array/qs_brightness_slider_position_values"
             android:defaultValue="0" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_brightness_slider_haptic"
             android:icon="@drawable/ic_brightness"
             android:title="@string/qs_brightness_slider_haptic_title"
-            android:summary="@string/qs_brightness_slider_haptic_summary"/>
+            android:summary="@string/qs_brightness_slider_haptic_summary"/> -->
+
+        <!-- Brightness slider intensity -->
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="qs_brightness_slider_haptic"
+            android:title="@string/brightness_slider_haptics_intensity_title"
+            android:summary="@string/qs_brightness_slider_haptic_intensity_summary"
+            android:icon="@drawable/ic_brightness"
+            android:max="3"
+            settings:min="0"
+            android:defaultValue="2"
+            settings:interval="1"/>
 
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="qs_show_auto_brightness"
