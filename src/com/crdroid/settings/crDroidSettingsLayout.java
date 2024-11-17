@@ -46,6 +46,7 @@ import com.crdroid.settings.fragments.Notifications;
 import com.crdroid.settings.fragments.QuickSettings;
 import com.crdroid.settings.fragments.Sound;
 import com.crdroid.settings.fragments.StatusBar;
+import com.crdroid.settings.fragments.SystemHaptics;
 import com.crdroid.settings.fragments.UserInterface;
 
 import com.android.internal.logging.nano.MetricsProto
@@ -176,6 +177,7 @@ public class crDroidSettingsLayout extends DashboardFragment {
             QuickSettings.reset(rContext);
             Sound.reset(rContext);
             StatusBar.reset(rContext);
+            SystemHaptics.reset(rContext);
             UserInterface.reset(rContext);
             finish();
             startActivity(getIntent());
