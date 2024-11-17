@@ -239,4 +239,9 @@
     <string name="powermenu_style2">Duoline</string>
     <string name="powermenu_style3">IOS</string>
     <string name="powermenu_style4">Layers</string>
+
+    <!-- Ignore secure window -->
+    <string name="ignore_window_secure_title">Ignore window secure flags</string>
+    <string name="ignore_window_secure_summary">Fixes black screenshots and recordings, May lead to privacy leaks, Restart apps to apply changes</string>
+
 </resources>
