@@ -265,4 +265,7 @@
     <string name="lockscreen_charge_temp_unit_title">Temperature unit</string>
     <string name="lockscreen_charge_temp_unit_farhenheit">Fahrenheit</string>
     <string name="lockscreen_charge_temp_unit_celsius">Celsius</string>
+
+    <string name="brightness_percent_title">Brightness Percentage</string>
+    <string name="brightness_percent_summary">Show hide brightness percentage text</string>  
 </resources>
