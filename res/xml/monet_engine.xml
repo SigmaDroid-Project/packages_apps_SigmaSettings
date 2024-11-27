@@ -21,11 +21,6 @@
     android:title="@string/monet_title"
     xmlns:lineage="http://schemas.android.com/apk/res-auto">
 
-    <!-- <com.android.settingslib.widget.LayoutPreference
-        android:key="monet_preview"
-        android:layout="@layout/monet_preview"
-        android:selectable="false"/> -->
-
     <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="monet_engine_theme_style"
         android:title="@string/monet_engine_style_title"
