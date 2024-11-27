@@ -135,12 +135,6 @@ public class MonetSettings extends DashboardFragment implements
         mTintBackgroundPref.setOnPreferenceChangeListener(this);
     }
 
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.BERRY_BLACK_THEME, 0, UserHandle.USER_CURRENT);
-    }
-
     @Override
     public void onResume() {
         super.onResume();
