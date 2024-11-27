@@ -281,4 +281,7 @@
 
     <string name="monet_engine_style_content">Content</string>
 
+    <!-- UI styles -->
+    <string name="theme_customization_ui_style_title">UI Style</string>
+    <string name="theme_customization_ui_style_summary">Set custom style for your interface</string>
 </resources>
