@@ -303,4 +303,7 @@
 
     <string name="entryhooks_title">Enable Keybox spoofing</string>
     <string name="entryhooks_summary">Spoof device keybox to pass Play Integrity</string>
+
+    <string name="monet_engine_style_content">Content</string>
+
 </resources>

@@ -235,7 +235,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.SETTINGS_DASHBOARD_STYLE , 2, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
-        // MonetSettings.reset(mContext);
         SmartPixels.reset(mContext);
     }
 
