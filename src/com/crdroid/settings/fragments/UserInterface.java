@@ -134,7 +134,10 @@ public class UserInterface extends SettingsPreferenceFragment implements
             mThemeUtils = ThemeUtils.getInstance(getContext());
         }
         mThemeUtils.setOverlayEnabled(notifStyleCategory, overlayThemeTarget, overlayThemeTarget);
-        if (notifStyle == 0) return;
+        if (notifStyle == 0) {
+            systemUtils.showSystemUIRestartDialog(getContext());
+            return;
+        }        
         switch (notifStyle) {
             case 1:
                 overlayPackage = "com.android.theme.notification.cyberpunk";
