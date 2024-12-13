@@ -57,15 +57,39 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String KEY_PGB_STYLE = "progress_bar_style";
     private static final String KEY_NOTIF_STYLE = "notification_style";
 
+    private static final String KEY_POWERMENU_STYLE = "powermenu_style";
+
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String KEY_DASHBOARD_STYLE = "settings_dashboard_style";
     private static final String KEY_SETTINGS_STORAGE_WIDGET = "settings_storage_widget";
     private static final String KEY_SETTINGS_BATTERY_WIDGET = "settings_battery_widget";
 
+    private static final String[] POWER_MENU_OVERLAYS = {
+        "com.android.theme.powermenu.cyberpunk",
+        "com.android.theme.powermenu.duoline",
+        "com.android.theme.powermenu.ios",
+        "com.android.theme.powermenu.layers"
+    };
+
+    private static final String[] NOTIF_OVERLAYS = {
+            "com.android.theme.notification.cyberpunk",
+            "com.android.theme.notification.duoline",
+            "com.android.theme.notification.ios",
+            "com.android.theme.notification.layers"
+    };
+
+    private static final String[] PROGRESS_BAR_OVERLAYS = {
+            "com.android.theme.progressbar.blocky_thumb",
+            "com.android.theme.progressbar.minimal_thumb",
+            "com.android.theme.progressbar.outline_thumb",
+            "com.android.theme.progressbar.shishu"
+    };
+
     private ThemeUtils mThemeUtils;
     private Preference mProgressBarPref;
     private Preference mNotificationStylePref;
+    private Preference mPowerMenuStylePref;
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
     private ListPreference mDashBoardStyle;
@@ -79,10 +103,12 @@ public class UserInterface extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.crdroid_settings_ui);
 
         mThemeUtils = ThemeUtils.getInstance(getActivity());
-        mProgressBarPref = (Preference) findPreference(KEY_PGB_STYLE);
+        mProgressBarPref = findPreference(KEY_PGB_STYLE);
         mProgressBarPref.setOnPreferenceChangeListener(this);
-        mNotificationStylePref = (Preference) findPreference(KEY_NOTIF_STYLE);
+        mNotificationStylePref = findPreference(KEY_NOTIF_STYLE);
         mNotificationStylePref.setOnPreferenceChangeListener(this);
+        mPowerMenuStylePref = findPreference(KEY_POWERMENU_STYLE);
+        mPowerMenuStylePref.setOnPreferenceChangeListener(this);
 
         Context mContext = getActivity().getApplicationContext();
         final PreferenceScreen prefScreen = getPreferenceScreen();
@@ -120,75 +146,43 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     }
 
-    private void updateNotifStyle() {
-        final int notifStyle = Settings.System.getIntForUser(
+    private void updateStyle(String key, String category, String target, 
+            int defaultValue, String[] overlayPackages, boolean restartSystemUI) {
+        final int style = Settings.System.getIntForUser(
                 getContext().getContentResolver(),
-                KEY_NOTIF_STYLE, 
-                0, 
+                key,
+                defaultValue,
                 UserHandle.USER_CURRENT
         );
-        String notifStyleCategory = "android.theme.customization.notification";
-        String overlayThemeTarget = "com.android.systemui";
-        String overlayPackage = null;
         if (mThemeUtils == null) {
             mThemeUtils = ThemeUtils.getInstance(getContext());
         }
-        mThemeUtils.setOverlayEnabled(notifStyleCategory, overlayThemeTarget, overlayThemeTarget);
-        if (notifStyle == 0) {
-            systemUtils.showSystemUIRestartDialog(getContext());
+        mThemeUtils.setOverlayEnabled(category, target, target);
+        if (style == 0) {
+            if (restartSystemUI) {
+                SystemRestartUtils.restartSystemUI(getContext());
+            }
             return;
-        }        
-        switch (notifStyle) {
-            case 1:
-                overlayPackage = "com.android.theme.notification.cyberpunk";
-                break;
-            case 2:
-                overlayPackage = "com.android.theme.notification.duoline";
-                break;
-            case 3:
-                overlayPackage = "com.android.theme.notification.ios";
-                break;
-            case 4:
-                overlayPackage = "com.android.theme.notification.layers";
-                break;
         }
-        if (overlayPackage != null) {
-            mThemeUtils.setOverlayEnabled(notifStyleCategory, overlayPackage, overlayThemeTarget);
+        if (style > 0 && style <= overlayPackages.length) {
+            mThemeUtils.setOverlayEnabled(category, overlayPackages[style - 1], target);
         }
+    }
+
+    private void updatePowerMenuStyle() {
+        updateStyle(KEY_POWERMENU_STYLE, "android.theme.customization.powermenu", "com.android.systemui", 0, POWER_MENU_OVERLAYS, false);
+    }
+
+    private void updateNotifStyle() {
+        updateStyle(KEY_NOTIF_STYLE, "android.theme.customization.notification", "com.android.systemui", 0, NOTIF_OVERLAYS, true);
     }
 
     private void updateProgressBarStyle() {
-        final int progressBarStyle = Settings.System.getIntForUser(
-                getContext().getContentResolver(),
-                KEY_PGB_STYLE, 
-                0, 
-                UserHandle.USER_CURRENT
-        );
-        String pgbStyleCategory = "android.theme.customization.progress_bar";
-        String overlayThemeTarget = "android";
-        String overlayPackage = null;
-        if (mThemeUtils == null) {
-            mThemeUtils = ThemeUtils.getInstance(getContext());
-        }
-        mThemeUtils.setOverlayEnabled(pgbStyleCategory, overlayThemeTarget, overlayThemeTarget);
-        if (progressBarStyle == 0) return;
-        switch (progressBarStyle) {
-            case 1:
-                overlayPackage = "com.android.theme.progressbar.blocky_thumb";
-                break;
-            case 2:
-                overlayPackage = "com.android.theme.progressbar.minimal_thumb";
-                break;
-            case 3:
-                overlayPackage = "com.android.theme.progressbar.outline_thumb";
-                break;
-        }
-        if (overlayPackage != null) {
-            mThemeUtils.setOverlayEnabled(pgbStyleCategory, overlayPackage, overlayThemeTarget);
-        }
+        updateStyle(KEY_PGB_STYLE, "android.theme.customization.progress_bar", "android", 0, PROGRESS_BAR_OVERLAYS, false);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        int value = Integer.parseInt((String) newValue);
 
         if (preference == mDashBoardStyle) {
             int value = Integer.parseInt((String) newValue);
@@ -206,16 +200,19 @@ public class UserInterface extends SettingsPreferenceFragment implements
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;
 		} else if (preference == mProgressBarPref) {
-            int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     KEY_PGB_STYLE, value, UserHandle.USER_CURRENT);
             updateProgressBarStyle();
             return true;
         } else if (preference == mNotificationStylePref) {
-            int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     KEY_NOTIF_STYLE, value, UserHandle.USER_CURRENT);
             updateNotifStyle();
+            return true;
+        } else if (preference == mPowerMenuStylePref) {
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    KEY_POWERMENU_STYLE, value, UserHandle.USER_CURRENT);
+            updatePowerMenuStyle();
             return true;
         }
         return false;

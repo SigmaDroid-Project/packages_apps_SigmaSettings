@@ -189,6 +189,7 @@
         <item>@string/progress_bar_style1</item>
         <item>@string/progress_bar_style2</item>
         <item>@string/progress_bar_style3</item>
+        <item>@string/progress_bar_style4</item>
     </string-array>
 
     <string-array name="progress_bar_style_values" translatable="false">
@@ -196,5 +197,23 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!-- Power Menu styles  -->
+    <string-array name="powermenu_style_entries">
+        <item>@string/color_default</item>
+        <item>@string/powermenu_style1</item>
+        <item>@string/powermenu_style2</item>
+        <item>@string/powermenu_style3</item>
+        <item>@string/powermenu_style4</item>
+    </string-array>
+
+    <string-array name="powermenu_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 </resources>

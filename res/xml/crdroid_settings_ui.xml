@@ -70,6 +70,16 @@
              android:summary="%s"
              android:defaultValue="0" />
 
+        <!-- Power Menu Styles -->      
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+             android:key="powermenu_style"
+             android:title="@string/powermenu_style_title"
+             android:icon="@drawable/ic_settings_powermenu"
+             android:entries="@array/powermenu_style_entries"
+             android:entryValues="@array/powermenu_style_values"
+             android:summary="%s"
+             android:defaultValue="0" />
+
         <!-- Progress Bar Styles -->      
         <com.crdroid.settings.preferences.SystemSettingListPreference
              android:key="progress_bar_style"
