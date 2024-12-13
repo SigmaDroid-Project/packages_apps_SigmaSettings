@@ -164,5 +164,37 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
-     </string-array>	
+     </string-array>
+
+    <!-- Notification styles  -->
+    <string-array name="notif_style_entries">
+        <item>@string/color_default</item>
+        <item>@string/notif_style1</item>
+        <item>@string/notif_style2</item>
+        <item>@string/notif_style3</item>
+        <item>@string/notif_style4</item>
+    </string-array>
+
+    <string-array name="notif_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <!-- Progress Bar style  -->
+    <string-array name="progress_bar_style_entries">
+        <item>@string/color_default</item>
+        <item>@string/progress_bar_style1</item>
+        <item>@string/progress_bar_style2</item>
+        <item>@string/progress_bar_style3</item>
+    </string-array>
+
+    <string-array name="progress_bar_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>
