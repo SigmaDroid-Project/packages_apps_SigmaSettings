@@ -182,34 +182,37 @@ public class UserInterface extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        int value = Integer.parseInt((String) newValue);
+        // int value = Integer.parseInt((String) newValue);
 
         if (preference == mDashBoardStyle) {
-            // int value = Integer.parseInt((String) newValue);
+            int value = Integer.parseInt((String) newValue);
             updateSettingsWidgets(value);
             CustomUtils.showSettingsRestartDialog(getContext());
             return true;
         } else if (preference == mHomepageStorageWidgetToggle) {
-            // boolean value = (Boolean) newValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "settings_storage_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;
 		} else if (preference == mHomepageBatteryWidgetToggle) {
-            // boolean value = (Boolean) newValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "settings_battery_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;
 		} else if (preference == mProgressBarPref) {
+            int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     KEY_PGB_STYLE, value, UserHandle.USER_CURRENT);
             updateProgressBarStyle();
             return true;
         } else if (preference == mNotificationStylePref) {
+            int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     KEY_NOTIF_STYLE, value, UserHandle.USER_CURRENT);
             updateNotifStyle();
             return true;
         } else if (preference == mPowerMenuStylePref) {
+            int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     KEY_POWERMENU_STYLE, value, UserHandle.USER_CURRENT);
             updatePowerMenuStyle();
