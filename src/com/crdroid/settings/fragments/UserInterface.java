@@ -160,7 +160,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
         mThemeUtils.setOverlayEnabled(category, target, target);
         if (style == 0) {
             if (restartSystemUI) {
-                SystemRestartUtils.restartSystemUI(getContext());
+                systemUtils.showSystemUIRestartDialog(getContext());
             }
             return;
         }
@@ -185,17 +185,17 @@ public class UserInterface extends SettingsPreferenceFragment implements
         int value = Integer.parseInt((String) newValue);
 
         if (preference == mDashBoardStyle) {
-            int value = Integer.parseInt((String) newValue);
+            // int value = Integer.parseInt((String) newValue);
             updateSettingsWidgets(value);
             CustomUtils.showSettingsRestartDialog(getContext());
             return true;
         } else if (preference == mHomepageStorageWidgetToggle) {
-            boolean value = (Boolean) newValue;
+            // boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "settings_storage_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;
 		} else if (preference == mHomepageBatteryWidgetToggle) {
-            boolean value = (Boolean) newValue;
+            // boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(), "settings_battery_widget", value ? 1 : 0);
 			CustomUtils.showSettingsRestartDialog(getContext());
             return true;

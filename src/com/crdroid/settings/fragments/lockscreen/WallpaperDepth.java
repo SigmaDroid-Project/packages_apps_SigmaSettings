@@ -113,7 +113,7 @@ public class WallpaperDepth extends SettingsPreferenceFragment
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.rising_settings_wallpaper_depth) {
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_wallpaper_depth) {
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
