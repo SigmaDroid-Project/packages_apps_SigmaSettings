@@ -138,9 +138,6 @@
     <string name="gameprops_load_json_title">Select GameProps JSON File</string>
     <string name="gameprops_load_json_summary">Pick GameProps JSON file to be used for spoofing games</string>
 
-    <string name="spoofing_title">Spoofing</string>
-    <string name="spoofing_title_summary">Spoof as different device to unlock application features</string>
-
     <!-- Enable all props -->
     <string name="all_props_title">Enable spoof options</string>
     <string name="all_props_summary">Enables all the spoof options within the PixelProps</string>
