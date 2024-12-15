@@ -53,6 +53,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
 
     public static final String TAG = "Spoof";
     private static final String SYS_GMS_SPOOF = "persist.sys.pixelprops.gms";
+    private static final String SYS_KEYBOX_SPOOF = "persist.sys.entryhooks_enabled";
     private static final String SYS_GOOGLE_SPOOF = "persist.sys.pixelprops.google";
     private static final String SYS_PROP_OPTIONS = "persist.sys.pixelprops.all";
     private static final String SYS_GAMEPROP_ENABLED = "persist.sys.gameprops.enabled";
@@ -64,6 +65,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
     private boolean isPixelDevice;
 
     private Preference mGmsSpoof;
+    private Preference mKeyBoxSpoof;
     private Preference mGoogleSpoof;
     private Preference mGphotosSpoof;
     private Preference mPropOptions;
@@ -84,6 +86,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
         mGamePropsSpoof = findPreference(SYS_GAMEPROP_ENABLED);
         mGphotosSpoof = findPreference(SYS_GPHOTOS_SPOOF);
         mGmsSpoof = findPreference(SYS_GMS_SPOOF);
+        mKeyBoxSpoof = findPreference(SYS_KEYBOX_SPOOF);
         mGoogleSpoof = findPreference(SYS_GOOGLE_SPOOF);
         mPropOptions = findPreference(SYS_PROP_OPTIONS);
         mPifJsonFilePreference = findPreference(KEY_PIF_JSON_FILE_PREFERENCE);
@@ -105,6 +108,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
         }
 
         mGmsSpoof.setOnPreferenceChangeListener(this);
+        mKeyBoxSpoof.setOnPreferenceChangeListener(this);
         mPropOptions.setOnPreferenceChangeListener(this);
         mGoogleSpoof.setOnPreferenceChangeListener(this);
         mGphotosSpoof.setOnPreferenceChangeListener(this);
@@ -131,7 +135,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
         }
         
         mUpdateJsonButton.setOnPreferenceClickListener(preference -> {
-            updatePropertiesFromUrl("https://raw.githubusercontent.com/chiteroman/PlayIntegrityFix/main/module/pif.json");
+            updatePropertiesFromUrl("https://raw.githubusercontent.com/RisingOS-staging/risingOS_wiki/refs/heads/fifteen/spoofing/PlayIntergrity/pif.json");
             return true;
         });
         
@@ -212,38 +216,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
                     String json = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
                     Log.d(TAG, "Downloaded JSON data: " + json);
                     JSONObject jsonObject = new JSONObject(json);
-
-                    // Retrieve and parse the "FINGERPRINT" value
-                    if (jsonObject.has("FINGERPRINT")) {
-                        String fingerprint = jsonObject.getString("FINGERPRINT");
-                        // Split fingerprint into sections
-                        String[] sections = fingerprint.split(":");
-                        if (sections.length == 3) {
-                            // First section: BRAND/PRODUCT/DEVICE
-                            String[] firstSection = sections[0].split("/");
-                            if (firstSection.length == 3) {
-                                jsonObject.put("BRAND", firstSection[0]);
-                                jsonObject.put("PRODUCT", firstSection[1]);
-                                jsonObject.put("DEVICE", firstSection[2]);
-                            }
-                            // Second section: RELEASE/ID/INCREMENTAL
-                            String[] secondSection = sections[1].split("/");
-                            if (secondSection.length == 3) {
-                                jsonObject.put("RELEASE", secondSection[0]);
-                                jsonObject.put("ID", secondSection[1]);
-                                jsonObject.put("INCREMENTAL", secondSection[2]);
-                            }
-                            // Third section: TYPE/TAGS
-                            String[] thirdSection = sections[2].split("/");
-                            if (thirdSection.length == 2) {
-                                jsonObject.put("TYPE", thirdSection[0]);
-                                jsonObject.put("TAGS", thirdSection[1]);
-                            }
-                        }
-                    }
-
                     String spoofedModel = jsonObject.optString("MODEL", "Unknown model");
-                    // Update system properties
                     for (Iterator<String> it = jsonObject.keys(); it.hasNext(); ) {
                         String key = it.next();
                         String value = jsonObject.getString(key);
@@ -254,6 +227,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
                         String toastMessage = getString(R.string.toast_spoofing_success, spoofedModel);
                         Toast.makeText(getContext(), toastMessage, Toast.LENGTH_LONG).show();
                     });
+
                 } finally {
                     urlConnection.disconnect();
                 }
@@ -339,6 +313,7 @@ public class Spoof extends SettingsPreferenceFragment implements Preference.OnPr
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mGmsSpoof 
+            || preference == mKeyBoxSpoof
             || preference == mPropOptions
             || preference == mGoogleSpoof
             || preference == mGphotosSpoof
