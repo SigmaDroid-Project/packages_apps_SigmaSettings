@@ -18,6 +18,8 @@ package com.crdroid.settings.fragments;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
@@ -28,6 +30,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 
 import androidx.preference.Preference;
+import androidx.preference.ListPreference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
@@ -36,6 +39,7 @@ import androidx.preference.SwitchPreferenceCompat;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.OmniJawsClient;
 import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.crdroid.ThemeUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -69,6 +73,12 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_COLOR_SOURCE = "sysui_keyguard_battery_bar_color_source";
     private static final String CUSTOM_KEYGUARD_BATTERY_BAR_CUSTOM_COLOR = "sysui_keyguard_battery_bar_custom_color";
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_cofig";
+    private static final String KEY_CLOCK_STYLE = "clock_style";
+    private static final String CLOCK_STYLE =
+            "system:" + KEY_CLOCK_STYLE;
+
+    private static final int DEFAULT_STYLE = 0; //Disabled
+    private static final String CLOCK_STYLE_KEY = "clock_style";
 
     private Preference mUdfpsAnimations;
     private Preference mUdfpsIcons;
@@ -84,22 +94,32 @@ public class LockScreen extends SettingsPreferenceFragment
     private ColorPickerPreference mBarCustomColor;
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
 
+    private ListPreference mClockStyle;
+    private static ThemeUtils mThemeUtils;
+//     private static final String CLOCK_STYLE_KEY = "clock_style";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
-
-        PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
-
-        FingerprintManager mFingerprintManager = (FingerprintManager)
-                getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
-        mUdfpsIcons = (Preference) findPreference(KEY_UDFPS_ICONS);
-        mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
-        mScreenOffUdfps = (Preference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
-
-        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+        //     private static final int DEFAULT_STYLE = 0; //Disabled
+            
+            super.onCreate(savedInstanceState);
+            
+            addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
+            
+            PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
+            
+            FingerprintManager mFingerprintManager = (FingerprintManager)
+            getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+            mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
+            mUdfpsIcons = (Preference) findPreference(KEY_UDFPS_ICONS);
+            mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
+            mScreenOffUdfps = (Preference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
+            mClockStyle = (ListPreference) findPreference(CLOCK_STYLE_KEY);
+            
+        //     private static final String KEY_CLOCK_STYLE = "clock_style";
+        
+            if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mUdfpsAnimations);
             gestCategory.removePreference(mUdfpsIcons);
             gestCategory.removePreference(mRippleEffect);
@@ -146,6 +166,18 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 3);
         mMaxKeyguardNotifConfig.setValue(kgconf);
         mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+
+        mClockStyle = (ListPreference) findPreference("clock_style");
+        // int clockStyle = Settings.System.getInt(mContext.getContentResolver(), CLOCK_STYLE_KEY, DEFAULT_STYLE);
+
+        // int clockStyle = Settings.System.getIntForUser(getContentResolver(),
+        //         CLOCK_STYLE_KEY, 0);
+        mClockStyle.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), CLOCK_STYLE, 0)));
+        // int clockStyle = Settings.System.getInt(getContentResolver(),
+
+        // mClockStyle.setValue(String.valueOf(clockStyle));
+        mClockStyle.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -179,6 +211,11 @@ public class LockScreen extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
             return true;
+        // } else if (preference == mClockStyle) {
+        //     int value = Integer.valueOf((String) newValue);
+        //     Settings.System.putInt(getActivity().getContentResolver(),
+        //             Settings.System.CLOCK_STYLE, value);
+        //     return true;
         }
         return false;
     }
