@@ -144,7 +144,7 @@ public class MonetSettings extends DashboardFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        updatePreferences();
+        // updatePreferences();
     }
 
     private void updatePreferences() {
