@@ -229,6 +229,12 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private void updateStyle(String key, String category, String target,
             int defaultValue, String[] overlayPackages, int style, boolean restartSystemUI) {
         mThemeUtils.setOverlayEnabled(category, target, target);
+        if (style == 0) {
+            if (restartSystemUI) {
+                systemUtils.showSystemUIRestartDialog(getContext());
+            }
+            return;
+        }
         if (style > 0 && style <= overlayPackages.length) {
             mThemeUtils.setOverlayEnabled(category, overlayPackages[style - 1], target);
             if (restartSystemUI) {
