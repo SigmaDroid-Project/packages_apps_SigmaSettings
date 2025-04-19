@@ -60,6 +60,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
     private static final String KEY_SETTINGS_BATTERY_WIDGET = "settings_battery_widget";
     private static final String KEY_NOTIFICATION_STYLE = "notification_style";
     private static final String KEY_POWERMENU_STYLE = "powermenu_style";
+    private static final String KEY_PGB_STYLE = "progress_bar_style";
+
 
     private static final String[] NOTIF_OVERLAYS = {
             "com.android.theme.notification.cyberpunk",
@@ -77,6 +79,14 @@ public class UserInterface extends SettingsPreferenceFragment implements
             "com.android.theme.powermenu.layers"
     };
 
+    private static final String[] PROGRESS_BAR_OVERLAYS = {
+        "com.android.theme.progressbar.blocky_thumb",
+        "com.android.theme.progressbar.minimal_thumb",
+        "com.android.theme.progressbar.outline_thumb",
+        "com.android.theme.progressbar.shishu"
+};
+
+    private Preference mProgressBarPref;
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
     private ListPreference mDashBoardStyle;
@@ -130,7 +140,43 @@ public class UserInterface extends SettingsPreferenceFragment implements
         mNotificationStylePref.setOnPreferenceChangeListener(this);
         mPowermenuStylePref = findPreference(KEY_POWERMENU_STYLE);
         mPowermenuStylePref.setOnPreferenceChangeListener(this);
+        mProgressBarPref = findPreference(KEY_PGB_STYLE);
+        mProgressBarPref.setOnPreferenceChangeListener(this);
     }
+
+    // private void updateProgressBarStyle() {
+        // final int progressBarStyle = Settings.System.getIntForUser(
+        //         getContext().getContentResolver(),
+        //         KEY_PGB_STYLE, 
+        //         0, 
+        //         UserHandle.USER_CURRENT
+        // );
+        // String pgbStyleCategory = "android.theme.customization.progress_bar";
+        // String overlayThemeTarget = "android";
+        // String overlayPackage = null;
+        // if (mThemeUtils == null) {
+        //     mThemeUtils = ThemeUtils.getInstance(getContext());
+        // }
+        // mThemeUtils.setOverlayEnabled(pgbStyleCategory, overlayThemeTarget, overlayThemeTarget);
+        // if (progressBarStyle == 0) return;
+        // switch (progressBarStyle) {
+        //     case 1:
+        //         overlayPackage = "com.android.theme.progressbar.blocky_thumb";
+        //         break;
+        //     case 2:
+        //         overlayPackage = "com.android.theme.progressbar.minimal_thumb";
+        //         break;
+        //     case 3:
+        //         overlayPackage = "com.android.theme.progressbar.outline_thumb";
+        //         break;
+        //     case 4:
+        //         overlayPackage = "com.android.theme.progressbar.shishu";
+        //         break;
+        // }
+        // if (overlayPackage != null) {
+        //     mThemeUtils.setOverlayEnabled(pgbStyleCategory, overlayPackage, overlayThemeTarget);
+        // }
+    // }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -158,23 +204,36 @@ public class UserInterface extends SettingsPreferenceFragment implements
             int value = Integer.parseInt((String) newValue);
             updatePowermenuStyle(value);
             return true;
+        } else if (preference == mProgressBarPref) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                    KEY_PGB_STYLE, value, UserHandle.USER_CURRENT);
+            updateProgressBarStyle(value);
+            return true;
         }
         return false;
     }
 
     private void updateNotifStyle(int style) {
-        updateStyle(KEY_NOTIFICATION_STYLE, "android.theme.customization.notification", "com.android.systemui", 0, NOTIF_OVERLAYS, style);
+        updateStyle(KEY_NOTIFICATION_STYLE, "android.theme.customization.notification", "com.android.systemui", 0, NOTIF_OVERLAYS, style, true);
     }
 
     private void updatePowermenuStyle(int style) {
-        updateStyle(KEY_POWERMENU_STYLE, "android.theme.customization.powermenu", "com.android.systemui", 0, POWERMENU_OVERLAYS, style);
+        updateStyle(KEY_POWERMENU_STYLE, "android.theme.customization.powermenu", "com.android.systemui", 0, POWERMENU_OVERLAYS, style, false);
+    }
+
+    private void updateProgressBarStyle(int style) {
+        updateStyle(KEY_PGB_STYLE, "android.theme.customization.progress_bar", "android", 0, PROGRESS_BAR_OVERLAYS, style, false);
     }
 
     private void updateStyle(String key, String category, String target,
-            int defaultValue, String[] overlayPackages, int style) {
+            int defaultValue, String[] overlayPackages, int style, boolean restartSystemUI) {
         mThemeUtils.setOverlayEnabled(category, target, target);
         if (style > 0 && style <= overlayPackages.length) {
             mThemeUtils.setOverlayEnabled(category, overlayPackages[style - 1], target);
+            if (restartSystemUI) {
+                systemUtils.showSystemUIRestartDialog(getContext());
+            }
         }
     }
 

@@ -203,4 +203,18 @@
     <string name="dw_wallpaper_enabled_title">Depth Wallpaper</string>
     <string name="dw_wallpaper_enabled_summary">Enable iOS-inspired depth wallpaper. Requires a subject image.</string>
     <string name="dw_wallpaper_opacity_title">Depth Wallpaper Opacity</string>
+
+    <!-- Notification Styles -->
+    <string name="notif_style_title">Notification Style</string>
+    <string name="notif_style1">Cyberpunk</string>
+    <string name="notif_style2">Duoline</string>
+    <string name="notif_style3">IOS</string>
+    <string name="notif_style4">Layers</string>
+
+    <!-- Progress Bar Styles -->
+    <string name="progress_bar_style_title">Progress Bar Style</string>
+    <string name="progress_bar_style1">Blocky Thumb</string>
+    <string name="progress_bar_style2">Minimal Thumb</string>
+    <string name="progress_bar_style3">Outline Thumb</string>
+    <string name="progress_bar_style4">Shishu</string>
 </resources>
