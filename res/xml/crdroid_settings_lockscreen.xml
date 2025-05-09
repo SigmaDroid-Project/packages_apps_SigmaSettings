@@ -201,21 +201,21 @@
             android:defaultValue="true"
             android:dependency="lockscreen_weather_enabled" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_wind_info"
             android:icon="@drawable/ic_weather_windy"
             android:title="@string/lockscreen_weather_wind_info_title"
             android:summary="@string/lockscreen_weather_wind_info_summary"
             android:defaultValue="false"
-            android:dependency="lockscreen_weather_enabled" />
+            android:dependency="lockscreen_weather_enabled" /> -->
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_humidity_info"
             android:icon="@drawable/ic_water_percent"
             android:title="@string/lockscreen_weather_humidity_info_title"
             android:summary="@string/lockscreen_weather_humidity_info_summary"
             android:defaultValue="false"
-            android:dependency="lockscreen_weather_enabled" />
+            android:dependency="lockscreen_weather_enabled" /> -->
 
     </PreferenceCategory>
 
