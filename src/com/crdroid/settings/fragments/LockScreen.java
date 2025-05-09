@@ -34,7 +34,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.crdroid.OmniJawsClient;
+import com.android.internal.util.android.OmniJawsClient;
 import com.android.internal.util.crdroid.Utils;
 
 import com.android.settings.R;
